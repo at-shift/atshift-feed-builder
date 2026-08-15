@@ -1,99 +1,129 @@
-# atshift Feed Builder
+<div align="center">
+  <img src="assets/plugin-icons/atshift-feed-builder-icon-512.png" width="160" height="160" alt="atshift Feed Builder">
+  <h1>atshift Feed Builder</h1>
+  <p><strong>Build reliable WordPress feeds for people, services, and AI.</strong></p>
+  <p>
+    <a href="https://github.com/at-shift/atshift-feed-builder/releases">Releases</a>
+    &middot;
+    <a href="https://github.com/at-shift/atshift-feed-builder/issues">Issues</a>
+  </p>
+</div>
 
-atshift Feed Builder is a standalone WordPress plugin for publishing WordPress, atshift Fields, and atshift User Profile Fields data as RSS 2.0 or JSON Feed 1.1. RSS configurations can replace WordPress standard feeds without changing their public URLs, while custom RSS and JSON feeds remain available for purpose-specific delivery.
+atshift Feed Builder turns structured information stored in WordPress into purpose-specific RSS 2.0 and JSON Feed 1.1 feeds. It works as a standalone plugin and adds deeper field discovery when atshift Fields or atshift User Profile Fields is active.
 
-Each feed uses one fixed output standard. After choosing RSS 2.0 or JSON Feed 1.1, the editor displays that standard's structure and lets the publisher map each output field to a WordPress value, an atshift Fields value, a post-author UPF value, an explicitly allowed post_meta or Pods field name, fixed text, or no output where the standard permits it.
+> This repository currently contains a public beta. Test it on a staging site before using it in production.
 
-Public posts, pages, and public custom post types can be selected independently for each feed. Fields and UPF values replace explicit standard output fields; they are not appended automatically.
+## Features
 
-Feeds can be narrowed by author, public taxonomy terms, and up to five allow-listed post meta conditions. Different filter types and taxonomy groups are combined with AND; multiple selected terms within one taxonomy are matched with OR.
+- Create multiple RSS 2.0 and JSON Feed 1.1 configurations
+- Customize WordPress standard RSS feeds while preserving their existing URLs
+- Create separate feeds with purpose-specific URLs
+- Disable selected WordPress standard feeds and their discovery links
+- Select posts, pages, and public custom post types
+- Filter items by author, public taxonomy terms, and allow-listed custom fields
+- Map feed fields to WordPress values, fixed values, atshift Fields, or post-author UPF values
+- Read explicitly named fields from post meta, Pods, ACF / Secure Custom Fields, Meta Box, and Carbon Fields
+- Map publisher, article author, primary source, and reviewer information independently
+- Define a fallback source for the main image
+- Preview the first real feed item before saving
+- Inspect and copy the generated XML or JSON
+- Publish ETag and Last-Modified headers with cached feed output
 
-The editor can preview the first real item in the current feed order using the current unsaved settings. A reader-style view is shown first, with the matching XML or formatted JSON available in a secondary source-code tab for inspection, copying, and validation.
+## Requirements
 
-Publisher, article-author, primary-source, and review attribution can be mapped independently. RSS uses `dc:publisher`, `dc:creator`, `dc:contributor`, `dc:source`, and an Atom `rel="related"` link. JSON Feed uses its standard top-level `authors`, item `authors`, and `external_url` fields. Source names and reviewer roles that JSON Feed does not define are included only when explicitly mapped, under the valid JSON Feed extension object `_atshift`.
+- WordPress 6.4 or later
+- PHP 7.4 or later
 
-## Custom source adapters
+atshift Fields, atshift User Profile Fields, and supported third-party field plugins are optional.
 
-Plugins can add value sources with the `atshift_feed_builder_source_adapters` filter. An adapter must implement `Atshift_Feed_Builder_Source_Adapter` and is automatically offered for compatible item fields.
+## Installation
 
-```php
-add_action(
-	'plugins_loaded',
-	function () {
-		if ( ! interface_exists( 'Atshift_Feed_Builder_Source_Adapter' ) ) {
-			return;
-		}
+1. Download the beta ZIP from [GitHub Releases](https://github.com/at-shift/atshift-feed-builder/releases).
+2. In WordPress, open **Plugins > Add Plugin > Upload Plugin**.
+3. Upload the ZIP and activate **atshift Feed Builder**.
+4. Open **atshift Feed Builder > Add New Feed**.
 
-		class Example_Feed_Source implements Atshift_Feed_Builder_Source_Adapter {
-			public function get_id() {
-				return 'example';
-			}
+## Getting Started
 
-			public function get_label() {
-				return 'Example Plugin';
-			}
+Choose RSS 2.0 or JSON Feed 1.1 when creating a feed. A feed keeps that output format after it is created, so the editor can show only the fields and choices that belong to the selected standard.
 
-			public function is_available() {
-				return function_exists( 'example_get_value' );
-			}
+For RSS, choose one publication method:
 
-			public function get_fields() {
-				return array(
-					'subtitle' => array(
-						'id'        => 'subtitle',
-						'label'     => 'Subtitle',
-						'type'      => 'string',
-						'sensitive' => false,
-					),
-				);
-			}
+1. Customize the contents of a WordPress standard feed.
+2. Create a custom feed at a separate URL.
+3. Disable a selected WordPress standard feed.
 
-			public function get_values( $post, $field_ids ) {
-				$values = array();
-				foreach ( $field_ids as $field_id ) {
-					$values[ $field_id ] = example_get_value( $field_id, $post->ID );
-				}
-				return $values;
-			}
-		}
+Then choose the content types, optional delivery filters, item limit, ordering, and output mappings. The preview uses the first matching published item and does not require saving temporary changes.
 
-		add_filter(
-			'atshift_feed_builder_source_adapters',
-			function ( $adapters ) {
-				$adapters['example'] = new Example_Feed_Source();
-				return $adapters;
-			}
-		);
-	},
-	5
-);
-```
+## Feed URLs
 
-Adapters that need a manually entered field name can implement `Atshift_Feed_Builder_Manual_Source_Adapter`. They must provide the input label and description and implement `is_allowed_key()` so protected or secret keys cannot be requested. Adapter IDs and field IDs must use lowercase WordPress-safe keys. Supported field types are `string`, `number`, `boolean`, `url`, `image`, `html`, and `list`.
+Standard RSS customization keeps the WordPress URL for the selected destination. This includes the main posts feed, public custom post type archive feeds, and public taxonomy term feeds.
 
-atshift Feed Builder catches adapter exceptions and discards unexpected adapter output before rendering a public feed. Values are still normalized to the target RSS or JSON field type. Do not expose password, authentication, session, capability, token, secret, or private personal-information fields through an adapter.
-
-## Feed endpoints
-
-Standard RSS replacements keep the WordPress URL for the selected destination, including the main posts feed, public custom post type archives, and each term in a public taxonomy. Custom feeds use the plugin endpoint:
+Custom feeds use the plugin endpoint:
 
 ```text
 /atshift-feed/{feed-slug}/rss/
 /atshift-feed/{feed-slug}/json/
 ```
 
-## Privacy model
+A custom feed can add an alternate feed link to the page `<head>` so browsers and external services can discover it.
 
-- Fields and UPF values are never published automatically.
-- Generic post_meta keys must be entered explicitly. Protected and security-related keys are blocked.
-- When Pods is active, a field name can be entered explicitly and resolved through the Pods API for either meta or table storage.
-- ACF / Secure Custom Fields, Meta Box, and Carbon Fields values can be loaded by entering their field name or ID when the respective plugin API is available.
-- Main image mappings can define a second source used only when the primary value is empty.
-- Publisher, article-author, primary-source, and reviewer values are independently allow-listed and omitted when empty.
-- The JSON `_atshift` attribution extension is added only when a source name or reviewer is explicitly mapped.
-- Third-party plugins can register allow-listed source adapters without adding executable code fields to the atshift Feed Builder editor.
-- Authentication, session, capability, and password-related UPF fields are not selectable.
-- Fields that may contain personal information are visibly marked in mapping selectors.
-- Draft, private, scheduled, and password-protected source posts are excluded.
-- WordPress standard feed discovery remains available unless a publisher explicitly disables that feed destination.
-- Custom feeds are added to the document head only when the publisher enables discovery for that feed.
+## Value Sources
+
+Every output field uses an explicit value source. Available sources depend on the field and active plugins.
+
+- WordPress site, post, author, taxonomy, and media values
+- Fixed values
+- atshift Fields field definitions and values
+- atshift User Profile Fields definitions and post-author values
+- WordPress `post_meta` using an explicitly entered key
+- Pods fields using an explicitly entered field name
+- ACF / Secure Custom Fields, Meta Box, and Carbon Fields using their public APIs
+- Additional adapters registered by another plugin
+
+Fields and UPF values replace selected output fields. They are never appended to a public feed automatically.
+
+## Privacy And Safety
+
+- Only explicitly selected fields are published
+- Protected and security-related meta keys are blocked
+- Password, authentication, session, token, and capability data cannot be selected
+- Fields that may contain personal information are visibly marked
+- Draft, private, scheduled, and password-protected posts are excluded
+- Unknown third-party values require an explicitly entered public field name or key
+- XML and JSON output is encoded for its target format
+- Adapter failures and unexpected adapter values are discarded before output
+
+Review every mapping before publishing a feed, especially when user profile fields may contain email addresses, phone numbers, addresses, or other personal information.
+
+## Custom Source Adapters
+
+Plugins can add value sources with the `atshift_feed_builder_source_adapters` filter. An adapter implements `Atshift_Feed_Builder_Source_Adapter` and declares only the public fields it intends to expose.
+
+```php
+add_filter(
+	'atshift_feed_builder_source_adapters',
+	function ( $adapters ) {
+		$adapters['example'] = new Example_Feed_Source();
+		return $adapters;
+	}
+);
+```
+
+Adapters that accept a manually entered field name can implement `Atshift_Feed_Builder_Manual_Source_Adapter`. They must validate the requested key with `is_allowed_key()` and must not expose protected or secret values.
+
+Supported field types are `string`, `number`, `boolean`, `url`, `image`, `html`, and `list`.
+
+## Related Projects
+
+- [atshift Fields](https://wordpress.org/plugins/atshift-fields-maintenance-for-custom-field-suite/) structures fields for posts and custom post types.
+- [atshift User Profile Fields](https://github.com/at-shift/atshift-user-profile-fields) creates and organizes WordPress user profile fields.
+- [atshift Freeform Login](https://github.com/at-shift/atshift-freeform-login) designs the WordPress login screen and provides a matching login form shortcode.
+
+## Reporting Issues
+
+Please use [GitHub Issues](https://github.com/at-shift/atshift-feed-builder/issues) and include reproduction steps together with your WordPress, PHP, and plugin versions.
+
+## License
+
+GPL-2.0-or-later
