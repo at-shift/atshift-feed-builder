@@ -297,6 +297,13 @@
 	gap: 16px;
 }
 
+.atfb-custom-content {
+	padding: 18px;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	background: #fff;
+}
+
 .atfb-post-type-group {
 	display: grid;
 	gap: 7px;
@@ -351,8 +358,10 @@
 
 .atfb-filter-section {
 	margin-top: 4px;
-	border-top: 1px solid #dcdcde;
-	border-bottom: 1px solid #dcdcde;
+	overflow: hidden;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	background: #fff;
 }
 
 .atfb-filter-summary {
@@ -361,7 +370,7 @@
 	justify-content: space-between;
 	gap: 12px;
 	min-height: 48px;
-	padding: 0 4px;
+	padding: 0 18px;
 	font-size: 14px;
 	font-weight: 600;
 	cursor: pointer;
@@ -405,7 +414,7 @@
 }
 
 .atfb-filter-body {
-	padding: 4px 0 20px;
+	padding: 4px 18px 20px;
 }
 
 .atfb-basic-settings {
