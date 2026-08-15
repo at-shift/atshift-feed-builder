@@ -55,6 +55,9 @@
 			if (customContent) {
 				customContent.hidden = usesStandardTarget;
 			}
+			editor.querySelectorAll('.atfb-output-settings').forEach(function (section) {
+				section.hidden = mode === 'disabled';
+			});
 			['atfb-mappings', 'atfb-preview'].forEach(function (id) {
 				var box = document.getElementById(id);
 				if (box) {

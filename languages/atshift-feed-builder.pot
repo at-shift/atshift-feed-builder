@@ -249,14 +249,13 @@ msgid ""
 msgstr ""
 
 #: includes/class-atshift-feed-builder-admin.php:301
-msgid "WordPress feed destination"
+msgid "Target WordPress standard feed"
 msgstr ""
 
 #: includes/class-atshift-feed-builder-admin.php:307
 msgid ""
-"The content types and public URL are determined automatically by this "
-"destination. Category, tag, and taxonomy mappings apply to every term using "
-"its existing feed URL."
+"Choose the standard WordPress feed affected by this setting. Category, tag, "
+"and taxonomy targets use each term's existing feed URL."
 msgstr ""
 
 #: includes/class-atshift-feed-builder-admin.php:313

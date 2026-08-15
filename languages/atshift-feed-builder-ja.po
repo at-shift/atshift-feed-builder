@@ -270,17 +270,16 @@ msgstr ""
 "す。"
 
 #: includes/class-atshift-feed-builder-admin.php:301
-msgid "WordPress feed destination"
-msgstr "WordPressフィードの配信先"
+msgid "Target WordPress standard feed"
+msgstr "対象となるWordPress標準フィード"
 
 #: includes/class-atshift-feed-builder-admin.php:307
 msgid ""
-"The content types and public URL are determined automatically by this "
-"destination. Category, tag, and taxonomy mappings apply to every term using "
-"its existing feed URL."
+"Choose the standard WordPress feed affected by this setting. Category, tag, "
+"and taxonomy targets use each term's existing feed URL."
 msgstr ""
-"コンテンツタイプと公開URLは配信先から自動決定します。カテゴリー、タグ、タクソ"
-"ノミーでは、各タームの既存フィードURLに同じマッピングを適用します。"
+"この設定の対象にするWordPress標準フィードを選びます。カテゴリー、タグ、タクソ"
+"ノミーでは、各タームの既存フィードURLが対象になります。"
 
 #: includes/class-atshift-feed-builder-admin.php:313
 msgid "Feed slug"

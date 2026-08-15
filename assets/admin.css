@@ -185,6 +185,7 @@
 }
 
 .atfb-custom-content[hidden],
+.atfb-output-settings[hidden],
 #atfb-mappings[hidden],
 #atfb-preview[hidden] {
 	display: none;

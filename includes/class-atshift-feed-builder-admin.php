@@ -298,13 +298,13 @@ class Atshift_Feed_Builder_Admin {
 
 				<div class="atfb-publication-panel" data-publication-panel="standard">
 					<div class="atfb-field">
-						<label for="atfb-standard-target"><?php esc_html_e( 'WordPress feed destination', 'atshift-feed-builder' ); ?></label>
+						<label for="atfb-standard-target"><?php esc_html_e( 'Target WordPress standard feed', 'atshift-feed-builder' ); ?></label>
 						<select id="atfb-standard-target" name="atfb_standard_target">
 							<?php foreach ( $standard_targets as $target => $details ) : ?>
 								<option value="<?php echo esc_attr( $target ); ?>" data-post-types="<?php echo esc_attr( implode( ',', $details['post_types'] ) ); ?>" <?php selected( $standard_target, $target ); ?>><?php echo esc_html( $details['label'] ); ?></option>
 							<?php endforeach; ?>
 						</select>
-						<p class="description"><?php esc_html_e( 'The content types and public URL are determined automatically by this destination. Category, tag, and taxonomy mappings apply to every term using its existing feed URL.', 'atshift-feed-builder' ); ?></p>
+						<p class="description"><?php esc_html_e( 'Choose the standard WordPress feed affected by this setting. Category, tag, and taxonomy targets use each term\'s existing feed URL.', 'atshift-feed-builder' ); ?></p>
 					</div>
 				</div>
 
@@ -349,7 +349,7 @@ class Atshift_Feed_Builder_Admin {
 				</div>
 				</fieldset>
 
-				<details class="atfb-filter-section atfb-field-wide"<?php if ( $has_active_filters ) : ?> open<?php endif; ?>>
+				<details class="atfb-filter-section atfb-field-wide atfb-output-settings"<?php if ( $has_active_filters ) : ?> open<?php endif; ?>>
 					<summary class="atfb-filter-summary">
 						<span class="atfb-label-with-help"><?php esc_html_e( 'Feed content filters', 'atshift-feed-builder' ); ?><?php $this->render_help_tooltip( __( 'These settings limit which published posts are included in the feed. They do not change the values output for each item.', 'atshift-feed-builder' ) ); ?></span>
 						<span class="atfb-filter-summary-meta">
@@ -440,7 +440,7 @@ class Atshift_Feed_Builder_Admin {
 					</div>
 				</details>
 
-			<div class="atfb-basic-settings atfb-field-wide">
+			<div class="atfb-basic-settings atfb-field-wide atfb-output-settings">
 				<div class="atfb-field">
 					<label for="atfb-limit"><span class="atfb-label-with-help"><?php esc_html_e( 'Number of items', 'atshift-feed-builder' ); ?><?php $this->render_help_tooltip( __( 'The maximum number of posts included each time the feed is generated.', 'atshift-feed-builder' ) ); ?></span></label>
 					<input type="number" id="atfb-limit" name="atfb_settings[item_limit]" value="<?php echo absint( $settings['item_limit'] ); ?>" min="1" max="100">
