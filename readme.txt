@@ -4,7 +4,7 @@ Tags: rss, json feed, custom fields, structured data, ai
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,7 +17,7 @@ atshift Feed Builder creates purpose-specific public feeds from structured infor
 The first release includes:
 
 * Multiple feed configurations.
-* A format-first creation flow for RSS 2.0 or JSON Feed 1.1.
+* Separate creation flows for replacing a WordPress standard RSS feed or adding a custom RSS 2.0 or JSON Feed 1.1 feed.
 * Public post type selection.
 * Author, public taxonomy term, and allow-listed custom field filters.
 * Format-specific mapping of standard output fields.
@@ -29,7 +29,8 @@ The first release includes:
 * A reader-first preview of the first real item in the current feed order, with matching XML or JSON source in a secondary tab.
 * Personal-information warnings and hard exclusion of authentication and permission data.
 * Stable item IDs, ETag, Last-Modified, and response caching.
-* Removal of WordPress core RSS and Atom discovery links from the document head.
+* Existing WordPress feed URLs remain unchanged when their RSS output is replaced.
+* Per-feed controls for replacing or disabling standard feeds and advertising custom feeds in the document head.
 
 atshift Fields and atshift User Profile Fields are optional integrations. atshift Feed Builder remains independently usable for standard WordPress post data.
 
@@ -42,6 +43,12 @@ atshift Fields and atshift User Profile Fields are optional integrations. atshif
 5. Map each output field to a WordPress, atshift Fields, UPF, post_meta, Pods, or fixed value.
 
 == Changelog ==
+
+= 0.2.0 =
+
+* Added WordPress standard feed replacement for posts, public custom post type archives, and public taxonomy term feeds.
+* Added explicit controls to keep custom feeds separate, advertise them in the document head, or disable a selected standard feed.
+* Restored WordPress standard feed discovery by default and preserved existing URLs when replacements are assigned.
 
 = 0.1.0 =
 

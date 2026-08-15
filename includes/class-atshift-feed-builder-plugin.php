@@ -54,9 +54,14 @@ class Atshift_Feed_Builder_Plugin {
 
 		add_action( 'init', array( $this, 'register_post_type' ) );
 		add_action( 'init', array( $this, 'add_rewrite_rules' ) );
-		add_action( 'after_setup_theme', array( $this, 'remove_default_feed_discovery_links' ), PHP_INT_MAX );
 		add_filter( 'query_vars', array( $this, 'add_query_vars' ) );
 		add_action( 'template_redirect', array( $this, 'serve_feed' ), 0 );
+		add_action( 'wp_head', array( $this, 'print_custom_feed_discovery_links' ), 4 );
+		add_filter( 'feed_links_show_posts_feed', array( $this, 'show_posts_feed_link' ) );
+		add_filter( 'feed_links_extra_show_post_type_archive_feed', array( $this, 'show_post_type_archive_feed_link' ) );
+		add_filter( 'feed_links_extra_show_category_feed', array( $this, 'show_category_feed_link' ) );
+		add_filter( 'feed_links_extra_show_tag_feed', array( $this, 'show_tag_feed_link' ) );
+		add_filter( 'feed_links_extra_show_tax_feed', array( $this, 'show_taxonomy_feed_link' ) );
 		add_action( 'save_post', array( $this, 'bump_cache_version' ) );
 		add_action( 'deleted_post', array( $this, 'bump_cache_version' ) );
 		add_action( 'added_post_meta', array( $this, 'bump_cache_version' ) );
@@ -146,18 +151,54 @@ class Atshift_Feed_Builder_Plugin {
 		return $vars;
 	}
 
-	public function remove_default_feed_discovery_links() {
-		remove_action( 'wp_head', 'feed_links', 2 );
-		remove_action( 'wp_head', 'feed_links_extra', 3 );
-	}
-
 	public function serve_feed() {
 		$slug = sanitize_title( (string) get_query_var( 'atfb_feed' ) );
 
-		if ( '' === $slug ) {
+		if ( '' !== $slug ) {
+			$this->serve_custom_feed( $slug );
+		}
+
+		if ( ! is_feed() || is_comment_feed() ) {
 			return;
 		}
 
+		$target = $this->get_current_standard_target();
+		if ( '' === $target ) {
+			return;
+		}
+
+		$feed = self::get_standard_feed( $target );
+		if ( ! $feed ) {
+			return;
+		}
+
+		$mode = self::get_publication_mode( $feed->ID );
+		if ( 'disabled' === $mode ) {
+			$this->send_not_found();
+		}
+		if ( 'standard' !== $mode ) {
+			return;
+		}
+
+		$request_format = sanitize_key( (string) get_query_var( 'feed' ) );
+		if ( ! in_array( $request_format, array( '', 'feed', 'rss2' ), true ) ) {
+			return;
+		}
+
+		$context = array();
+		if ( 0 === strpos( $target, 'taxonomy:' ) ) {
+			$term = get_queried_object();
+			if ( $term instanceof WP_Term ) {
+				$context['taxonomy'] = $term->taxonomy;
+				$context['term_id']  = $term->term_id;
+				$context['feed_url'] = get_term_feed_link( $term->term_id, $term->taxonomy, 'rss2' );
+			}
+		}
+
+		$this->serve_configured_feed( $feed, 'rss', $context );
+	}
+
+	private function serve_custom_feed( $slug ) {
 		$format = sanitize_key( (string) get_query_var( 'atfb_format' ) );
 		if ( ! in_array( $format, array( 'rss', 'json' ), true ) ) {
 			$this->send_not_found();
@@ -168,18 +209,25 @@ class Atshift_Feed_Builder_Plugin {
 			$this->send_not_found();
 		}
 
-		$settings = self::get_feed_settings( $feed->ID );
 		if ( $format !== self::get_feed_format( $feed->ID ) ) {
 			$this->send_not_found();
 		}
+		if ( 'custom' !== self::get_publication_mode( $feed->ID ) ) {
+			$this->send_not_found();
+		}
 
+		$this->serve_configured_feed( $feed, $format );
+	}
+
+	private function serve_configured_feed( $feed, $format, $context = array() ) {
+		$settings  = self::get_feed_settings( $feed->ID );
 		$version   = (int) get_option( 'atshift_feed_builder_cache_version', 1 );
-		$cache_key = 'atfb_' . md5( $feed->ID . '|' . $format . '|' . $version );
+		$cache_key = 'atfb_' . md5( $feed->ID . '|' . $format . '|' . wp_json_encode( $context ) . '|' . $version );
 		$response  = get_transient( $cache_key );
 
 		if ( ! is_array( $response ) || empty( $response['body'] ) ) {
 			$renderer = new Atshift_Feed_Builder_Renderer( $this->adapters );
-			$response = $renderer->generate( $feed, $format );
+			$response = $renderer->generate( $feed, $format, null, null, false, $context );
 
 			if ( is_wp_error( $response ) ) {
 				status_header( 503 );
@@ -193,6 +241,89 @@ class Atshift_Feed_Builder_Plugin {
 
 		$response['cache_ttl'] = $settings['cache_ttl'];
 		$this->send_response( $response, $format );
+	}
+
+	public function print_custom_feed_discovery_links() {
+		$feeds = get_posts(
+			array(
+				'post_type'      => self::POST_TYPE,
+				'post_status'    => 'publish',
+				'posts_per_page' => -1,
+				'no_found_rows'  => true,
+				'meta_query'     => array(
+					array(
+						'key'   => '_atfb_discovery',
+						'value' => '1',
+					),
+				),
+			)
+		);
+
+		foreach ( $feeds as $feed ) {
+			if ( 'custom' !== self::get_publication_mode( $feed->ID ) ) {
+				continue;
+			}
+			$format = self::get_feed_format( $feed->ID );
+			$type   = 'json' === $format ? 'application/feed+json' : 'application/rss+xml';
+			printf(
+				'<link rel="alternate" type="%1$s" title="%2$s" href="%3$s" />' . "\n",
+				esc_attr( $type ),
+				esc_attr( get_the_title( $feed ) ),
+				esc_url( self::get_feed_url( $feed, $format ) )
+			);
+		}
+	}
+
+	public function show_posts_feed_link( $show ) {
+		return $this->is_standard_target_disabled( 'posts' ) ? false : $show;
+	}
+
+	public function show_post_type_archive_feed_link( $show ) {
+		$post_type = get_query_var( 'post_type' );
+		$post_type = is_array( $post_type ) ? reset( $post_type ) : $post_type;
+		return $this->is_standard_target_disabled( 'post_type:' . sanitize_key( (string) $post_type ) ) ? false : $show;
+	}
+
+	public function show_category_feed_link( $show ) {
+		return $this->is_standard_target_disabled( 'taxonomy:category' ) ? false : $show;
+	}
+
+	public function show_tag_feed_link( $show ) {
+		return $this->is_standard_target_disabled( 'taxonomy:post_tag' ) ? false : $show;
+	}
+
+	public function show_taxonomy_feed_link( $show ) {
+		$term = get_queried_object();
+		if ( ! $term instanceof WP_Term ) {
+			return $show;
+		}
+
+		return $this->is_standard_target_disabled( 'taxonomy:' . $term->taxonomy ) ? false : $show;
+	}
+
+	private function is_standard_target_disabled( $target ) {
+		$feed = self::get_standard_feed( $target );
+		return $feed && 'disabled' === self::get_publication_mode( $feed->ID );
+	}
+
+	private function get_current_standard_target() {
+		if ( is_category() ) {
+			return 'taxonomy:category';
+		}
+		if ( is_tag() ) {
+			return 'taxonomy:post_tag';
+		}
+		if ( is_tax() ) {
+			$term = get_queried_object();
+			return $term instanceof WP_Term ? 'taxonomy:' . $term->taxonomy : '';
+		}
+		if ( is_post_type_archive() ) {
+			$post_type = get_query_var( 'post_type' );
+			$post_type = is_array( $post_type ) ? reset( $post_type ) : $post_type;
+			return '' !== (string) $post_type ? 'post_type:' . sanitize_key( (string) $post_type ) : '';
+		}
+
+		return 'posts';
 	}
 
 	private function send_response( $response, $format ) {
@@ -239,6 +370,118 @@ class Atshift_Feed_Builder_Plugin {
 		if ( in_array( $option, array( 'atshift_upf_fields', 'atshift_upf_settings' ), true ) ) {
 			$this->bump_cache_version();
 		}
+	}
+
+	public static function get_publication_mode( $feed_id ) {
+		$mode = sanitize_key( (string) get_post_meta( $feed_id, '_atfb_publication_mode', true ) );
+		if ( 'rss' === self::get_feed_format( $feed_id ) && in_array( $mode, array( 'standard', 'disabled' ), true ) ) {
+			return $mode;
+		}
+
+		return 'custom';
+	}
+
+	public static function get_standard_target( $feed_id ) {
+		$target  = sanitize_text_field( (string) get_post_meta( $feed_id, '_atfb_standard_target', true ) );
+		$targets = self::get_standard_targets();
+		return isset( $targets[ $target ] ) ? $target : 'posts';
+	}
+
+	public static function get_standard_targets() {
+		$targets = array(
+			'posts' => array(
+				'label'      => __( 'Main posts feed', 'atshift-feed-builder' ),
+				'post_types' => array( 'post' ),
+				'kind'       => 'posts',
+			),
+		);
+
+		$post_types = get_post_types( array( 'public' => true ), 'objects' );
+		foreach ( $post_types as $post_type ) {
+			if ( $post_type->_builtin || empty( $post_type->has_archive ) || 'attachment' === $post_type->name ) {
+				continue;
+			}
+			$targets[ 'post_type:' . $post_type->name ] = array(
+				'label'      => sprintf(
+					/* translators: %s: Post type label. */
+					__( '%s archive feed', 'atshift-feed-builder' ),
+					$post_type->labels->name
+				),
+				'post_types' => array( $post_type->name ),
+				'kind'       => 'post_type',
+			);
+		}
+
+		$public_types     = array_keys( $post_types );
+		$public_taxonomies = get_taxonomies( array( 'public' => true ), 'objects' );
+		foreach ( $public_taxonomies as $taxonomy ) {
+			$object_types = array_values( array_intersect( (array) $taxonomy->object_type, $public_types ) );
+			if ( empty( $object_types ) ) {
+				continue;
+			}
+			$targets[ 'taxonomy:' . $taxonomy->name ] = array(
+				'label'      => sprintf(
+					/* translators: %s: Taxonomy label. */
+					__( '%s feeds', 'atshift-feed-builder' ),
+					$taxonomy->labels->name
+				),
+				'post_types' => $object_types,
+				'kind'       => 'taxonomy',
+			);
+		}
+
+		return $targets;
+	}
+
+	public static function get_standard_feed( $target ) {
+		$target = sanitize_text_field( $target );
+		if ( ! isset( self::get_standard_targets()[ $target ] ) ) {
+			return null;
+		}
+
+		$feeds = get_posts(
+			array(
+				'post_type'      => self::POST_TYPE,
+				'post_status'    => 'publish',
+				'posts_per_page' => 1,
+				'orderby'        => 'modified',
+				'order'          => 'DESC',
+				'no_found_rows'  => true,
+				'meta_query'     => array(
+					'relation' => 'AND',
+					array(
+						'key'   => '_atfb_standard_target',
+						'value' => $target,
+					),
+					array(
+						'key'     => '_atfb_publication_mode',
+						'value'   => array( 'standard', 'disabled' ),
+						'compare' => 'IN',
+					),
+				),
+			)
+		);
+
+		return empty( $feeds ) ? null : $feeds[0];
+	}
+
+	public static function get_standard_target_url( $target, $term = null ) {
+		if ( 'posts' === $target ) {
+			return get_feed_link( 'rss2' );
+		}
+		if ( 0 === strpos( $target, 'post_type:' ) ) {
+			return get_post_type_archive_feed_link( substr( $target, strlen( 'post_type:' ) ), 'rss2' );
+		}
+		if ( 0 === strpos( $target, 'taxonomy:' ) && $term instanceof WP_Term ) {
+			return get_term_feed_link( $term->term_id, $term->taxonomy, 'rss2' );
+		}
+
+		return '';
+	}
+
+	public static function get_standard_target_post_types( $target ) {
+		$targets = self::get_standard_targets();
+		return isset( $targets[ $target ] ) ? $targets[ $target ]['post_types'] : array( 'post' );
 	}
 
 	public static function get_feed_settings( $feed_id ) {
@@ -295,6 +538,13 @@ class Atshift_Feed_Builder_Plugin {
 	}
 
 	public static function get_feed_url( $feed, $format ) {
+		if ( 'rss' === $format && 'standard' === self::get_publication_mode( $feed->ID ) ) {
+			$standard_url = self::get_standard_target_url( self::get_standard_target( $feed->ID ) );
+			if ( '' !== $standard_url ) {
+				return $standard_url;
+			}
+		}
+
 		if ( '' === (string) get_option( 'permalink_structure', '' ) ) {
 			return add_query_arg(
 				array(

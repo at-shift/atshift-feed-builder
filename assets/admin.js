@@ -33,6 +33,53 @@
 		}
 	});
 
+	document.querySelectorAll('.atfb-publication-editor').forEach(function (editor) {
+		var modeFields = editor.querySelectorAll('[name="atfb_publication_mode"]');
+		var targetSelect = editor.querySelector('#atfb-standard-target');
+		var customContent = editor.querySelector('.atfb-custom-content');
+
+		function currentMode() {
+			var checked = editor.querySelector('[name="atfb_publication_mode"]:checked');
+			return checked ? checked.value : (modeFields[0] ? modeFields[0].value : 'custom');
+		}
+
+		function updatePublicationEditor() {
+			var mode = currentMode();
+			var usesStandardTarget = mode === 'standard' || mode === 'disabled';
+
+			editor.dataset.publicationMode = mode;
+			editor.querySelectorAll('.atfb-publication-panel').forEach(function (panel) {
+				var visible = panel.dataset.publicationPanel === 'custom' ? mode === 'custom' : usesStandardTarget;
+				panel.hidden = !visible;
+			});
+			if (customContent) {
+				customContent.hidden = usesStandardTarget;
+			}
+			['atfb-mappings', 'atfb-preview'].forEach(function (id) {
+				var box = document.getElementById(id);
+				if (box) {
+					box.hidden = mode === 'disabled';
+				}
+			});
+
+			if (usesStandardTarget && targetSelect) {
+				var selected = targetSelect.options[targetSelect.selectedIndex];
+				var targetTypes = (selected.dataset.postTypes || '').split(',');
+				editor.querySelectorAll('.atfb-custom-content input[type="checkbox"]').forEach(function (checkbox) {
+					checkbox.checked = targetTypes.indexOf(checkbox.value) !== -1;
+				});
+			}
+		}
+
+		modeFields.forEach(function (field) {
+			field.addEventListener('change', updatePublicationEditor);
+		});
+		if (targetSelect) {
+			targetSelect.addEventListener('change', updatePublicationEditor);
+		}
+		updatePublicationEditor();
+	});
+
 	function updateSourceControl(control) {
 		var kindSelect = control.querySelector('.atfb-source-select');
 		var sourceInput = control.querySelector('.atfb-source-value');

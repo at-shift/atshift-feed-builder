@@ -2,6 +2,41 @@
 	max-width: 960px;
 }
 
+.atfb-create-section {
+	margin-top: 26px;
+}
+
+.atfb-create-section > h2 {
+	margin-bottom: 4px;
+}
+
+.atfb-create-section > p {
+	max-width: 760px;
+	margin-top: 4px;
+	color: #50575e;
+}
+
+.atfb-standard-create {
+	display: grid;
+	grid-template-columns: minmax(180px, 1fr) minmax(260px, 2fr) auto;
+	align-items: center;
+	gap: 12px 16px;
+	margin-top: 16px;
+	padding: 20px;
+	border: 1px solid #c3c4c7;
+	border-radius: 6px;
+	background: #fff;
+}
+
+.atfb-standard-create label {
+	font-weight: 600;
+}
+
+.atfb-standard-create select {
+	width: 100%;
+	max-width: none;
+}
+
 .atfb-lead,
 .atfb-mapping-intro {
 	max-width: 760px;
@@ -84,6 +119,75 @@
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 20px 28px;
+}
+
+.atfb-publication-settings {
+	display: grid;
+	gap: 18px;
+	padding: 18px;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	background: #fff;
+}
+
+.atfb-field-label {
+	font-weight: 600;
+}
+
+.atfb-publication-options {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 10px;
+}
+
+.atfb-publication-options label,
+.atfb-discovery-option {
+	display: grid;
+	grid-template-columns: 20px minmax(0, 1fr);
+	align-items: start;
+	gap: 8px;
+	padding: 12px;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	background: #fff;
+}
+
+.atfb-publication-options label:has(input:checked) {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+}
+
+.atfb-publication-options input,
+.atfb-discovery-option input {
+	margin-top: 2px;
+}
+
+.atfb-publication-options span,
+.atfb-discovery-option span {
+	display: grid;
+	gap: 3px;
+}
+
+.atfb-publication-options small,
+.atfb-discovery-option small,
+.atfb-publication-note {
+	color: #646970;
+	font-weight: 400;
+}
+
+.atfb-publication-panel {
+	display: grid;
+	gap: 12px;
+}
+
+.atfb-publication-panel[hidden] {
+	display: none;
+}
+
+.atfb-custom-content[hidden],
+#atfb-mappings[hidden],
+#atfb-preview[hidden] {
+	display: none;
 }
 
 .atfb-field {
@@ -877,6 +981,8 @@ a.atfb-reader-feed-title:hover {
 }
 
 @media (max-width: 782px) {
+	.atfb-standard-create,
+	.atfb-publication-options,
 	.atfb-format-grid,
 	.atfb-form-grid,
 	.atfb-post-type-list,

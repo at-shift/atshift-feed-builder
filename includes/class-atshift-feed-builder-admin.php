@@ -62,16 +62,39 @@ class Atshift_Feed_Builder_Admin {
 	}
 
 	public function render_new_feed_page() {
-		$formats = Atshift_Feed_Builder_Schema::get_formats();
+		$formats          = Atshift_Feed_Builder_Schema::get_formats();
+		$standard_targets = Atshift_Feed_Builder_Plugin::get_standard_targets();
 		?>
 		<div class="wrap atfb-new-feed">
-			<h1><?php esc_html_e( 'Choose a feed format', 'atshift-feed-builder' ); ?></h1>
-			<p class="atfb-lead"><?php esc_html_e( 'The selected standard determines the available output fields and validation rules.', 'atshift-feed-builder' ); ?></p>
+			<h1><?php esc_html_e( 'Choose how to publish the feed', 'atshift-feed-builder' ); ?></h1>
+			<p class="atfb-lead"><?php esc_html_e( 'Keep an existing WordPress feed URL and replace its output, or add a separate feed for a new purpose.', 'atshift-feed-builder' ); ?></p>
+			<section class="atfb-create-section">
+				<h2><?php esc_html_e( 'Replace a WordPress standard feed', 'atshift-feed-builder' ); ?></h2>
+				<p><?php esc_html_e( 'The existing RSS URL stays the same. WordPress continues to advertise that URL in the page head, while atshift Feed Builder controls its content.', 'atshift-feed-builder' ); ?></p>
+				<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="atfb-standard-create">
+					<input type="hidden" name="action" value="atfb_create_feed">
+					<input type="hidden" name="atfb_format" value="rss">
+					<input type="hidden" name="atfb_publication_mode" value="standard">
+					<?php wp_nonce_field( 'atfb_create_feed', 'atfb_create_nonce' ); ?>
+					<label for="atfb-new-standard-target"><?php esc_html_e( 'Standard feed to replace', 'atshift-feed-builder' ); ?></label>
+					<select id="atfb-new-standard-target" name="atfb_standard_target">
+						<?php foreach ( $standard_targets as $target => $details ) : ?>
+							<option value="<?php echo esc_attr( $target ); ?>"><?php echo esc_html( $details['label'] ); ?></option>
+						<?php endforeach; ?>
+					</select>
+					<button type="submit" class="button button-primary button-large"><?php esc_html_e( 'Create standard RSS feed', 'atshift-feed-builder' ); ?></button>
+				</form>
+			</section>
+
+			<section class="atfb-create-section">
+				<h2><?php esc_html_e( 'Add a custom feed', 'atshift-feed-builder' ); ?></h2>
+				<p><?php esc_html_e( 'Create a separate URL with its own slug for a specific service, audience, or use case.', 'atshift-feed-builder' ); ?></p>
 			<div class="atfb-format-grid">
 				<?php foreach ( $formats as $format => $details ) : ?>
 					<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="atfb-format-card">
 						<input type="hidden" name="action" value="atfb_create_feed">
 						<input type="hidden" name="atfb_format" value="<?php echo esc_attr( $format ); ?>">
+						<input type="hidden" name="atfb_publication_mode" value="custom">
 						<?php wp_nonce_field( 'atfb_create_feed', 'atfb_create_nonce' ); ?>
 						<span class="atfb-format-mark" aria-hidden="true"><?php echo 'rss' === $format ? 'XML' : '{}'; ?></span>
 						<h2><?php echo esc_html( $details['label'] ); ?></h2>
@@ -88,6 +111,7 @@ class Atshift_Feed_Builder_Admin {
 					</form>
 				<?php endforeach; ?>
 			</div>
+			</section>
 		</div>
 		<?php
 	}
@@ -98,22 +122,32 @@ class Atshift_Feed_Builder_Admin {
 		}
 
 		check_admin_referer( 'atfb_create_feed', 'atfb_create_nonce' );
-		$format  = isset( $_POST['atfb_format'] ) ? sanitize_key( wp_unslash( $_POST['atfb_format'] ) ) : '';
-		$formats = Atshift_Feed_Builder_Schema::get_formats();
+		$format           = isset( $_POST['atfb_format'] ) ? sanitize_key( wp_unslash( $_POST['atfb_format'] ) ) : '';
+		$publication_mode = isset( $_POST['atfb_publication_mode'] ) ? sanitize_key( wp_unslash( $_POST['atfb_publication_mode'] ) ) : 'custom';
+		$standard_target  = isset( $_POST['atfb_standard_target'] ) ? sanitize_text_field( wp_unslash( $_POST['atfb_standard_target'] ) ) : 'posts';
+		$formats          = Atshift_Feed_Builder_Schema::get_formats();
+		$targets          = Atshift_Feed_Builder_Plugin::get_standard_targets();
 
 		if ( ! isset( $formats[ $format ] ) ) {
 			wp_die( esc_html__( 'Invalid feed format.', 'atshift-feed-builder' ) );
 		}
+		if ( 'standard' === $publication_mode && ( 'rss' !== $format || ! isset( $targets[ $standard_target ] ) ) ) {
+			wp_die( esc_html__( 'Invalid standard feed destination.', 'atshift-feed-builder' ) );
+		}
+		$publication_mode = 'standard' === $publication_mode ? 'standard' : 'custom';
+		$title            = 'standard' === $publication_mode
+			? $targets[ $standard_target ]['label']
+			: sprintf(
+				/* translators: %s: Feed format name. */
+				__( 'New %s feed', 'atshift-feed-builder' ),
+				$formats[ $format ]['label']
+			);
 
 		$post_id = wp_insert_post(
 			array(
 				'post_type'   => Atshift_Feed_Builder_Plugin::POST_TYPE,
 				'post_status' => 'auto-draft',
-				'post_title'  => sprintf(
-					/* translators: %s: Feed format name. */
-					__( 'New %s feed', 'atshift-feed-builder' ),
-					$formats[ $format ]['label']
-				),
+				'post_title'  => $title,
 			)
 		);
 
@@ -122,6 +156,16 @@ class Atshift_Feed_Builder_Admin {
 		}
 
 		update_post_meta( $post_id, '_atfb_format', $format );
+		update_post_meta( $post_id, '_atfb_publication_mode', $publication_mode );
+		update_post_meta( $post_id, '_atfb_discovery', '0' );
+		if ( 'standard' === $publication_mode ) {
+			update_post_meta( $post_id, '_atfb_standard_target', $standard_target );
+			update_post_meta(
+				$post_id,
+				'_atfb_settings',
+				array( 'post_types' => Atshift_Feed_Builder_Plugin::get_standard_target_post_types( $standard_target ) )
+			);
+		}
 		update_post_meta( $post_id, '_atfb_mappings', Atshift_Feed_Builder_Schema::get_default_mappings( $format ) );
 		wp_safe_redirect( get_edit_post_link( $post_id, 'raw' ) );
 		exit;
@@ -189,10 +233,14 @@ class Atshift_Feed_Builder_Admin {
 	}
 
 	public function render_settings( $post ) {
-		$settings   = Atshift_Feed_Builder_Plugin::get_feed_settings( $post->ID );
-		$format     = Atshift_Feed_Builder_Plugin::get_feed_format( $post->ID );
-		$formats    = Atshift_Feed_Builder_Schema::get_formats();
-		$post_types = get_post_types( array( 'public' => true ), 'objects' );
+		$settings         = Atshift_Feed_Builder_Plugin::get_feed_settings( $post->ID );
+		$format           = Atshift_Feed_Builder_Plugin::get_feed_format( $post->ID );
+		$formats          = Atshift_Feed_Builder_Schema::get_formats();
+		$publication_mode = Atshift_Feed_Builder_Plugin::get_publication_mode( $post->ID );
+		$standard_target  = Atshift_Feed_Builder_Plugin::get_standard_target( $post->ID );
+		$standard_targets = Atshift_Feed_Builder_Plugin::get_standard_targets();
+		$discovery        = '1' === (string) get_post_meta( $post->ID, '_atfb_discovery', true );
+		$post_types       = get_post_types( array( 'public' => true ), 'objects' );
 		unset( $post_types['attachment'] );
 		$core_post_types   = array();
 		$custom_post_types = array();
@@ -232,14 +280,45 @@ class Atshift_Feed_Builder_Admin {
 			<strong><?php echo esc_html( $formats[ $format ]['label'] ); ?></strong>
 			<small><?php esc_html_e( 'The format is fixed for this feed.', 'atshift-feed-builder' ); ?></small>
 		</div>
-		<div class="atfb-form-grid">
-			<div class="atfb-field atfb-field-wide">
-				<label for="atfb-slug"><span class="atfb-label-with-help"><?php esc_html_e( 'Feed slug', 'atshift-feed-builder' ); ?><?php $this->render_help_tooltip( __( 'A short identifier used in the public feed URL. Use lowercase letters, numbers, and hyphens.', 'atshift-feed-builder' ) ); ?></span></label>
-				<input type="text" class="regular-text" id="atfb-slug" name="atfb_slug" value="<?php echo esc_attr( $post->post_name ); ?>" placeholder="news">
-				<p class="description"><?php esc_html_e( 'Changing this value changes the public feed URL.', 'atshift-feed-builder' ); ?></p>
-			</div>
+		<div class="atfb-form-grid atfb-publication-editor" data-publication-mode="<?php echo esc_attr( $publication_mode ); ?>">
+			<section class="atfb-publication-settings atfb-field-wide">
+				<div class="atfb-field">
+					<span class="atfb-field-label"><?php esc_html_e( 'Publication method', 'atshift-feed-builder' ); ?></span>
+					<?php if ( 'rss' === $format ) : ?>
+						<div class="atfb-publication-options">
+							<label><input type="radio" name="atfb_publication_mode" value="standard" <?php checked( $publication_mode, 'standard' ); ?>><span><strong><?php esc_html_e( 'Replace a standard feed', 'atshift-feed-builder' ); ?></strong><small><?php esc_html_e( 'Keep the WordPress URL and replace its RSS output.', 'atshift-feed-builder' ); ?></small></span></label>
+							<label><input type="radio" name="atfb_publication_mode" value="custom" <?php checked( $publication_mode, 'custom' ); ?>><span><strong><?php esc_html_e( 'Custom feed', 'atshift-feed-builder' ); ?></strong><small><?php esc_html_e( 'Publish at a separate URL with a custom slug.', 'atshift-feed-builder' ); ?></small></span></label>
+							<label><input type="radio" name="atfb_publication_mode" value="disabled" <?php checked( $publication_mode, 'disabled' ); ?>><span><strong><?php esc_html_e( 'Disable a standard feed', 'atshift-feed-builder' ); ?></strong><small><?php esc_html_e( 'Remove its discovery link and return not found at that RSS URL.', 'atshift-feed-builder' ); ?></small></span></label>
+						</div>
+					<?php else : ?>
+						<input type="hidden" name="atfb_publication_mode" value="custom">
+						<p class="atfb-publication-note"><?php esc_html_e( 'JSON Feed uses a custom URL because WordPress does not provide a standard JSON Feed endpoint.', 'atshift-feed-builder' ); ?></p>
+					<?php endif; ?>
+				</div>
 
-			<fieldset class="atfb-field atfb-field-wide">
+				<div class="atfb-publication-panel" data-publication-panel="standard">
+					<div class="atfb-field">
+						<label for="atfb-standard-target"><?php esc_html_e( 'WordPress feed destination', 'atshift-feed-builder' ); ?></label>
+						<select id="atfb-standard-target" name="atfb_standard_target">
+							<?php foreach ( $standard_targets as $target => $details ) : ?>
+								<option value="<?php echo esc_attr( $target ); ?>" data-post-types="<?php echo esc_attr( implode( ',', $details['post_types'] ) ); ?>" <?php selected( $standard_target, $target ); ?>><?php echo esc_html( $details['label'] ); ?></option>
+							<?php endforeach; ?>
+						</select>
+						<p class="description"><?php esc_html_e( 'The content types and public URL are determined automatically by this destination. Category, tag, and taxonomy mappings apply to every term using its existing feed URL.', 'atshift-feed-builder' ); ?></p>
+					</div>
+				</div>
+
+				<div class="atfb-publication-panel" data-publication-panel="custom">
+					<div class="atfb-field">
+						<label for="atfb-slug"><span class="atfb-label-with-help"><?php esc_html_e( 'Feed slug', 'atshift-feed-builder' ); ?><?php $this->render_help_tooltip( __( 'A short identifier used in the public feed URL. Use lowercase letters, numbers, and hyphens.', 'atshift-feed-builder' ) ); ?></span></label>
+						<input type="text" class="regular-text" id="atfb-slug" name="atfb_slug" value="<?php echo esc_attr( $post->post_name ); ?>" placeholder="news">
+						<p class="description"><?php esc_html_e( 'Changing this value changes the public feed URL.', 'atshift-feed-builder' ); ?></p>
+					</div>
+					<label class="atfb-discovery-option"><input type="checkbox" name="atfb_discovery" value="1" <?php checked( $discovery ); ?>><span><strong><?php esc_html_e( 'Advertise this feed in the page head', 'atshift-feed-builder' ); ?></strong><small><?php esc_html_e( 'Adds an alternate feed link so browsers and services can discover this custom feed.', 'atshift-feed-builder' ); ?></small></span></label>
+				</div>
+			</section>
+
+			<fieldset class="atfb-field atfb-field-wide atfb-custom-content">
 				<legend><span class="atfb-label-with-help"><?php esc_html_e( 'Content types', 'atshift-feed-builder' ); ?><?php $this->render_help_tooltip( __( 'Choose which kinds of WordPress content become feed items. Selecting a custom post type includes its published entries.', 'atshift-feed-builder' ) ); ?></span></legend>
 				<div class="atfb-post-type-groups">
 					<?php
@@ -659,7 +738,17 @@ class Atshift_Feed_Builder_Admin {
 		}
 
 		$format = Atshift_Feed_Builder_Plugin::get_feed_format( $post->ID );
-		$url    = Atshift_Feed_Builder_Plugin::get_feed_url( $post, $format );
+		$mode   = Atshift_Feed_Builder_Plugin::get_publication_mode( $post->ID );
+		if ( 'disabled' === $mode ) {
+			echo '<p><strong>' . esc_html__( 'Standard feed disabled', 'atshift-feed-builder' ) . '</strong><br>' . esc_html__( 'The selected WordPress feed URL returns not found and is not advertised in the page head.', 'atshift-feed-builder' ) . '</p>';
+			return;
+		}
+		if ( 'standard' === $mode && 0 === strpos( Atshift_Feed_Builder_Plugin::get_standard_target( $post->ID ), 'taxonomy:' ) ) {
+			echo '<p><strong>' . esc_html__( 'Existing term feed URLs', 'atshift-feed-builder' ) . '</strong><br>' . esc_html__( 'Each category, tag, or taxonomy term keeps its own WordPress feed URL.', 'atshift-feed-builder' ) . '</p>';
+			return;
+		}
+
+		$url = Atshift_Feed_Builder_Plugin::get_feed_url( $post, $format );
 		printf( '<p><strong>%1$s</strong><br><a href="%2$s" target="_blank" rel="noopener">%3$s</a></p>', esc_html( strtoupper( $format ) ), esc_url( $url ), esc_html( $url ) );
 	}
 
@@ -725,20 +814,33 @@ class Atshift_Feed_Builder_Admin {
 		}
 
 		$format = Atshift_Feed_Builder_Plugin::get_feed_format( $post_id );
+		$mode   = isset( $_POST['atfb_publication_mode'] ) ? sanitize_key( wp_unslash( $_POST['atfb_publication_mode'] ) ) : 'custom';
+		$target = isset( $_POST['atfb_standard_target'] ) ? sanitize_text_field( wp_unslash( $_POST['atfb_standard_target'] ) ) : 'posts';
+		$mode   = 'rss' === $format && in_array( $mode, array( 'standard', 'disabled' ), true ) ? $mode : 'custom';
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Each setting is allow-listed and sanitized by sanitize_settings().
 		$raw_settings = isset( $_POST['atfb_settings'] ) && is_array( $_POST['atfb_settings'] ) ? wp_unslash( $_POST['atfb_settings'] ) : array();
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Each mapping is allow-listed and sanitized by sanitize_mappings().
 		$raw_mappings = isset( $_POST['atfb_mappings'] ) && is_array( $_POST['atfb_mappings'] ) ? wp_unslash( $_POST['atfb_mappings'] ) : array();
-		$settings     = $this->sanitize_settings( $raw_settings );
+		$settings     = $this->sanitize_settings(
+			$raw_settings,
+			'custom' === $mode ? null : Atshift_Feed_Builder_Plugin::get_standard_target_post_types( $target )
+		);
 		$mappings     = $this->sanitize_mappings( $format, $raw_mappings, Atshift_Feed_Builder_Plugin::get_mappings( $post_id, $format ) );
 		$settings['item_limit'] = 1;
 
 		$preview_feed = clone $feed;
 		$slug         = isset( $_POST['atfb_slug'] ) ? sanitize_title( wp_unslash( $_POST['atfb_slug'] ) ) : '';
 		$preview_feed->post_name = '' !== $slug ? $slug : ( '' !== $feed->post_name ? $feed->post_name : 'feed-' . $post_id );
+		$context = array();
+		if ( 'standard' === $mode ) {
+			$standard_url = Atshift_Feed_Builder_Plugin::get_standard_target_url( $target );
+			if ( '' !== $standard_url ) {
+				$context['feed_url'] = $standard_url;
+			}
+		}
 
 		$renderer = new Atshift_Feed_Builder_Renderer( $this->adapters );
-		$response = $renderer->generate( $preview_feed, $format, $settings, $mappings, true );
+		$response = $renderer->generate( $preview_feed, $format, $settings, $mappings, true, $context );
 		if ( is_wp_error( $response ) ) {
 			wp_send_json_error( array( 'message' => $response->get_error_message() ), 422 );
 		}
@@ -764,11 +866,31 @@ class Atshift_Feed_Builder_Admin {
 			return;
 		}
 
+		$format = Atshift_Feed_Builder_Plugin::get_feed_format( $post_id );
+		$mode   = isset( $_POST['atfb_publication_mode'] ) ? sanitize_key( wp_unslash( $_POST['atfb_publication_mode'] ) ) : 'custom';
+		$target = isset( $_POST['atfb_standard_target'] ) ? sanitize_text_field( wp_unslash( $_POST['atfb_standard_target'] ) ) : 'posts';
+		$mode   = 'rss' === $format && in_array( $mode, array( 'standard', 'disabled' ), true ) ? $mode : 'custom';
+		$targets = Atshift_Feed_Builder_Plugin::get_standard_targets();
+		if ( ! isset( $targets[ $target ] ) ) {
+			$target = 'posts';
+		}
+
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Values are allow-listed and sanitized by sanitize_settings().
-		$raw      = isset( $_POST['atfb_settings'] ) && is_array( $_POST['atfb_settings'] ) ? wp_unslash( $_POST['atfb_settings'] ) : array();
-		$settings = $this->sanitize_settings( $raw );
+		$raw = isset( $_POST['atfb_settings'] ) && is_array( $_POST['atfb_settings'] ) ? wp_unslash( $_POST['atfb_settings'] ) : array();
+		$settings = $this->sanitize_settings(
+			$raw,
+			'custom' === $mode ? null : Atshift_Feed_Builder_Plugin::get_standard_target_post_types( $target )
+		);
 
 		update_post_meta( $post_id, '_atfb_settings', $settings );
+		update_post_meta( $post_id, '_atfb_publication_mode', $mode );
+		update_post_meta( $post_id, '_atfb_discovery', 'custom' === $mode && ! empty( $_POST['atfb_discovery'] ) ? '1' : '0' );
+		if ( 'custom' !== $mode ) {
+			update_post_meta( $post_id, '_atfb_standard_target', $target );
+			if ( 'publish' === $post->post_status ) {
+				$this->release_standard_target( $post_id, $target );
+			}
+		}
 		$this->save_mappings( $post_id );
 
 		$slug = sanitize_title( wp_unslash( $_POST['atfb_slug'] ?? '' ) );
@@ -787,10 +909,11 @@ class Atshift_Feed_Builder_Admin {
 			}
 		}
 
-	private function sanitize_settings( $raw ) {
+	private function sanitize_settings( $raw, $post_types_override = null ) {
 		$public_types = get_post_types( array( 'public' => true ), 'names' );
 		unset( $public_types['attachment'] );
-		$post_types   = array_values( array_intersect( array_map( 'sanitize_key', (array) ( $raw['post_types'] ?? array() ) ), $public_types ) );
+		$requested_types = is_array( $post_types_override ) ? $post_types_override : (array) ( $raw['post_types'] ?? array() );
+		$post_types   = array_values( array_intersect( array_map( 'sanitize_key', $requested_types ), $public_types ) );
 		$post_types   = empty( $post_types ) ? array( 'post' ) : $post_types;
 
 		$requested_authors = array_values( array_unique( array_filter( array_map( 'absint', (array) ( $raw['authors'] ?? array() ) ) ) ) );
@@ -846,6 +969,33 @@ class Atshift_Feed_Builder_Admin {
 			'order_by'       => 'modified' === ( $raw['order_by'] ?? '' ) ? 'modified' : 'published',
 			'cache_ttl'      => max( 60, min( DAY_IN_SECONDS, absint( $raw['cache_ttl'] ?? 900 ) ) ),
 		);
+	}
+
+	private function release_standard_target( $post_id, $target ) {
+		$duplicates = get_posts(
+			array(
+				'post_type'      => Atshift_Feed_Builder_Plugin::POST_TYPE,
+				'post_status'    => array( 'publish', 'draft', 'pending', 'private', 'future' ),
+				'posts_per_page' => -1,
+				'post__not_in'   => array( $post_id ),
+				'fields'         => 'ids',
+				'no_found_rows'  => true,
+				'meta_query'     => array(
+					array(
+						'key'   => '_atfb_standard_target',
+						'value' => $target,
+					),
+				),
+			)
+		);
+
+		foreach ( $duplicates as $duplicate_id ) {
+			$duplicate_mode = Atshift_Feed_Builder_Plugin::get_publication_mode( $duplicate_id );
+			if ( in_array( $duplicate_mode, array( 'standard', 'disabled' ), true ) ) {
+				update_post_meta( $duplicate_id, '_atfb_publication_mode', 'custom' );
+				update_post_meta( $duplicate_id, '_atfb_discovery', '0' );
+			}
+		}
 	}
 
 	private function save_mappings( $post_id ) {
@@ -950,8 +1100,9 @@ class Atshift_Feed_Builder_Admin {
 	}
 
 	public function columns( $columns ) {
-		$columns['atfb_format'] = __( 'Format', 'atshift-feed-builder' );
-		$columns['atfb_url']    = __( 'Feed URL', 'atshift-feed-builder' );
+		$columns['atfb_format']      = __( 'Format', 'atshift-feed-builder' );
+		$columns['atfb_publication'] = __( 'Publication', 'atshift-feed-builder' );
+		$columns['atfb_url']         = __( 'Feed URL', 'atshift-feed-builder' );
 		return $columns;
 	}
 
@@ -963,9 +1114,25 @@ class Atshift_Feed_Builder_Admin {
 			$formats = Atshift_Feed_Builder_Schema::get_formats();
 			echo esc_html( $formats[ $format ]['label'] );
 		}
+		if ( 'atfb_publication' === $column ) {
+			$mode = Atshift_Feed_Builder_Plugin::get_publication_mode( $post_id );
+			$labels = array(
+				'custom'   => __( 'Custom feed', 'atshift-feed-builder' ),
+				'standard' => __( 'Standard feed replacement', 'atshift-feed-builder' ),
+				'disabled' => __( 'Standard feed disabled', 'atshift-feed-builder' ),
+			);
+			echo esc_html( $labels[ $mode ] );
+		}
 		if ( 'atfb_url' === $column && $post && 'publish' === $post->post_status ) {
-			$url = Atshift_Feed_Builder_Plugin::get_feed_url( $post, $format );
-			echo '<a href="' . esc_url( $url ) . '" target="_blank" rel="noopener">' . esc_html( strtoupper( $format ) ) . '</a>';
+			$mode = Atshift_Feed_Builder_Plugin::get_publication_mode( $post_id );
+			if ( 'disabled' === $mode ) {
+				esc_html_e( 'Disabled', 'atshift-feed-builder' );
+			} elseif ( 'standard' === $mode && 0 === strpos( Atshift_Feed_Builder_Plugin::get_standard_target( $post_id ), 'taxonomy:' ) ) {
+				esc_html_e( 'Dynamic term URLs', 'atshift-feed-builder' );
+			} else {
+				$url = Atshift_Feed_Builder_Plugin::get_feed_url( $post, $format );
+				echo '<a href="' . esc_url( $url ) . '" target="_blank" rel="noopener">' . esc_html( strtoupper( $format ) ) . '</a>';
+			}
 		}
 	}
 

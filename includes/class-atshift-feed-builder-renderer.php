@@ -25,9 +25,10 @@ class Atshift_Feed_Builder_Renderer {
 	 * @param array|null $settings_override Optional unsaved settings for previews.
 	 * @param array|null $mappings_override Optional unsaved mappings for previews.
 	 * @param bool       $include_preview   Include normalized reader-preview data.
+	 * @param array      $context           Optional standard-feed request context.
 	 * @return array<string,mixed>|WP_Error
 	 */
-	public function generate( $feed, $format, $settings_override = null, $mappings_override = null, $include_preview = false ) {
+	public function generate( $feed, $format, $settings_override = null, $mappings_override = null, $include_preview = false, $context = array() ) {
 		$format   = 'json' === $format ? 'json' : 'rss';
 		$settings = is_array( $settings_override ) ? $settings_override : Atshift_Feed_Builder_Plugin::get_feed_settings( $feed->ID );
 		$schema   = Atshift_Feed_Builder_Schema::get_fields( $format );
@@ -47,6 +48,14 @@ class Atshift_Feed_Builder_Renderer {
 		}
 
 		$tax_query = array( 'relation' => 'AND' );
+		if ( ! empty( $context['taxonomy'] ) && ! empty( $context['term_id'] ) && taxonomy_exists( $context['taxonomy'] ) ) {
+			$tax_query[] = array(
+				'taxonomy' => sanitize_key( $context['taxonomy'] ),
+				'field'    => 'term_id',
+				'terms'    => array( absint( $context['term_id'] ) ),
+				'operator' => 'IN',
+			);
+		}
 		foreach ( (array) ( $settings['taxonomy_terms'] ?? array() ) as $taxonomy => $term_ids ) {
 			if ( taxonomy_exists( $taxonomy ) && ! empty( $term_ids ) ) {
 				$tax_query[] = array(
@@ -94,7 +103,7 @@ class Atshift_Feed_Builder_Renderer {
 		$last_modified = max( $last_modified, $global_change, time() - 1 );
 		$model         = array(
 			'feed'          => $this->resolve_scope( 'feed', $schema, $mappings, null ),
-			'feed_url'      => Atshift_Feed_Builder_Plugin::get_feed_url( $feed, $format ),
+			'feed_url'      => ! empty( $context['feed_url'] ) ? esc_url_raw( html_entity_decode( (string) $context['feed_url'], ENT_QUOTES, 'UTF-8' ) ) : Atshift_Feed_Builder_Plugin::get_feed_url( $feed, $format ),
 			'last_modified' => $last_modified,
 			'items'         => $items,
 		);

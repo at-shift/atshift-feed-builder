@@ -1,9 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: atshift Feed Builder 0.1.0\n"
-"Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-feed-builder/"
-"issues\n"
-"POT-Creation-Date: 2026-08-15 20:33+0900\n"
+"Project-Id-Version: atshift Feed Builder 0.2.0\n"
+"Report-Msgid-Bugs-To: https://at-shift.net/\n"
+"POT-Creation-Date: 2026-08-15 21:06+0900\n"
 "PO-Revision-Date: 2026-08-15 19:00+0900\n"
 "Last-Translator: @shift\n"
 "Language-Team: Japanese\n"
@@ -14,77 +13,107 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Domain: atshift-feed-builder\n"
 
-msgid ""
-"Build safe RSS and JSON feeds from WordPress, atshift Fields, and atshift "
-"User Profile Fields data."
-msgstr ""
-"WordPress、atshift Fields、atshift User Profile Fieldsのデータから、安全なRSS"
-"フィードとJSONフィードを作成します。"
-
 #: includes/class-atshift-feed-builder-admin.php:38
 #: includes/class-atshift-feed-builder-admin.php:39
-#: includes/class-atshift-feed-builder-plugin.php:123
+#: includes/class-atshift-feed-builder-plugin.php:128
 msgid "Add New Feed"
 msgstr "新規フィードを追加"
 
-#: includes/class-atshift-feed-builder-admin.php:68
-msgid "Choose a feed format"
-msgstr "フィード形式を選択"
-
 #: includes/class-atshift-feed-builder-admin.php:69
+msgid "Choose how to publish the feed"
+msgstr "フィードの公開方法を選択"
+
+#: includes/class-atshift-feed-builder-admin.php:70
 msgid ""
-"The selected standard determines the available output fields and validation "
-"rules."
-msgstr "選択した標準仕様に応じて、使用できる出力項目と検証ルールが決まります。"
+"Keep an existing WordPress feed URL and replace its output, or add a "
+"separate feed for a new purpose."
+msgstr ""
+"既存のWordPressフィードURLの出力を置き換えるか、新しい用途の独自フィードを追"
+"加します。"
+
+#: includes/class-atshift-feed-builder-admin.php:72
+msgid "Replace a WordPress standard feed"
+msgstr "WordPress標準フィードを置き換える"
+
+#: includes/class-atshift-feed-builder-admin.php:73
+msgid ""
+"The existing RSS URL stays the same. WordPress continues to advertise that "
+"URL in the page head, while atshift Feed Builder controls its content."
+msgstr ""
+"既存のRSS URLは変わりません。ページのheadでも同じURLを案内しながら、配信内容"
+"をatshift Feed Builderで管理します。"
+
+#: includes/class-atshift-feed-builder-admin.php:79
+msgid "Standard feed to replace"
+msgstr "置き換える標準フィード"
+
+#: includes/class-atshift-feed-builder-admin.php:85
+msgid "Create standard RSS feed"
+msgstr "標準RSSフィードを作成"
+
+#: includes/class-atshift-feed-builder-admin.php:90
+msgid "Add a custom feed"
+msgstr "カスタムフィードを追加"
+
+#: includes/class-atshift-feed-builder-admin.php:91
+msgid ""
+"Create a separate URL with its own slug for a specific service, audience, or "
+"use case."
+msgstr ""
+"外部サービス、対象者、用途に合わせて、独自スラッグの別URLを作成します。"
 
 #. translators: %s: Feed format name.
-#: includes/class-atshift-feed-builder-admin.php:83
+#: includes/class-atshift-feed-builder-admin.php:106
 #, php-format
 msgid "Create %s feed"
 msgstr "%sフィードを作成"
 
-#: includes/class-atshift-feed-builder-admin.php:97
+#: includes/class-atshift-feed-builder-admin.php:121
 msgid "You are not allowed to create feeds."
 msgstr "フィードを作成する権限がありません。"
 
-#: includes/class-atshift-feed-builder-admin.php:105
+#: includes/class-atshift-feed-builder-admin.php:132
 msgid "Invalid feed format."
 msgstr "フィード形式が正しくありません。"
 
+#: includes/class-atshift-feed-builder-admin.php:135
+msgid "Invalid standard feed destination."
+msgstr "標準フィードの配信先が正しくありません。"
+
 #. translators: %s: Feed format name.
-#: includes/class-atshift-feed-builder-admin.php:114
+#: includes/class-atshift-feed-builder-admin.php:142
 #, php-format
 msgid "New %s feed"
 msgstr "新規%sフィード"
 
-#: includes/class-atshift-feed-builder-admin.php:121
+#: includes/class-atshift-feed-builder-admin.php:155
 msgid "The feed could not be created."
 msgstr "フィードを作成できませんでした。"
 
-#: includes/class-atshift-feed-builder-admin.php:134
+#: includes/class-atshift-feed-builder-admin.php:178
 msgid "Feed source"
 msgstr "フィードソース"
 
 #. translators: %s: Feed format name.
-#: includes/class-atshift-feed-builder-admin.php:139
+#: includes/class-atshift-feed-builder-admin.php:183
 #, php-format
 msgid "%s output mapping"
 msgstr "%sの出力マッピング"
 
-#: includes/class-atshift-feed-builder-admin.php:147
-#: includes/class-atshift-feed-builder-admin.php:954
+#: includes/class-atshift-feed-builder-admin.php:191
+#: includes/class-atshift-feed-builder-admin.php:1105
 msgid "Feed URL"
 msgstr "フィードURL"
 
-#: includes/class-atshift-feed-builder-admin.php:148
+#: includes/class-atshift-feed-builder-admin.php:192
 msgid "Preview"
 msgstr "プレビュー"
 
-#: includes/class-atshift-feed-builder-admin.php:159
+#: includes/class-atshift-feed-builder-admin.php:203
 msgid "Help"
 msgstr "説明"
 
-#: includes/class-atshift-feed-builder-admin.php:167
+#: includes/class-atshift-feed-builder-admin.php:211
 msgid ""
 "The most recent update time in the feed, calculated automatically. Services "
 "use it to detect changes."
@@ -92,8 +121,8 @@ msgstr ""
 "フィード内で最も新しい更新日時を自動計算します。外部サービスが更新を検知する"
 "ために使用します。"
 
-#: includes/class-atshift-feed-builder-admin.php:168
-#: includes/class-atshift-feed-builder-admin.php:169
+#: includes/class-atshift-feed-builder-admin.php:212
+#: includes/class-atshift-feed-builder-admin.php:213
 msgid ""
 "The permanent public URL of this feed. It is generated automatically and "
 "tells services which URL is authoritative."
@@ -101,8 +130,8 @@ msgstr ""
 "このフィードの正式な公開URLです。自動生成され、外部サービスへ正規のURLを伝え"
 "ます。"
 
-#: includes/class-atshift-feed-builder-admin.php:170
-#: includes/class-atshift-feed-builder-admin.php:171
+#: includes/class-atshift-feed-builder-admin.php:214
+#: includes/class-atshift-feed-builder-admin.php:215
 msgid ""
 "The person or organization responsible for operating and publishing the "
 "feed, not necessarily the article author."
@@ -110,7 +139,7 @@ msgstr ""
 "フィードを運営・発行する責任者または組織です。記事作成者と同じである必要はあ"
 "りません。"
 
-#: includes/class-atshift-feed-builder-admin.php:172
+#: includes/class-atshift-feed-builder-admin.php:216
 msgid ""
 "A feed item is one published post included in the feed. This container is "
 "created automatically."
@@ -118,8 +147,8 @@ msgstr ""
 "フィードでは、配信対象の公開投稿1件ずつを「項目」と呼びます。この入れ物は自動"
 "生成されます。"
 
-#: includes/class-atshift-feed-builder-admin.php:173
-#: includes/class-atshift-feed-builder-admin.php:174
+#: includes/class-atshift-feed-builder-admin.php:217
+#: includes/class-atshift-feed-builder-admin.php:218
 msgid ""
 "Feed readers use this value to recognize the same post after an update and "
 "avoid duplicates. It should not change after publication."
@@ -127,8 +156,8 @@ msgstr ""
 "更新後も同じ投稿だとフィードリーダーが識別し、重複を防ぐための値です。公開後"
 "に変わらない値を使用します。"
 
-#: includes/class-atshift-feed-builder-admin.php:175
-#: includes/class-atshift-feed-builder-admin.php:176
+#: includes/class-atshift-feed-builder-admin.php:219
+#: includes/class-atshift-feed-builder-admin.php:220
 msgid ""
 "The public page readers open for this post. Custom post types also use their "
 "normal permalink."
@@ -136,21 +165,21 @@ msgstr ""
 "読者がこの投稿を開くときの公開ページです。カスタム投稿タイプでも通常のパーマ"
 "リンクを使用します。"
 
-#: includes/class-atshift-feed-builder-admin.php:177
-#: includes/class-atshift-feed-builder-admin.php:178
+#: includes/class-atshift-feed-builder-admin.php:221
+#: includes/class-atshift-feed-builder-admin.php:222
 msgid "The person credited with writing or creating the post."
 msgstr "投稿を執筆または作成した人物として表示する情報です。"
 
-#: includes/class-atshift-feed-builder-admin.php:179
-#: includes/class-atshift-feed-builder-admin.php:180
+#: includes/class-atshift-feed-builder-admin.php:223
+#: includes/class-atshift-feed-builder-admin.php:224
 msgid ""
 "An optional person who checked or supervised the content. Leave it out when "
 "there is no reviewer."
 msgstr ""
 "内容を確認・監修した人物の任意情報です。監修者がいない場合は出力しません。"
 
-#: includes/class-atshift-feed-builder-admin.php:181
-#: includes/class-atshift-feed-builder-admin.php:182
+#: includes/class-atshift-feed-builder-admin.php:225
+#: includes/class-atshift-feed-builder-admin.php:226
 msgid ""
 "The original or related source behind the post. Use this when the WordPress "
 "post summarizes information published elsewhere."
@@ -158,8 +187,8 @@ msgstr ""
 "投稿の根拠となる原典や関連情報です。別の場所で公開された情報をWordPress投稿で"
 "要約するときなどに使用します。"
 
-#: includes/class-atshift-feed-builder-admin.php:183
-#: includes/class-atshift-feed-builder-admin.php:184
+#: includes/class-atshift-feed-builder-admin.php:227
+#: includes/class-atshift-feed-builder-admin.php:228
 msgid ""
 "Classification labels attached to the post. They help readers and services "
 "group or filter items."
@@ -167,46 +196,97 @@ msgstr ""
 "投稿に付けられた分類用の名前です。読者や外部サービスが項目を分類・絞り込みす"
 "るために使用します。"
 
-#: includes/class-atshift-feed-builder-admin.php:185
+#: includes/class-atshift-feed-builder-admin.php:229
 msgid ""
 "The representative image for the item. A fallback can be used when the post "
 "has no featured image."
 msgstr ""
 "項目を代表する画像です。アイキャッチ画像がない場合は代替画像を指定できます。"
 
-#: includes/class-atshift-feed-builder-admin.php:221
+#: includes/class-atshift-feed-builder-admin.php:269
 msgid "Equals"
 msgstr "等しい"
 
-#: includes/class-atshift-feed-builder-admin.php:222
+#: includes/class-atshift-feed-builder-admin.php:270
 msgid "Does not equal"
 msgstr "等しくない"
 
-#: includes/class-atshift-feed-builder-admin.php:223
+#: includes/class-atshift-feed-builder-admin.php:271
 msgid "Contains"
 msgstr "含む"
 
-#: includes/class-atshift-feed-builder-admin.php:224
+#: includes/class-atshift-feed-builder-admin.php:272
 msgid "Exists"
 msgstr "存在する"
 
-#: includes/class-atshift-feed-builder-admin.php:225
+#: includes/class-atshift-feed-builder-admin.php:273
 msgid "Does not exist"
 msgstr "存在しない"
 
-#: includes/class-atshift-feed-builder-admin.php:231
+#: includes/class-atshift-feed-builder-admin.php:279
 msgid "Output format"
 msgstr "出力形式"
 
-#: includes/class-atshift-feed-builder-admin.php:233
+#: includes/class-atshift-feed-builder-admin.php:281
 msgid "The format is fixed for this feed."
 msgstr "このフィードの形式は作成後に変更できません。"
 
-#: includes/class-atshift-feed-builder-admin.php:237
+#: includes/class-atshift-feed-builder-admin.php:286
+msgid "Publication method"
+msgstr "公開方法"
+
+#: includes/class-atshift-feed-builder-admin.php:289
+msgid "Replace a standard feed"
+msgstr "標準フィードを置き換える"
+
+#: includes/class-atshift-feed-builder-admin.php:289
+msgid "Keep the WordPress URL and replace its RSS output."
+msgstr "WordPressのURLを維持してRSS出力を置き換えます。"
+
+#: includes/class-atshift-feed-builder-admin.php:290
+#: includes/class-atshift-feed-builder-admin.php:1120
+msgid "Custom feed"
+msgstr "カスタムフィード"
+
+#: includes/class-atshift-feed-builder-admin.php:290
+msgid "Publish at a separate URL with a custom slug."
+msgstr "独自スラッグを使った別URLで公開します。"
+
+#: includes/class-atshift-feed-builder-admin.php:291
+msgid "Disable a standard feed"
+msgstr "標準フィードを無効化"
+
+#: includes/class-atshift-feed-builder-admin.php:291
+msgid "Remove its discovery link and return not found at that RSS URL."
+msgstr ""
+"案内リンクを削除し、そのRSS URLへのアクセスには「見つかりません」を返します。"
+
+#: includes/class-atshift-feed-builder-admin.php:295
+msgid ""
+"JSON Feed uses a custom URL because WordPress does not provide a standard "
+"JSON Feed endpoint."
+msgstr ""
+"WordPressには標準のJSON Feed URLがないため、JSON FeedはカスタムURLで公開しま"
+"す。"
+
+#: includes/class-atshift-feed-builder-admin.php:301
+msgid "WordPress feed destination"
+msgstr "WordPressフィードの配信先"
+
+#: includes/class-atshift-feed-builder-admin.php:307
+msgid ""
+"The content types and public URL are determined automatically by this "
+"destination. Category, tag, and taxonomy mappings apply to every term using "
+"its existing feed URL."
+msgstr ""
+"コンテンツタイプと公開URLは配信先から自動決定します。カテゴリー、タグ、タクソ"
+"ノミーでは、各タームの既存フィードURLに同じマッピングを適用します。"
+
+#: includes/class-atshift-feed-builder-admin.php:313
 msgid "Feed slug"
 msgstr "フィードスラッグ"
 
-#: includes/class-atshift-feed-builder-admin.php:237
+#: includes/class-atshift-feed-builder-admin.php:313
 msgid ""
 "A short identifier used in the public feed URL. Use lowercase letters, "
 "numbers, and hyphens."
@@ -214,15 +294,27 @@ msgstr ""
 "公開フィードURLの一部になる短い識別名です。半角小文字、数字、ハイフンを使用し"
 "ます。"
 
-#: includes/class-atshift-feed-builder-admin.php:239
+#: includes/class-atshift-feed-builder-admin.php:315
 msgid "Changing this value changes the public feed URL."
 msgstr "この値を変更すると、公開フィードURLも変わります。"
 
-#: includes/class-atshift-feed-builder-admin.php:243
+#: includes/class-atshift-feed-builder-admin.php:317
+msgid "Advertise this feed in the page head"
+msgstr "ページのheadでこのフィードを案内"
+
+#: includes/class-atshift-feed-builder-admin.php:317
+msgid ""
+"Adds an alternate feed link so browsers and services can discover this "
+"custom feed."
+msgstr ""
+"alternateフィードリンクを追加し、ブラウザーや外部サービスがこのカスタムフィー"
+"ドを発見できるようにします。"
+
+#: includes/class-atshift-feed-builder-admin.php:322
 msgid "Content types"
 msgstr "コンテンツタイプ"
 
-#: includes/class-atshift-feed-builder-admin.php:243
+#: includes/class-atshift-feed-builder-admin.php:322
 msgid ""
 "Choose which kinds of WordPress content become feed items. Selecting a "
 "custom post type includes its published entries."
@@ -230,23 +322,23 @@ msgstr ""
 "どの種類のWordPressコンテンツを配信項目にするか選びます。カスタム投稿タイプを"
 "選ぶと、その公開済み投稿も対象になります。"
 
-#: includes/class-atshift-feed-builder-admin.php:247
+#: includes/class-atshift-feed-builder-admin.php:326
 msgid "WordPress content"
 msgstr "WordPress標準コンテンツ"
 
-#: includes/class-atshift-feed-builder-admin.php:248
+#: includes/class-atshift-feed-builder-admin.php:327
 msgid "Custom post types"
 msgstr "カスタム投稿タイプ"
 
-#: includes/class-atshift-feed-builder-admin.php:248
+#: includes/class-atshift-feed-builder-admin.php:327
 msgid "No public custom post types are currently registered."
 msgstr "現在、公開カスタム投稿タイプは登録されていません。"
 
-#: includes/class-atshift-feed-builder-admin.php:275
+#: includes/class-atshift-feed-builder-admin.php:354
 msgid "Feed content filters"
 msgstr "配信内容の絞り込み"
 
-#: includes/class-atshift-feed-builder-admin.php:275
+#: includes/class-atshift-feed-builder-admin.php:354
 msgid ""
 "These settings limit which published posts are included in the feed. They do "
 "not change the values output for each item."
@@ -254,11 +346,11 @@ msgstr ""
 "フィードに含める公開投稿を条件で絞り込みます。各項目から出力する値を変更する"
 "設定ではありません。"
 
-#: includes/class-atshift-feed-builder-admin.php:278
+#: includes/class-atshift-feed-builder-admin.php:357
 msgid "Active"
 msgstr "設定あり"
 
-#: includes/class-atshift-feed-builder-admin.php:284
+#: includes/class-atshift-feed-builder-admin.php:363
 msgid ""
 "Choose which posts are included by author, taxonomy term, or custom field "
 "value. Different filter groups must all match; within each taxonomy, any "
@@ -268,19 +360,19 @@ msgstr ""
 "みます。異なる条件グループはすべて一致する必要があり、同じタクソノミー内では"
 "選択したいずれかのタームに一致すれば対象になります。"
 
-#: includes/class-atshift-feed-builder-admin.php:287
+#: includes/class-atshift-feed-builder-admin.php:366
 msgid "Authors"
 msgstr "投稿者"
 
-#: includes/class-atshift-feed-builder-admin.php:287
+#: includes/class-atshift-feed-builder-admin.php:366
 msgid "Include posts written by the selected authors."
 msgstr "選択した投稿者が作成した投稿だけを配信対象にします。"
 
-#: includes/class-atshift-feed-builder-admin.php:299
+#: includes/class-atshift-feed-builder-admin.php:378
 msgid "Taxonomy terms"
 msgstr "タクソノミーのターム"
 
-#: includes/class-atshift-feed-builder-admin.php:299
+#: includes/class-atshift-feed-builder-admin.php:378
 msgid ""
 "Include posts assigned to the selected categories, tags, or custom taxonomy "
 "terms."
@@ -288,83 +380,83 @@ msgstr ""
 "選択したカテゴリー、タグ、カスタムタクソノミーのタームが付いた投稿だけを配信"
 "対象にします。"
 
-#: includes/class-atshift-feed-builder-admin.php:301
+#: includes/class-atshift-feed-builder-admin.php:380
 msgid "No public taxonomy terms are currently registered."
 msgstr "現在、公開タクソノミーのタームは登録されていません。"
 
-#: includes/class-atshift-feed-builder-admin.php:322
+#: includes/class-atshift-feed-builder-admin.php:401
 msgid "Custom field conditions"
 msgstr "カスタムフィールド条件"
 
-#: includes/class-atshift-feed-builder-admin.php:322
+#: includes/class-atshift-feed-builder-admin.php:401
 msgid "Include posts by matching a public custom field key and value."
 msgstr ""
 "公開可能なカスタムフィールドのキーと値を条件にして、配信する投稿を絞り込みま"
 "す。"
 
-#: includes/class-atshift-feed-builder-admin.php:326
-#: includes/class-atshift-feed-builder-admin.php:346
+#: includes/class-atshift-feed-builder-admin.php:405
+#: includes/class-atshift-feed-builder-admin.php:425
 #: includes/adapters/class-atshift-feed-builder-post-meta-adapter.php:35
 msgid "Custom field key"
 msgstr "カスタムフィールドキー"
 
-#: includes/class-atshift-feed-builder-admin.php:327
-#: includes/class-atshift-feed-builder-admin.php:347
+#: includes/class-atshift-feed-builder-admin.php:406
+#: includes/class-atshift-feed-builder-admin.php:426
 msgid "Comparison"
 msgstr "比較方法"
 
-#: includes/class-atshift-feed-builder-admin.php:332
-#: includes/class-atshift-feed-builder-admin.php:352
+#: includes/class-atshift-feed-builder-admin.php:411
+#: includes/class-atshift-feed-builder-admin.php:431
 msgid "Value"
 msgstr "値"
 
-#: includes/class-atshift-feed-builder-admin.php:333
-#: includes/class-atshift-feed-builder-admin.php:335
-#: includes/class-atshift-feed-builder-admin.php:353
-#: includes/class-atshift-feed-builder-admin.php:355
+#: includes/class-atshift-feed-builder-admin.php:412
+#: includes/class-atshift-feed-builder-admin.php:414
+#: includes/class-atshift-feed-builder-admin.php:432
+#: includes/class-atshift-feed-builder-admin.php:434
 msgid "Remove condition"
 msgstr "条件を削除"
 
-#: includes/class-atshift-feed-builder-admin.php:342
+#: includes/class-atshift-feed-builder-admin.php:421
 msgid "Add condition"
 msgstr "条件を追加"
 
-#: includes/class-atshift-feed-builder-admin.php:366
+#: includes/class-atshift-feed-builder-admin.php:445
 msgid "Number of items"
 msgstr "出力件数"
 
-#: includes/class-atshift-feed-builder-admin.php:366
+#: includes/class-atshift-feed-builder-admin.php:445
 msgid "The maximum number of posts included each time the feed is generated."
 msgstr "フィードを生成するたびに含める投稿の最大件数です。"
 
-#: includes/class-atshift-feed-builder-admin.php:371
+#: includes/class-atshift-feed-builder-admin.php:450
 msgid "Order items by"
 msgstr "項目の並び順"
 
-#: includes/class-atshift-feed-builder-admin.php:371
+#: includes/class-atshift-feed-builder-admin.php:450
 msgid ""
 "Choose whether newly published posts or recently updated posts appear first."
 msgstr ""
 "新しく公開された投稿と、最近更新された投稿のどちらを先に並べるか選びます。"
 
-#: includes/class-atshift-feed-builder-admin.php:373
-#: includes/class-atshift-feed-builder-admin.php:533
+#: includes/class-atshift-feed-builder-admin.php:452
+#: includes/class-atshift-feed-builder-admin.php:612
 #: includes/class-atshift-feed-builder-schema.php:114
 #: includes/class-atshift-feed-builder-schema.php:139
 msgid "Published date"
 msgstr "公開日"
 
-#: includes/class-atshift-feed-builder-admin.php:374
-#: includes/class-atshift-feed-builder-admin.php:534
+#: includes/class-atshift-feed-builder-admin.php:453
+#: includes/class-atshift-feed-builder-admin.php:613
 #: includes/class-atshift-feed-builder-schema.php:140
 msgid "Modified date"
 msgstr "更新日"
 
-#: includes/class-atshift-feed-builder-admin.php:379
+#: includes/class-atshift-feed-builder-admin.php:458
 msgid "Cache lifetime (seconds)"
 msgstr "キャッシュ有効時間（秒）"
 
-#: includes/class-atshift-feed-builder-admin.php:379
+#: includes/class-atshift-feed-builder-admin.php:458
 msgid ""
 "How long generated output is reused before checking WordPress for changes. "
 "For example, 900 seconds is 15 minutes."
@@ -372,7 +464,7 @@ msgstr ""
 "生成したフィードを再利用し、WordPressの変更を再確認するまでの時間です。例えば"
 "900秒は15分です。"
 
-#: includes/class-atshift-feed-builder-admin.php:392
+#: includes/class-atshift-feed-builder-admin.php:471
 msgid ""
 "Choose a value source for each output field. Field-specific choices appear "
 "only when they are needed."
@@ -380,271 +472,326 @@ msgstr ""
 "各出力項目に使用する値を選択します。フィールド固有の選択肢は、必要な場合にだ"
 "け表示されます。"
 
-#: includes/class-atshift-feed-builder-admin.php:393
+#: includes/class-atshift-feed-builder-admin.php:472
 msgid "Feed information"
 msgstr "フィード情報"
 
-#: includes/class-atshift-feed-builder-admin.php:393
+#: includes/class-atshift-feed-builder-admin.php:472
 msgid "Each item"
 msgstr "各項目"
 
-#: includes/class-atshift-feed-builder-admin.php:404
+#: includes/class-atshift-feed-builder-admin.php:483
 msgid "Required"
 msgstr "必須"
 
-#: includes/class-atshift-feed-builder-admin.php:411
+#: includes/class-atshift-feed-builder-admin.php:490
 msgid "Generated automatically"
 msgstr "自動生成"
 
-#: includes/class-atshift-feed-builder-admin.php:415
-#: includes/class-atshift-feed-builder-admin.php:482
+#: includes/class-atshift-feed-builder-admin.php:494
+#: includes/class-atshift-feed-builder-admin.php:561
 msgid "Fixed value"
 msgstr "固定値"
 
-#: includes/class-atshift-feed-builder-admin.php:419
+#: includes/class-atshift-feed-builder-admin.php:498
 msgid "If the primary value is empty"
 msgstr "主な値が空の場合"
 
-#: includes/class-atshift-feed-builder-admin.php:422
+#: includes/class-atshift-feed-builder-admin.php:501
 msgid "Fallback URL"
 msgstr "代替URL"
 
-#: includes/class-atshift-feed-builder-admin.php:465
+#: includes/class-atshift-feed-builder-admin.php:544
 msgid "Value source"
 msgstr "値の取得元"
 
-#: includes/class-atshift-feed-builder-admin.php:466
+#: includes/class-atshift-feed-builder-admin.php:545
 msgid "WordPress values"
 msgstr "WordPressの値"
 
-#: includes/class-atshift-feed-builder-admin.php:472
+#: includes/class-atshift-feed-builder-admin.php:551
 msgid "Custom values"
 msgstr "カスタム値"
 
-#: includes/class-atshift-feed-builder-admin.php:481
+#: includes/class-atshift-feed-builder-admin.php:560
 msgid "Other"
 msgstr "その他"
 
-#: includes/class-atshift-feed-builder-admin.php:484
+#: includes/class-atshift-feed-builder-admin.php:563
 msgid "Do not output"
 msgstr "出力しない"
 
-#: includes/class-atshift-feed-builder-admin.php:487
+#: includes/class-atshift-feed-builder-admin.php:566
 msgid "Unavailable source (selection preserved)"
 msgstr "利用できない取得元（選択は保持されています）"
 
-#: includes/class-atshift-feed-builder-admin.php:500
+#: includes/class-atshift-feed-builder-admin.php:579
 msgid "Unavailable field (selection preserved)"
 msgstr "利用できないフィールド（選択は保持されています）"
 
-#: includes/class-atshift-feed-builder-admin.php:523
+#: includes/class-atshift-feed-builder-admin.php:602
 msgid "Site name"
 msgstr "サイト名"
 
-#: includes/class-atshift-feed-builder-admin.php:524
+#: includes/class-atshift-feed-builder-admin.php:603
 msgid "Site tagline"
 msgstr "サイトのキャッチフレーズ"
 
-#: includes/class-atshift-feed-builder-admin.php:525
+#: includes/class-atshift-feed-builder-admin.php:604
 msgid "Site URL"
 msgstr "サイトURL"
 
-#: includes/class-atshift-feed-builder-admin.php:526
+#: includes/class-atshift-feed-builder-admin.php:605
 msgid "Site language"
 msgstr "サイトの言語"
 
-#: includes/class-atshift-feed-builder-admin.php:527
+#: includes/class-atshift-feed-builder-admin.php:606
 msgid "Site icon URL"
 msgstr "サイトアイコンURL"
 
-#: includes/class-atshift-feed-builder-admin.php:528
+#: includes/class-atshift-feed-builder-admin.php:607
 #: includes/class-atshift-feed-builder-schema.php:105
 #: includes/class-atshift-feed-builder-schema.php:135
 msgid "Post title"
 msgstr "投稿タイトル"
 
-#: includes/class-atshift-feed-builder-admin.php:529
+#: includes/class-atshift-feed-builder-admin.php:608
 msgid "Post permalink"
 msgstr "投稿のパーマリンク"
 
-#: includes/class-atshift-feed-builder-admin.php:530
+#: includes/class-atshift-feed-builder-admin.php:609
 msgid "Stable post ID"
 msgstr "投稿の固定ID"
 
-#: includes/class-atshift-feed-builder-admin.php:531
+#: includes/class-atshift-feed-builder-admin.php:610
 msgid "Post excerpt (generated from content if empty)"
 msgstr "投稿の抜粋（未入力時は本文から自動生成）"
 
-#: includes/class-atshift-feed-builder-admin.php:532
+#: includes/class-atshift-feed-builder-admin.php:611
 msgid "Post content (HTML)"
 msgstr "投稿本文（HTML）"
 
-#: includes/class-atshift-feed-builder-admin.php:535
+#: includes/class-atshift-feed-builder-admin.php:614
 msgid "Featured image URL"
 msgstr "アイキャッチ画像URL"
 
-#: includes/class-atshift-feed-builder-admin.php:536
+#: includes/class-atshift-feed-builder-admin.php:615
 msgid "All public taxonomy terms"
 msgstr "すべての公開カテゴリー・タグ・ターム"
 
-#: includes/class-atshift-feed-builder-admin.php:537
+#: includes/class-atshift-feed-builder-admin.php:616
 msgid "Categories only"
 msgstr "カテゴリーのみ"
 
-#: includes/class-atshift-feed-builder-admin.php:538
+#: includes/class-atshift-feed-builder-admin.php:617
 msgid "Tags only"
 msgstr "タグのみ"
 
-#: includes/class-atshift-feed-builder-admin.php:539
+#: includes/class-atshift-feed-builder-admin.php:618
 msgid "Public custom taxonomy terms only"
 msgstr "公開カスタムタクソノミーのみ"
 
-#: includes/class-atshift-feed-builder-admin.php:540
+#: includes/class-atshift-feed-builder-admin.php:619
 msgid "Display name"
 msgstr "表示名"
 
-#: includes/class-atshift-feed-builder-admin.php:541
+#: includes/class-atshift-feed-builder-admin.php:620
 msgid "Author archive URL"
 msgstr "投稿者アーカイブURL"
 
-#: includes/class-atshift-feed-builder-admin.php:542
+#: includes/class-atshift-feed-builder-admin.php:621
 msgid "Avatar URL"
 msgstr "アバターURL"
 
-#: includes/class-atshift-feed-builder-admin.php:579
+#: includes/class-atshift-feed-builder-admin.php:658
 msgid "may contain personal information"
 msgstr "個人情報を含む可能性があります"
 
-#: includes/class-atshift-feed-builder-admin.php:604
-#: includes/class-atshift-feed-builder-admin.php:606
-#: includes/class-atshift-feed-builder-admin.php:610
+#: includes/class-atshift-feed-builder-admin.php:683
+#: includes/class-atshift-feed-builder-admin.php:685
+#: includes/class-atshift-feed-builder-admin.php:689
 msgid "Field name"
 msgstr "フィールド名"
 
-#: includes/class-atshift-feed-builder-admin.php:617
-#: includes/class-atshift-feed-builder-admin.php:619
-#: includes/class-atshift-feed-builder-admin.php:623
+#: includes/class-atshift-feed-builder-admin.php:696
+#: includes/class-atshift-feed-builder-admin.php:698
+#: includes/class-atshift-feed-builder-admin.php:702
 msgid "Enter the field name used by the plugin."
 msgstr "プラグインで使用しているフィールド名を入力してください。"
 
-#: includes/class-atshift-feed-builder-admin.php:657
+#: includes/class-atshift-feed-builder-admin.php:736
 msgid "Publish this feed to create its public URL."
 msgstr "公開フィードURLを作成するには、このフィードを公開してください。"
 
-#: includes/class-atshift-feed-builder-admin.php:671
+#: includes/class-atshift-feed-builder-admin.php:743
+#: includes/class-atshift-feed-builder-admin.php:1122
+msgid "Standard feed disabled"
+msgstr "標準フィードは無効です"
+
+#: includes/class-atshift-feed-builder-admin.php:743
+msgid ""
+"The selected WordPress feed URL returns not found and is not advertised in "
+"the page head."
+msgstr ""
+"選択したWordPressフィードURLは「見つかりません」を返し、ページのheadにも掲載"
+"しません。"
+
+#: includes/class-atshift-feed-builder-admin.php:747
+msgid "Existing term feed URLs"
+msgstr "既存のターム別フィードURL"
+
+#: includes/class-atshift-feed-builder-admin.php:747
+msgid "Each category, tag, or taxonomy term keeps its own WordPress feed URL."
+msgstr ""
+"カテゴリー、タグ、タクソノミーの各タームは、それぞれ既存のWordPressフィード"
+"URLを維持します。"
+
+#: includes/class-atshift-feed-builder-admin.php:760
 msgid "Check the current settings without saving them."
 msgstr "保存せずに現在の設定を確認できます。"
 
-#: includes/class-atshift-feed-builder-admin.php:674
+#: includes/class-atshift-feed-builder-admin.php:763
 msgid "Preview feed"
 msgstr "フィードをプレビュー"
 
-#: includes/class-atshift-feed-builder-admin.php:676
+#: includes/class-atshift-feed-builder-admin.php:765
 msgid "The preview uses the first item in the current feed order."
 msgstr "プレビューには、現在のフィード順で先頭の項目を使用します。"
 
-#: includes/class-atshift-feed-builder-admin.php:681
+#: includes/class-atshift-feed-builder-admin.php:770
 msgid "Feed preview"
 msgstr "フィードプレビュー"
 
-#: includes/class-atshift-feed-builder-admin.php:684
-#: includes/class-atshift-feed-builder-admin.php:686
+#: includes/class-atshift-feed-builder-admin.php:773
+#: includes/class-atshift-feed-builder-admin.php:775
 msgid "Close preview"
 msgstr "プレビューを閉じる"
 
-#: includes/class-atshift-feed-builder-admin.php:690
+#: includes/class-atshift-feed-builder-admin.php:779
 msgid "Preview view"
 msgstr "プレビュー表示"
 
-#: includes/class-atshift-feed-builder-admin.php:692
+#: includes/class-atshift-feed-builder-admin.php:781
 msgid "Reader preview"
 msgstr "表示プレビュー"
 
-#: includes/class-atshift-feed-builder-admin.php:695
+#: includes/class-atshift-feed-builder-admin.php:784
 msgid "Source code"
 msgstr "ソースコード"
 
-#: includes/class-atshift-feed-builder-admin.php:707
+#: includes/class-atshift-feed-builder-admin.php:796
 msgid "Copy output"
 msgstr "出力をコピー"
 
-#: includes/class-atshift-feed-builder-admin.php:718
+#: includes/class-atshift-feed-builder-admin.php:807
 msgid "You are not allowed to preview feeds."
 msgstr "フィードをプレビューする権限がありません。"
 
-#: includes/class-atshift-feed-builder-admin.php:724
+#: includes/class-atshift-feed-builder-admin.php:813
 msgid "The feed configuration could not be found."
 msgstr "フィード設定が見つかりませんでした。"
 
-#: includes/class-atshift-feed-builder-admin.php:936
+#: includes/class-atshift-feed-builder-admin.php:1086
 msgid "Generating preview..."
 msgstr "プレビューを生成しています..."
 
-#: includes/class-atshift-feed-builder-admin.php:937
+#: includes/class-atshift-feed-builder-admin.php:1087
 msgid "The preview could not be generated."
 msgstr "プレビューを生成できませんでした。"
 
 #. translators: %s: Feed format.
-#: includes/class-atshift-feed-builder-admin.php:939
+#: includes/class-atshift-feed-builder-admin.php:1089
 #, php-format
 msgid "%s preview, first item"
 msgstr "%sプレビュー、先頭の項目"
 
-#: includes/class-atshift-feed-builder-admin.php:940
+#: includes/class-atshift-feed-builder-admin.php:1090
 msgid "Output copied."
 msgstr "出力をコピーしました。"
 
-#: includes/class-atshift-feed-builder-admin.php:941
+#: includes/class-atshift-feed-builder-admin.php:1091
 msgid "The output could not be copied."
 msgstr "出力をコピーできませんでした。"
 
 #. translators: %s: Publisher name.
-#: includes/class-atshift-feed-builder-admin.php:943
+#: includes/class-atshift-feed-builder-admin.php:1093
 #, php-format
 msgid "Published by %s"
 msgstr "発行者: %s"
 
 #. translators: %s: Reviewer name.
-#: includes/class-atshift-feed-builder-admin.php:945
+#: includes/class-atshift-feed-builder-admin.php:1095
 #, php-format
 msgid "Reviewed by %s"
 msgstr "監修者: %s"
 
 #. translators: %s: Source name.
-#: includes/class-atshift-feed-builder-admin.php:947
+#: includes/class-atshift-feed-builder-admin.php:1097
 #, php-format
 msgid "Source: %s"
 msgstr "一次ソース: %s"
 
-#: includes/class-atshift-feed-builder-admin.php:953
+#: includes/class-atshift-feed-builder-admin.php:1103
 msgid "Format"
 msgstr "形式"
 
-#: includes/class-atshift-feed-builder-admin.php:974
+#: includes/class-atshift-feed-builder-admin.php:1104
+msgid "Publication"
+msgstr "公開方法"
+
+#: includes/class-atshift-feed-builder-admin.php:1121
+msgid "Standard feed replacement"
+msgstr "標準フィードを置換"
+
+#: includes/class-atshift-feed-builder-admin.php:1129
+msgid "Disabled"
+msgstr "無効"
+
+#: includes/class-atshift-feed-builder-admin.php:1131
+msgid "Dynamic term URLs"
+msgstr "ターム別の動的URL"
+
+#: includes/class-atshift-feed-builder-admin.php:1141
 msgid "Internal feed name"
 msgstr "管理用フィード名"
 
-#: includes/class-atshift-feed-builder-plugin.php:121
+#: includes/class-atshift-feed-builder-plugin.php:126
 msgid "atshift Feed Builder"
 msgstr "atshift Feed Builder"
 
-#: includes/class-atshift-feed-builder-plugin.php:122
+#: includes/class-atshift-feed-builder-plugin.php:127
 msgid "Feed"
 msgstr "フィード"
 
-#: includes/class-atshift-feed-builder-plugin.php:124
+#: includes/class-atshift-feed-builder-plugin.php:129
 msgid "Edit Feed"
 msgstr "フィードを編集"
 
-#: includes/class-atshift-feed-builder-plugin.php:125
+#: includes/class-atshift-feed-builder-plugin.php:130
 msgid "New Feed"
 msgstr "新規フィード"
 
-#: includes/class-atshift-feed-builder-plugin.php:126
+#: includes/class-atshift-feed-builder-plugin.php:131
 msgid "Feeds"
 msgstr "フィード"
 
-#: includes/class-atshift-feed-builder-renderer.php:105
+#: includes/class-atshift-feed-builder-plugin.php:393
+msgid "Main posts feed"
+msgstr "通常投稿のメインフィード"
+
+#. translators: %s: Post type label.
+#: includes/class-atshift-feed-builder-plugin.php:407
+#, php-format
+msgid "%s archive feed"
+msgstr "%sのアーカイブフィード"
+
+#. translators: %s: Taxonomy label.
+#: includes/class-atshift-feed-builder-plugin.php:425
+#, php-format
+msgid "%s feeds"
+msgstr "%sのフィード"
+
+#: includes/class-atshift-feed-builder-renderer.php:114
 msgid "The feed could not be encoded."
 msgstr "フィードをエンコードできませんでした。"
 
@@ -1027,3 +1174,20 @@ msgstr ""
 #: includes/adapters/class-atshift-feed-builder-upf-adapter.php:21
 msgid "atshift User Profile Fields (post author)"
 msgstr "atshift User Profile Fields（投稿者）"
+
+#. Plugin description.
+msgid ""
+"Build safe RSS and JSON feeds from WordPress, atshift Fields, and atshift "
+"User Profile Fields data."
+msgstr ""
+"WordPress、atshift Fields、atshift User Profile Fieldsのデータから、安全なRSS"
+"フィードとJSONフィードを作成します。"
+
+#~ msgid "Choose a feed format"
+#~ msgstr "フィード形式を選択"
+
+#~ msgid ""
+#~ "The selected standard determines the available output fields and "
+#~ "validation rules."
+#~ msgstr ""
+#~ "選択した標準仕様に応じて、使用できる出力項目と検証ルールが決まります。"

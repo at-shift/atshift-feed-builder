@@ -6,610 +6,745 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: atshift Feed Builder 0.1.0\n"
-"Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-feed-builder/"
-"issues\n"
-"POT-Creation-Date: 2026-08-15 20:33+0900\n"
+"Project-Id-Version: atshift Feed Builder 0.2.0\n"
+"Report-Msgid-Bugs-To: https://at-shift.net/\n"
+"POT-Creation-Date: 2026-08-15 21:06+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Domain: atshift-feed-builder\n"
 
-msgid "Build safe RSS and JSON feeds from WordPress, atshift Fields, and atshift User Profile Fields data."
-msgstr ""
-
 #: includes/class-atshift-feed-builder-admin.php:38
 #: includes/class-atshift-feed-builder-admin.php:39
-#: includes/class-atshift-feed-builder-plugin.php:123
+#: includes/class-atshift-feed-builder-plugin.php:128
 msgid "Add New Feed"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:68
-msgid "Choose a feed format"
+#: includes/class-atshift-feed-builder-admin.php:69
+msgid "Choose how to publish the feed"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:69
+#: includes/class-atshift-feed-builder-admin.php:70
 msgid ""
-"The selected standard determines the available output fields and validation "
-"rules."
+"Keep an existing WordPress feed URL and replace its output, or add a "
+"separate feed for a new purpose."
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:72
+msgid "Replace a WordPress standard feed"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:73
+msgid ""
+"The existing RSS URL stays the same. WordPress continues to advertise that "
+"URL in the page head, while atshift Feed Builder controls its content."
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:79
+msgid "Standard feed to replace"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:85
+msgid "Create standard RSS feed"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:90
+msgid "Add a custom feed"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:91
+msgid ""
+"Create a separate URL with its own slug for a specific service, audience, or "
+"use case."
 msgstr ""
 
 #. translators: %s: Feed format name.
-#: includes/class-atshift-feed-builder-admin.php:83
+#: includes/class-atshift-feed-builder-admin.php:106
 #, php-format
 msgid "Create %s feed"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:97
+#: includes/class-atshift-feed-builder-admin.php:121
 msgid "You are not allowed to create feeds."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:105
+#: includes/class-atshift-feed-builder-admin.php:132
 msgid "Invalid feed format."
 msgstr ""
 
+#: includes/class-atshift-feed-builder-admin.php:135
+msgid "Invalid standard feed destination."
+msgstr ""
+
 #. translators: %s: Feed format name.
-#: includes/class-atshift-feed-builder-admin.php:114
+#: includes/class-atshift-feed-builder-admin.php:142
 #, php-format
 msgid "New %s feed"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:121
+#: includes/class-atshift-feed-builder-admin.php:155
 msgid "The feed could not be created."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:134
+#: includes/class-atshift-feed-builder-admin.php:178
 msgid "Feed source"
 msgstr ""
 
 #. translators: %s: Feed format name.
-#: includes/class-atshift-feed-builder-admin.php:139
+#: includes/class-atshift-feed-builder-admin.php:183
 #, php-format
 msgid "%s output mapping"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:147
-#: includes/class-atshift-feed-builder-admin.php:954
+#: includes/class-atshift-feed-builder-admin.php:191
+#: includes/class-atshift-feed-builder-admin.php:1105
 msgid "Feed URL"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:148
+#: includes/class-atshift-feed-builder-admin.php:192
 msgid "Preview"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:159
+#: includes/class-atshift-feed-builder-admin.php:203
 msgid "Help"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:167
+#: includes/class-atshift-feed-builder-admin.php:211
 msgid ""
 "The most recent update time in the feed, calculated automatically. Services "
 "use it to detect changes."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:168
-#: includes/class-atshift-feed-builder-admin.php:169
+#: includes/class-atshift-feed-builder-admin.php:212
+#: includes/class-atshift-feed-builder-admin.php:213
 msgid ""
 "The permanent public URL of this feed. It is generated automatically and "
 "tells services which URL is authoritative."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:170
-#: includes/class-atshift-feed-builder-admin.php:171
+#: includes/class-atshift-feed-builder-admin.php:214
+#: includes/class-atshift-feed-builder-admin.php:215
 msgid ""
 "The person or organization responsible for operating and publishing the "
 "feed, not necessarily the article author."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:172
+#: includes/class-atshift-feed-builder-admin.php:216
 msgid ""
 "A feed item is one published post included in the feed. This container is "
 "created automatically."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:173
-#: includes/class-atshift-feed-builder-admin.php:174
+#: includes/class-atshift-feed-builder-admin.php:217
+#: includes/class-atshift-feed-builder-admin.php:218
 msgid ""
 "Feed readers use this value to recognize the same post after an update and "
 "avoid duplicates. It should not change after publication."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:175
-#: includes/class-atshift-feed-builder-admin.php:176
+#: includes/class-atshift-feed-builder-admin.php:219
+#: includes/class-atshift-feed-builder-admin.php:220
 msgid ""
 "The public page readers open for this post. Custom post types also use their "
 "normal permalink."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:177
-#: includes/class-atshift-feed-builder-admin.php:178
+#: includes/class-atshift-feed-builder-admin.php:221
+#: includes/class-atshift-feed-builder-admin.php:222
 msgid "The person credited with writing or creating the post."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:179
-#: includes/class-atshift-feed-builder-admin.php:180
+#: includes/class-atshift-feed-builder-admin.php:223
+#: includes/class-atshift-feed-builder-admin.php:224
 msgid ""
 "An optional person who checked or supervised the content. Leave it out when "
 "there is no reviewer."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:181
-#: includes/class-atshift-feed-builder-admin.php:182
+#: includes/class-atshift-feed-builder-admin.php:225
+#: includes/class-atshift-feed-builder-admin.php:226
 msgid ""
 "The original or related source behind the post. Use this when the WordPress "
 "post summarizes information published elsewhere."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:183
-#: includes/class-atshift-feed-builder-admin.php:184
+#: includes/class-atshift-feed-builder-admin.php:227
+#: includes/class-atshift-feed-builder-admin.php:228
 msgid ""
 "Classification labels attached to the post. They help readers and services "
 "group or filter items."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:185
+#: includes/class-atshift-feed-builder-admin.php:229
 msgid ""
 "The representative image for the item. A fallback can be used when the post "
 "has no featured image."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:221
+#: includes/class-atshift-feed-builder-admin.php:269
 msgid "Equals"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:222
+#: includes/class-atshift-feed-builder-admin.php:270
 msgid "Does not equal"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:223
+#: includes/class-atshift-feed-builder-admin.php:271
 msgid "Contains"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:224
+#: includes/class-atshift-feed-builder-admin.php:272
 msgid "Exists"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:225
+#: includes/class-atshift-feed-builder-admin.php:273
 msgid "Does not exist"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:231
+#: includes/class-atshift-feed-builder-admin.php:279
 msgid "Output format"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:233
+#: includes/class-atshift-feed-builder-admin.php:281
 msgid "The format is fixed for this feed."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:237
+#: includes/class-atshift-feed-builder-admin.php:286
+msgid "Publication method"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:289
+msgid "Replace a standard feed"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:289
+msgid "Keep the WordPress URL and replace its RSS output."
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:290
+#: includes/class-atshift-feed-builder-admin.php:1120
+msgid "Custom feed"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:290
+msgid "Publish at a separate URL with a custom slug."
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:291
+msgid "Disable a standard feed"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:291
+msgid "Remove its discovery link and return not found at that RSS URL."
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:295
+msgid ""
+"JSON Feed uses a custom URL because WordPress does not provide a standard "
+"JSON Feed endpoint."
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:301
+msgid "WordPress feed destination"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:307
+msgid ""
+"The content types and public URL are determined automatically by this "
+"destination. Category, tag, and taxonomy mappings apply to every term using "
+"its existing feed URL."
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:313
 msgid "Feed slug"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:237
+#: includes/class-atshift-feed-builder-admin.php:313
 msgid ""
 "A short identifier used in the public feed URL. Use lowercase letters, "
 "numbers, and hyphens."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:239
+#: includes/class-atshift-feed-builder-admin.php:315
 msgid "Changing this value changes the public feed URL."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:243
+#: includes/class-atshift-feed-builder-admin.php:317
+msgid "Advertise this feed in the page head"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:317
+msgid ""
+"Adds an alternate feed link so browsers and services can discover this "
+"custom feed."
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:322
 msgid "Content types"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:243
+#: includes/class-atshift-feed-builder-admin.php:322
 msgid ""
 "Choose which kinds of WordPress content become feed items. Selecting a "
 "custom post type includes its published entries."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:247
+#: includes/class-atshift-feed-builder-admin.php:326
 msgid "WordPress content"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:248
+#: includes/class-atshift-feed-builder-admin.php:327
 msgid "Custom post types"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:248
+#: includes/class-atshift-feed-builder-admin.php:327
 msgid "No public custom post types are currently registered."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:275
+#: includes/class-atshift-feed-builder-admin.php:354
 msgid "Feed content filters"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:275
+#: includes/class-atshift-feed-builder-admin.php:354
 msgid ""
 "These settings limit which published posts are included in the feed. They do "
 "not change the values output for each item."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:278
+#: includes/class-atshift-feed-builder-admin.php:357
 msgid "Active"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:284
+#: includes/class-atshift-feed-builder-admin.php:363
 msgid ""
 "Choose which posts are included by author, taxonomy term, or custom field "
 "value. Different filter groups must all match; within each taxonomy, any "
 "selected term can match."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:287
+#: includes/class-atshift-feed-builder-admin.php:366
 msgid "Authors"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:287
+#: includes/class-atshift-feed-builder-admin.php:366
 msgid "Include posts written by the selected authors."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:299
+#: includes/class-atshift-feed-builder-admin.php:378
 msgid "Taxonomy terms"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:299
+#: includes/class-atshift-feed-builder-admin.php:378
 msgid ""
 "Include posts assigned to the selected categories, tags, or custom taxonomy "
 "terms."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:301
+#: includes/class-atshift-feed-builder-admin.php:380
 msgid "No public taxonomy terms are currently registered."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:322
+#: includes/class-atshift-feed-builder-admin.php:401
 msgid "Custom field conditions"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:322
+#: includes/class-atshift-feed-builder-admin.php:401
 msgid "Include posts by matching a public custom field key and value."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:326
-#: includes/class-atshift-feed-builder-admin.php:346
+#: includes/class-atshift-feed-builder-admin.php:405
+#: includes/class-atshift-feed-builder-admin.php:425
 #: includes/adapters/class-atshift-feed-builder-post-meta-adapter.php:35
 msgid "Custom field key"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:327
-#: includes/class-atshift-feed-builder-admin.php:347
+#: includes/class-atshift-feed-builder-admin.php:406
+#: includes/class-atshift-feed-builder-admin.php:426
 msgid "Comparison"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:332
-#: includes/class-atshift-feed-builder-admin.php:352
+#: includes/class-atshift-feed-builder-admin.php:411
+#: includes/class-atshift-feed-builder-admin.php:431
 msgid "Value"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:333
-#: includes/class-atshift-feed-builder-admin.php:335
-#: includes/class-atshift-feed-builder-admin.php:353
-#: includes/class-atshift-feed-builder-admin.php:355
+#: includes/class-atshift-feed-builder-admin.php:412
+#: includes/class-atshift-feed-builder-admin.php:414
+#: includes/class-atshift-feed-builder-admin.php:432
+#: includes/class-atshift-feed-builder-admin.php:434
 msgid "Remove condition"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:342
+#: includes/class-atshift-feed-builder-admin.php:421
 msgid "Add condition"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:366
+#: includes/class-atshift-feed-builder-admin.php:445
 msgid "Number of items"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:366
+#: includes/class-atshift-feed-builder-admin.php:445
 msgid "The maximum number of posts included each time the feed is generated."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:371
+#: includes/class-atshift-feed-builder-admin.php:450
 msgid "Order items by"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:371
+#: includes/class-atshift-feed-builder-admin.php:450
 msgid ""
 "Choose whether newly published posts or recently updated posts appear first."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:373
-#: includes/class-atshift-feed-builder-admin.php:533
+#: includes/class-atshift-feed-builder-admin.php:452
+#: includes/class-atshift-feed-builder-admin.php:612
 #: includes/class-atshift-feed-builder-schema.php:114
 #: includes/class-atshift-feed-builder-schema.php:139
 msgid "Published date"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:374
-#: includes/class-atshift-feed-builder-admin.php:534
+#: includes/class-atshift-feed-builder-admin.php:453
+#: includes/class-atshift-feed-builder-admin.php:613
 #: includes/class-atshift-feed-builder-schema.php:140
 msgid "Modified date"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:379
+#: includes/class-atshift-feed-builder-admin.php:458
 msgid "Cache lifetime (seconds)"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:379
+#: includes/class-atshift-feed-builder-admin.php:458
 msgid ""
 "How long generated output is reused before checking WordPress for changes. "
 "For example, 900 seconds is 15 minutes."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:392
+#: includes/class-atshift-feed-builder-admin.php:471
 msgid ""
 "Choose a value source for each output field. Field-specific choices appear "
 "only when they are needed."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:393
+#: includes/class-atshift-feed-builder-admin.php:472
 msgid "Feed information"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:393
+#: includes/class-atshift-feed-builder-admin.php:472
 msgid "Each item"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:404
+#: includes/class-atshift-feed-builder-admin.php:483
 msgid "Required"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:411
+#: includes/class-atshift-feed-builder-admin.php:490
 msgid "Generated automatically"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:415
-#: includes/class-atshift-feed-builder-admin.php:482
+#: includes/class-atshift-feed-builder-admin.php:494
+#: includes/class-atshift-feed-builder-admin.php:561
 msgid "Fixed value"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:419
+#: includes/class-atshift-feed-builder-admin.php:498
 msgid "If the primary value is empty"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:422
+#: includes/class-atshift-feed-builder-admin.php:501
 msgid "Fallback URL"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:465
+#: includes/class-atshift-feed-builder-admin.php:544
 msgid "Value source"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:466
+#: includes/class-atshift-feed-builder-admin.php:545
 msgid "WordPress values"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:472
+#: includes/class-atshift-feed-builder-admin.php:551
 msgid "Custom values"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:481
+#: includes/class-atshift-feed-builder-admin.php:560
 msgid "Other"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:484
+#: includes/class-atshift-feed-builder-admin.php:563
 msgid "Do not output"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:487
+#: includes/class-atshift-feed-builder-admin.php:566
 msgid "Unavailable source (selection preserved)"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:500
+#: includes/class-atshift-feed-builder-admin.php:579
 msgid "Unavailable field (selection preserved)"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:523
+#: includes/class-atshift-feed-builder-admin.php:602
 msgid "Site name"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:524
+#: includes/class-atshift-feed-builder-admin.php:603
 msgid "Site tagline"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:525
+#: includes/class-atshift-feed-builder-admin.php:604
 msgid "Site URL"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:526
+#: includes/class-atshift-feed-builder-admin.php:605
 msgid "Site language"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:527
+#: includes/class-atshift-feed-builder-admin.php:606
 msgid "Site icon URL"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:528
+#: includes/class-atshift-feed-builder-admin.php:607
 #: includes/class-atshift-feed-builder-schema.php:105
 #: includes/class-atshift-feed-builder-schema.php:135
 msgid "Post title"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:529
+#: includes/class-atshift-feed-builder-admin.php:608
 msgid "Post permalink"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:530
+#: includes/class-atshift-feed-builder-admin.php:609
 msgid "Stable post ID"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:531
+#: includes/class-atshift-feed-builder-admin.php:610
 msgid "Post excerpt (generated from content if empty)"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:532
+#: includes/class-atshift-feed-builder-admin.php:611
 msgid "Post content (HTML)"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:535
+#: includes/class-atshift-feed-builder-admin.php:614
 msgid "Featured image URL"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:536
+#: includes/class-atshift-feed-builder-admin.php:615
 msgid "All public taxonomy terms"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:537
+#: includes/class-atshift-feed-builder-admin.php:616
 msgid "Categories only"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:538
+#: includes/class-atshift-feed-builder-admin.php:617
 msgid "Tags only"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:539
+#: includes/class-atshift-feed-builder-admin.php:618
 msgid "Public custom taxonomy terms only"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:540
+#: includes/class-atshift-feed-builder-admin.php:619
 msgid "Display name"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:541
+#: includes/class-atshift-feed-builder-admin.php:620
 msgid "Author archive URL"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:542
+#: includes/class-atshift-feed-builder-admin.php:621
 msgid "Avatar URL"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:579
+#: includes/class-atshift-feed-builder-admin.php:658
 msgid "may contain personal information"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:604
-#: includes/class-atshift-feed-builder-admin.php:606
-#: includes/class-atshift-feed-builder-admin.php:610
+#: includes/class-atshift-feed-builder-admin.php:683
+#: includes/class-atshift-feed-builder-admin.php:685
+#: includes/class-atshift-feed-builder-admin.php:689
 msgid "Field name"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:617
-#: includes/class-atshift-feed-builder-admin.php:619
-#: includes/class-atshift-feed-builder-admin.php:623
+#: includes/class-atshift-feed-builder-admin.php:696
+#: includes/class-atshift-feed-builder-admin.php:698
+#: includes/class-atshift-feed-builder-admin.php:702
 msgid "Enter the field name used by the plugin."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:657
+#: includes/class-atshift-feed-builder-admin.php:736
 msgid "Publish this feed to create its public URL."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:671
+#: includes/class-atshift-feed-builder-admin.php:743
+#: includes/class-atshift-feed-builder-admin.php:1122
+msgid "Standard feed disabled"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:743
+msgid ""
+"The selected WordPress feed URL returns not found and is not advertised in "
+"the page head."
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:747
+msgid "Existing term feed URLs"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:747
+msgid "Each category, tag, or taxonomy term keeps its own WordPress feed URL."
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:760
 msgid "Check the current settings without saving them."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:674
+#: includes/class-atshift-feed-builder-admin.php:763
 msgid "Preview feed"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:676
+#: includes/class-atshift-feed-builder-admin.php:765
 msgid "The preview uses the first item in the current feed order."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:681
+#: includes/class-atshift-feed-builder-admin.php:770
 msgid "Feed preview"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:684
-#: includes/class-atshift-feed-builder-admin.php:686
+#: includes/class-atshift-feed-builder-admin.php:773
+#: includes/class-atshift-feed-builder-admin.php:775
 msgid "Close preview"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:690
+#: includes/class-atshift-feed-builder-admin.php:779
 msgid "Preview view"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:692
+#: includes/class-atshift-feed-builder-admin.php:781
 msgid "Reader preview"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:695
+#: includes/class-atshift-feed-builder-admin.php:784
 msgid "Source code"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:707
+#: includes/class-atshift-feed-builder-admin.php:796
 msgid "Copy output"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:718
+#: includes/class-atshift-feed-builder-admin.php:807
 msgid "You are not allowed to preview feeds."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:724
+#: includes/class-atshift-feed-builder-admin.php:813
 msgid "The feed configuration could not be found."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:936
+#: includes/class-atshift-feed-builder-admin.php:1086
 msgid "Generating preview..."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:937
+#: includes/class-atshift-feed-builder-admin.php:1087
 msgid "The preview could not be generated."
 msgstr ""
 
 #. translators: %s: Feed format.
-#: includes/class-atshift-feed-builder-admin.php:939
+#: includes/class-atshift-feed-builder-admin.php:1089
 #, php-format
 msgid "%s preview, first item"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:940
+#: includes/class-atshift-feed-builder-admin.php:1090
 msgid "Output copied."
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:941
+#: includes/class-atshift-feed-builder-admin.php:1091
 msgid "The output could not be copied."
 msgstr ""
 
 #. translators: %s: Publisher name.
-#: includes/class-atshift-feed-builder-admin.php:943
+#: includes/class-atshift-feed-builder-admin.php:1093
 #, php-format
 msgid "Published by %s"
 msgstr ""
 
 #. translators: %s: Reviewer name.
-#: includes/class-atshift-feed-builder-admin.php:945
+#: includes/class-atshift-feed-builder-admin.php:1095
 #, php-format
 msgid "Reviewed by %s"
 msgstr ""
 
 #. translators: %s: Source name.
-#: includes/class-atshift-feed-builder-admin.php:947
+#: includes/class-atshift-feed-builder-admin.php:1097
 #, php-format
 msgid "Source: %s"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:953
+#: includes/class-atshift-feed-builder-admin.php:1103
 msgid "Format"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-admin.php:974
+#: includes/class-atshift-feed-builder-admin.php:1104
+msgid "Publication"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:1121
+msgid "Standard feed replacement"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:1129
+msgid "Disabled"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:1131
+msgid "Dynamic term URLs"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-admin.php:1141
 msgid "Internal feed name"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-plugin.php:121
+#: includes/class-atshift-feed-builder-plugin.php:126
 msgid "atshift Feed Builder"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-plugin.php:122
+#: includes/class-atshift-feed-builder-plugin.php:127
 msgid "Feed"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-plugin.php:124
+#: includes/class-atshift-feed-builder-plugin.php:129
 msgid "Edit Feed"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-plugin.php:125
+#: includes/class-atshift-feed-builder-plugin.php:130
 msgid "New Feed"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-plugin.php:126
+#: includes/class-atshift-feed-builder-plugin.php:131
 msgid "Feeds"
 msgstr ""
 
-#: includes/class-atshift-feed-builder-renderer.php:105
+#: includes/class-atshift-feed-builder-plugin.php:393
+msgid "Main posts feed"
+msgstr ""
+
+#. translators: %s: Post type label.
+#: includes/class-atshift-feed-builder-plugin.php:407
+#, php-format
+msgid "%s archive feed"
+msgstr ""
+
+#. translators: %s: Taxonomy label.
+#: includes/class-atshift-feed-builder-plugin.php:425
+#, php-format
+msgid "%s feeds"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-renderer.php:114
 msgid "The feed could not be encoded."
 msgstr ""
 
@@ -980,4 +1115,7 @@ msgstr ""
 
 #: includes/adapters/class-atshift-feed-builder-upf-adapter.php:21
 msgid "atshift User Profile Fields (post author)"
+msgstr ""
+#. Plugin description.
+msgid "Build safe RSS and JSON feeds from WordPress, atshift Fields, and atshift User Profile Fields data."
 msgstr ""

@@ -1,6 +1,6 @@
 # atshift Feed Builder
 
-atshift Feed Builder is a standalone WordPress plugin for publishing WordPress, atshift Fields, and atshift User Profile Fields data as RSS 2.0 or JSON Feed 1.1.
+atshift Feed Builder is a standalone WordPress plugin for publishing WordPress, atshift Fields, and atshift User Profile Fields data as RSS 2.0 or JSON Feed 1.1. RSS configurations can replace WordPress standard feeds without changing their public URLs, while custom RSS and JSON feeds remain available for purpose-specific delivery.
 
 Each feed uses one fixed output standard. After choosing RSS 2.0 or JSON Feed 1.1, the editor displays that standard's structure and lets the publisher map each output field to a WordPress value, an atshift Fields value, a post-author UPF value, an explicitly allowed post_meta or Pods field name, fixed text, or no output where the standard permits it.
 
@@ -73,7 +73,9 @@ Adapters that need a manually entered field name can implement `Atshift_Feed_Bui
 
 atshift Feed Builder catches adapter exceptions and discards unexpected adapter output before rendering a public feed. Values are still normalized to the target RSS or JSON field type. Do not expose password, authentication, session, capability, token, secret, or private personal-information fields through an adapter.
 
-## Initial endpoints
+## Feed endpoints
+
+Standard RSS replacements keep the WordPress URL for the selected destination, including the main posts feed, public custom post type archives, and each term in a public taxonomy. Custom feeds use the plugin endpoint:
 
 ```text
 /atshift-feed/{feed-slug}/rss/
@@ -93,4 +95,5 @@ atshift Feed Builder catches adapter exceptions and discards unexpected adapter 
 - Authentication, session, capability, and password-related UPF fields are not selectable.
 - Fields that may contain personal information are visibly marked in mapping selectors.
 - Draft, private, scheduled, and password-protected source posts are excluded.
-- WordPress core RSS and Atom discovery links are removed from the document head while atshift Feed Builder is active.
+- WordPress standard feed discovery remains available unless a publisher explicitly disables that feed destination.
+- Custom feeds are added to the document head only when the publisher enables discovery for that feed.
