@@ -236,14 +236,17 @@ msgid "Publication method"
 msgstr "公開方法"
 
 #: includes/class-atshift-feed-builder-admin.php:289
-msgid "Replace a standard feed"
-msgstr "標準フィードを置き換える"
+msgid "Customize a standard feed"
+msgstr "標準フィードの内容を整える"
 
 #: includes/class-atshift-feed-builder-admin.php:289
 msgid "Keep the WordPress URL and replace its RSS output."
 msgstr "WordPressのURLを維持してRSS出力を置き換えます。"
 
 #: includes/class-atshift-feed-builder-admin.php:290
+msgid "Create a custom feed"
+msgstr "カスタムフィードを作成する"
+
 #: includes/class-atshift-feed-builder-admin.php:1120
 msgid "Custom feed"
 msgstr "カスタムフィード"
@@ -254,7 +257,7 @@ msgstr "独自スラッグを使った別URLで公開します。"
 
 #: includes/class-atshift-feed-builder-admin.php:291
 msgid "Disable a standard feed"
-msgstr "標準フィードを無効化"
+msgstr "標準のフィードを無効化する"
 
 #: includes/class-atshift-feed-builder-admin.php:291
 msgid "Remove its discovery link and return not found at that RSS URL."

@@ -218,7 +218,7 @@ msgid "Publication method"
 msgstr ""
 
 #: includes/class-atshift-feed-builder-admin.php:289
-msgid "Replace a standard feed"
+msgid "Customize a standard feed"
 msgstr ""
 
 #: includes/class-atshift-feed-builder-admin.php:289
@@ -226,6 +226,9 @@ msgid "Keep the WordPress URL and replace its RSS output."
 msgstr ""
 
 #: includes/class-atshift-feed-builder-admin.php:290
+msgid "Create a custom feed"
+msgstr ""
+
 #: includes/class-atshift-feed-builder-admin.php:1120
 msgid "Custom feed"
 msgstr ""

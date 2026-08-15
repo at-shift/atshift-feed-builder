@@ -286,8 +286,8 @@ class Atshift_Feed_Builder_Admin {
 					<span class="atfb-field-label"><?php esc_html_e( 'Publication method', 'atshift-feed-builder' ); ?></span>
 					<?php if ( 'rss' === $format ) : ?>
 						<div class="atfb-publication-options">
-							<label><input type="radio" name="atfb_publication_mode" value="standard" <?php checked( $publication_mode, 'standard' ); ?>><span><strong><?php esc_html_e( 'Replace a standard feed', 'atshift-feed-builder' ); ?></strong><small><?php esc_html_e( 'Keep the WordPress URL and replace its RSS output.', 'atshift-feed-builder' ); ?></small></span></label>
-							<label><input type="radio" name="atfb_publication_mode" value="custom" <?php checked( $publication_mode, 'custom' ); ?>><span><strong><?php esc_html_e( 'Custom feed', 'atshift-feed-builder' ); ?></strong><small><?php esc_html_e( 'Publish at a separate URL with a custom slug.', 'atshift-feed-builder' ); ?></small></span></label>
+							<label><input type="radio" name="atfb_publication_mode" value="standard" <?php checked( $publication_mode, 'standard' ); ?>><span><strong><?php esc_html_e( 'Customize a standard feed', 'atshift-feed-builder' ); ?></strong><small><?php esc_html_e( 'Keep the WordPress URL and replace its RSS output.', 'atshift-feed-builder' ); ?></small></span></label>
+							<label><input type="radio" name="atfb_publication_mode" value="custom" <?php checked( $publication_mode, 'custom' ); ?>><span><strong><?php esc_html_e( 'Create a custom feed', 'atshift-feed-builder' ); ?></strong><small><?php esc_html_e( 'Publish at a separate URL with a custom slug.', 'atshift-feed-builder' ); ?></small></span></label>
 							<label><input type="radio" name="atfb_publication_mode" value="disabled" <?php checked( $publication_mode, 'disabled' ); ?>><span><strong><?php esc_html_e( 'Disable a standard feed', 'atshift-feed-builder' ); ?></strong><small><?php esc_html_e( 'Remove its discovery link and return not found at that RSS URL.', 'atshift-feed-builder' ); ?></small></span></label>
 						</div>
 					<?php else : ?>
