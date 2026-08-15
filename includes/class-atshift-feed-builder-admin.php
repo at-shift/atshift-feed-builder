@@ -314,7 +314,7 @@ class Atshift_Feed_Builder_Admin {
 						<input type="text" class="regular-text" id="atfb-slug" name="atfb_slug" value="<?php echo esc_attr( $post->post_name ); ?>" placeholder="news">
 						<p class="description"><?php esc_html_e( 'Changing this value changes the public feed URL.', 'atshift-feed-builder' ); ?></p>
 					</div>
-					<label class="atfb-discovery-option"><input type="checkbox" name="atfb_discovery" value="1" <?php checked( $discovery ); ?>><span><strong><?php esc_html_e( 'Advertise this feed in the page head', 'atshift-feed-builder' ); ?></strong><small><?php esc_html_e( 'Adds an alternate feed link so browsers and services can discover this custom feed.', 'atshift-feed-builder' ); ?></small></span></label>
+					<label class="atfb-discovery-option"><input type="checkbox" name="atfb_discovery" value="1" <?php checked( $discovery ); ?>><span><strong><?php esc_html_e( 'Publish this feed', 'atshift-feed-builder' ); ?></strong><small><?php esc_html_e( 'Adds an alternate feed link to the page <head> so browsers and external services can discover this custom feed.', 'atshift-feed-builder' ); ?></small></span></label>
 				</div>
 			</section>
 

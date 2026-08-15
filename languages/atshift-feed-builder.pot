@@ -276,13 +276,13 @@ msgid "Changing this value changes the public feed URL."
 msgstr ""
 
 #: includes/class-atshift-feed-builder-admin.php:317
-msgid "Advertise this feed in the page head"
+msgid "Publish this feed"
 msgstr ""
 
 #: includes/class-atshift-feed-builder-admin.php:317
 msgid ""
-"Adds an alternate feed link so browsers and services can discover this "
-"custom feed."
+"Adds an alternate feed link to the page <head> so browsers and external "
+"services can discover this custom feed."
 msgstr ""
 
 #: includes/class-atshift-feed-builder-admin.php:322

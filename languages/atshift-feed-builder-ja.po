@@ -301,16 +301,16 @@ msgid "Changing this value changes the public feed URL."
 msgstr "この値を変更すると、公開フィードURLも変わります。"
 
 #: includes/class-atshift-feed-builder-admin.php:317
-msgid "Advertise this feed in the page head"
-msgstr "ページのheadでこのフィードを案内"
+msgid "Publish this feed"
+msgstr "このフィードを配信する"
 
 #: includes/class-atshift-feed-builder-admin.php:317
 msgid ""
-"Adds an alternate feed link so browsers and services can discover this "
-"custom feed."
+"Adds an alternate feed link to the page <head> so browsers and external "
+"services can discover this custom feed."
 msgstr ""
-"alternateフィードリンクを追加し、ブラウザーや外部サービスがこのカスタムフィー"
-"ドを発見できるようにします。"
+"ページの<head>内にalternateフィードリンクを追加して、ブラウザーや外部サービス"
+"がこのカスタムフィードを発見できるようにします。"
 
 #: includes/class-atshift-feed-builder-admin.php:322
 msgid "Content types"
