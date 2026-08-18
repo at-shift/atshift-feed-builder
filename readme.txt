@@ -4,7 +4,7 @@ Tags: rss, json feed, custom fields, structured data, ai
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.2.0-beta.1
+Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,12 @@ The first release includes:
 
 atshift Fields and atshift User Profile Fields are optional integrations. atshift Feed Builder remains independently usable for standard WordPress post data.
 
+== Privacy ==
+
+atshift Feed Builder does not send site data to the plugin author or any external service. It does not include analytics, telemetry, advertising, or remote executable code.
+
+Feeds created with this plugin are public URLs. Only explicitly mapped values are output, and protected authentication, session, token, and capability keys are blocked. Site administrators are responsible for reviewing mappings before publication, especially fields that may contain personal information.
+
 == Installation ==
 
 1. Upload the plugin directory to `/wp-content/plugins/`.
@@ -44,11 +50,12 @@ atshift Fields and atshift User Profile Fields are optional integrations. atshif
 
 == Changelog ==
 
-= 0.2.0-beta.1 =
+= 0.3.0 =
 
-* Added WordPress standard feed replacement for posts, public custom post type archives, and public taxonomy term feeds.
-* Added explicit controls to keep custom feeds separate, advertise them in the document head, or disable a selected standard feed.
-* Restored WordPress standard feed discovery by default and preserved existing URLs when replacements are assigned.
+* Initial stable release of the RSS 2.0 and JSON Feed 1.1 builder.
+* Added WordPress standard feed replacement for posts, public custom post type archives, and public taxonomy term feeds while preserving their URLs.
+* Added explicit controls for custom feed discovery and disabling selected standard feeds.
+* Added allow-listed mappings for WordPress, atshift Fields, UPF, post meta, and supported custom field plugins.
 
 = 0.1.0 =
 

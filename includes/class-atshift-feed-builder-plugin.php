@@ -250,6 +250,7 @@ class Atshift_Feed_Builder_Plugin {
 				'post_status'    => 'publish',
 				'posts_per_page' => -1,
 				'no_found_rows'  => true,
+				// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- Discovery is an explicit per-feed setting and the query only scans the private feed configuration post type.
 				'meta_query'     => array(
 					array(
 						'key'   => '_atfb_discovery',
@@ -447,6 +448,7 @@ class Atshift_Feed_Builder_Plugin {
 				'orderby'        => 'modified',
 				'order'          => 'DESC',
 				'no_found_rows'  => true,
+				// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- Standard destination and publication mode are the indexed configuration lookup for this private post type.
 				'meta_query'     => array(
 					'relation' => 'AND',
 					array(

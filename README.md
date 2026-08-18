@@ -11,7 +11,7 @@
 
 atshift Feed Builder turns structured information stored in WordPress into purpose-specific RSS 2.0 and JSON Feed 1.1 feeds. It works as a standalone plugin and adds deeper field discovery when atshift Fields or atshift User Profile Fields is active.
 
-> This repository currently contains a public beta. Test it on a staging site before using it in production.
+The current stable release is version 0.3.0. Review every mapping on a staging site before publishing a new feed in production.
 
 ## Features
 
@@ -38,7 +38,7 @@ atshift Fields, atshift User Profile Fields, and supported third-party field plu
 
 ## Installation
 
-1. Download the beta ZIP from [GitHub Releases](https://github.com/at-shift/atshift-feed-builder/releases).
+1. Download the latest ZIP from [GitHub Releases](https://github.com/at-shift/atshift-feed-builder/releases).
 2. In WordPress, open **Plugins > Add Plugin > Upload Plugin**.
 3. Upload the ZIP and activate **atshift Feed Builder**.
 4. Open **atshift Feed Builder > Add New Feed**.

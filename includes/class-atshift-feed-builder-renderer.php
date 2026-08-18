@@ -67,6 +67,7 @@ class Atshift_Feed_Builder_Renderer {
 			}
 		}
 		if ( 1 < count( $tax_query ) ) {
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Taxonomy filtering is an explicit feed-builder feature selected by an administrator.
 			$query_args['tax_query'] = $tax_query;
 		}
 
@@ -85,6 +86,7 @@ class Atshift_Feed_Builder_Renderer {
 			$meta_query[] = $clause;
 		}
 		if ( 1 < count( $meta_query ) ) {
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- Meta filtering is an explicit, bounded feed-builder feature selected by an administrator.
 			$query_args['meta_query'] = $meta_query;
 		}
 

@@ -881,10 +881,11 @@ class Atshift_Feed_Builder_Admin {
 			$raw,
 			'custom' === $mode ? null : Atshift_Feed_Builder_Plugin::get_standard_target_post_types( $target )
 		);
+		$discovery = isset( $_POST['atfb_discovery'] ) ? sanitize_text_field( wp_unslash( $_POST['atfb_discovery'] ) ) : '';
 
 		update_post_meta( $post_id, '_atfb_settings', $settings );
 		update_post_meta( $post_id, '_atfb_publication_mode', $mode );
-		update_post_meta( $post_id, '_atfb_discovery', 'custom' === $mode && ! empty( $_POST['atfb_discovery'] ) ? '1' : '0' );
+		update_post_meta( $post_id, '_atfb_discovery', 'custom' === $mode && '1' === $discovery ? '1' : '0' );
 		if ( 'custom' !== $mode ) {
 			update_post_meta( $post_id, '_atfb_standard_target', $target );
 			if ( 'publish' === $post->post_status ) {
@@ -977,9 +978,9 @@ class Atshift_Feed_Builder_Admin {
 				'post_type'      => Atshift_Feed_Builder_Plugin::POST_TYPE,
 				'post_status'    => array( 'publish', 'draft', 'pending', 'private', 'future' ),
 				'posts_per_page' => -1,
-				'post__not_in'   => array( $post_id ),
 				'fields'         => 'ids',
 				'no_found_rows'  => true,
+				// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- Releasing duplicate standard destinations requires an exact lookup within the private feed configuration post type.
 				'meta_query'     => array(
 					array(
 						'key'   => '_atfb_standard_target',
@@ -990,6 +991,9 @@ class Atshift_Feed_Builder_Admin {
 		);
 
 		foreach ( $duplicates as $duplicate_id ) {
+			if ( $post_id === $duplicate_id ) {
+				continue;
+			}
 			$duplicate_mode = Atshift_Feed_Builder_Plugin::get_publication_mode( $duplicate_id );
 			if ( in_array( $duplicate_mode, array( 'standard', 'disabled' ), true ) ) {
 				update_post_meta( $duplicate_id, '_atfb_publication_mode', 'custom' );
