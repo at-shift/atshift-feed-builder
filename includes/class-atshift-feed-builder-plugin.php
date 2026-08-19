@@ -73,10 +73,70 @@ class Atshift_Feed_Builder_Plugin {
 		add_action( 'updated_user_meta', array( $this, 'bump_cache_version' ) );
 		add_action( 'deleted_user_meta', array( $this, 'bump_cache_version' ) );
 		add_action( 'updated_option', array( $this, 'maybe_bump_for_option' ), 10, 1 );
+		add_filter( 'plugin_action_links_' . plugin_basename( ATSHIFT_FEED_BUILDER_FILE ), array( $this, 'filter_plugin_action_links' ) );
+		add_filter( 'plugin_row_meta', array( $this, 'filter_plugin_row_meta' ), 10, 4 );
 
 		if ( is_admin() ) {
 			new Atshift_Feed_Builder_Admin( $this->adapters );
 		}
+	}
+
+	/**
+	 * Add the settings shortcut before the standard deactivate link.
+	 *
+	 * @param array<string, string> $links Existing plugin action links.
+	 * @return array<string, string>
+	 */
+	public function filter_plugin_action_links( $links ) {
+		$actions = array(
+			'settings' => sprintf(
+				'<a href="%1$s">%2$s</a>',
+				esc_url( admin_url( 'edit.php?post_type=' . self::POST_TYPE ) ),
+				esc_html__( 'Settings' )
+			),
+		);
+
+		return array_merge( $actions, $links );
+	}
+
+	/**
+	 * Build the plugin metadata row in the shared atshift order.
+	 *
+	 * @param array<int, string>   $links       Existing plugin metadata links.
+	 * @param string               $plugin_file Plugin basename.
+	 * @param array<string, mixed> $plugin_data Parsed plugin headers.
+	 * @param string               $status      Plugin status.
+	 * @return array<int, string>
+	 */
+	public function filter_plugin_row_meta( $links, $plugin_file, $plugin_data, $status ) {
+		$original_links = $links;
+		unset( $status );
+
+		if ( plugin_basename( ATSHIFT_FEED_BUILDER_FILE ) !== $plugin_file ) {
+			return $original_links;
+		}
+
+		$details_url = 0 === strpos( determine_locale(), 'ja' )
+			? 'https://upf.at-shift.net/feed-builder/'
+			: 'https://upf.at-shift.net/en/feed-builder/';
+
+		return array(
+			sprintf(
+				/* translators: %s: Plugin version. */
+				esc_html__( 'Version %s' ),
+				esc_html( isset( $plugin_data['Version'] ) ? $plugin_data['Version'] : ATSHIFT_FEED_BUILDER_VERSION )
+			),
+			sprintf(
+				/* translators: %s: Plugin author. */
+				__( 'By %s' ),
+				'<a href="' . esc_url( 'https://cfs.at-shift.net/' ) . '" target="_blank" rel="noopener noreferrer">@shift</a>'
+			),
+			sprintf(
+				'<a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a>',
+				esc_url( $details_url ),
+				esc_html__( 'View details' )
+			),
+		);
 	}
 
 	/**

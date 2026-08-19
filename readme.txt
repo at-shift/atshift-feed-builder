@@ -4,7 +4,7 @@ Tags: rss, json feed, custom fields, structured data, ai
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.3.0
+Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,10 @@ Feeds created with this plugin are public URLs. Only explicitly mapped values ar
 5. Map each output field to a WordPress, atshift Fields, UPF, post_meta, Pods, or fixed value.
 
 == Changelog ==
+
+= 0.3.1 =
+
+* Added settings and standardized metadata links to the Plugins screen.
 
 = 0.3.0 =
 
