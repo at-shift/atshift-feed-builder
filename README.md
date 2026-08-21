@@ -55,6 +55,30 @@ For RSS, choose one publication method:
 
 Then choose the content types, optional delivery filters, item limit, ordering, and output mappings. The preview uses the first matching published item and does not require saving temporary changes.
 
+## Screenshots
+
+### Choose how to publish
+
+<img src="screenshots/choose-publication-method.png" width="900" alt="Choose whether to replace a WordPress standard feed or create a custom RSS or JSON feed">
+
+### Map structured values
+
+<img src="screenshots/value-source-menu.png" width="900" alt="Choose WordPress, atshift Fields, supported custom field, fixed, or empty values for a feed field">
+
+<details>
+<summary>RSS 2.0 feed editor</summary>
+
+<img src="screenshots/rss-feed-editor.png" width="900" alt="RSS 2.0 feed editor with source, delivery, and output mapping settings">
+
+</details>
+
+<details>
+<summary>JSON Feed 1.1 editor</summary>
+
+<img src="screenshots/json-feed-editor.png" width="900" alt="JSON Feed 1.1 editor with source, metadata, and item mapping settings">
+
+</details>
+
 ## Feed URLs
 
 Standard RSS customization keeps the WordPress URL for the selected destination. This includes the main posts feed, public custom post type archive feeds, and public taxonomy term feeds.

@@ -56,6 +56,13 @@ Feeds created with this plugin are public URLs. Only explicitly mapped values ar
 
 atshift Fields and atshift User Profile Fields are optional. When they are active, their field definitions and saved values become available as mapping sources.
 
+== Screenshots ==
+
+1. Choose whether to replace a WordPress standard RSS feed or create a custom RSS 2.0 or JSON Feed 1.1 feed.
+2. Select WordPress values, atshift Fields, supported custom-field integrations, fixed values, or no output for each feed field.
+3. Configure the source, delivery settings, and RSS 2.0 output mappings in one feed editor.
+4. Configure JSON Feed 1.1 metadata and item mappings with format-specific field names.
+
 == Related Projects ==
 
 * [atshift User Profile Fields](https://wordpress.org/plugins/atshift-user-profile-fields/) - create and manage structured custom fields for WordPress users.
