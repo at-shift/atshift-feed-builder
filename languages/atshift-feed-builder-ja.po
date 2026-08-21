@@ -1062,8 +1062,8 @@ msgstr "atshift User Profile Fields（投稿者）"
 
 #. Description of the plugin
 #: atshift-feed-builder.php
-msgid "Build safe RSS and JSON feeds from WordPress, atshift Fields, and atshift User Profile Fields data."
-msgstr "WordPress、atshift Fields、atshift User Profile Fieldsのデータから、安全なRSSフィードとJSONフィードを作成します。"
+msgid "Build safe RSS and JSON feeds from WordPress posts, custom fields, and author profile data."
+msgstr "WordPressの投稿、カスタムフィールド、投稿者プロフィールのデータから、安全なRSSフィードとJSONフィードを作成します。"
 
 #. Plugin URI of the plugin
 #: atshift-feed-builder.php

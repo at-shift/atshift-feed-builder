@@ -8,7 +8,7 @@ Stable tag: 0.3.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Build safe RSS 2.0 and JSON Feed 1.1 feeds from WordPress, atshift Fields, and atshift User Profile Fields data.
+Build safe RSS 2.0 and JSON Feed 1.1 feeds from WordPress posts, custom fields, and author profile data.
 
 == Description ==
 

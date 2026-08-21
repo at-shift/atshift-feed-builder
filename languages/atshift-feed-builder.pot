@@ -27,7 +27,7 @@ msgstr ""
 
 #. Description of the plugin
 #: atshift-feed-builder.php
-msgid "Build safe RSS and JSON feeds from WordPress, atshift Fields, and atshift User Profile Fields data."
+msgid "Build safe RSS and JSON feeds from WordPress posts, custom fields, and author profile data."
 msgstr ""
 
 #. Author of the plugin
