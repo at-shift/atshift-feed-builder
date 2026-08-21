@@ -11,7 +11,7 @@
 
 atshift Feed Builder turns structured information stored in WordPress into purpose-specific RSS 2.0 and JSON Feed 1.1 feeds. It works as a standalone plugin and adds deeper field discovery when atshift Fields or atshift User Profile Fields is active.
 
-The current stable release is version 0.3.2. Review every mapping on a staging site before publishing a new feed in production.
+The current stable release is version 0.3.3. Review every mapping on a staging site before publishing a new feed in production.
 
 ## Features
 
@@ -83,11 +83,11 @@ Then choose the content types, optional delivery filters, item limit, ordering, 
 
 Standard RSS customization keeps the WordPress URL for the selected destination. This includes the main posts feed, public custom post type archive feeds, and public taxonomy term feeds.
 
-Custom feeds use the plugin endpoint:
+Custom feeds use a site-owned endpoint without a plugin-name prefix:
 
 ```text
-/atshift-feed/{feed-slug}/rss/
-/atshift-feed/{feed-slug}/json/
+/feeds/{feed-slug}/rss/
+/feeds/{feed-slug}/json/
 ```
 
 A custom feed can add an alternate feed link to the page `<head>` so browsers and external services can discover it.

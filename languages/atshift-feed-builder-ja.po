@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: atshift Feed Builder 0.3.2\n"
+"Project-Id-Version: atshift Feed Builder 0.3.3\n"
 "Report-Msgid-Bugs-To: https://upf.at-shift.net/feed-builder/\n"
 "Last-Translator: @shift\n"
 "Language-Team: Japanese\n"

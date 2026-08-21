@@ -11,6 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Atshift_Feed_Builder_Plugin {
 	const POST_TYPE = 'atfb_feed';
+	const REWRITE_VERSION = '2';
 
 	/** @var self|null */
 	private static $instance;
@@ -54,6 +55,7 @@ class Atshift_Feed_Builder_Plugin {
 
 		add_action( 'init', array( $this, 'register_post_type' ) );
 		add_action( 'init', array( $this, 'add_rewrite_rules' ) );
+		add_action( 'init', array( $this, 'maybe_flush_rewrite_rules' ), 99 );
 		add_filter( 'query_vars', array( $this, 'add_query_vars' ) );
 		add_action( 'template_redirect', array( $this, 'serve_feed' ), 0 );
 		add_action( 'wp_head', array( $this, 'print_custom_feed_discovery_links' ), 4 );
@@ -202,20 +204,31 @@ class Atshift_Feed_Builder_Plugin {
 	}
 
 	public function add_rewrite_rules() {
-		add_rewrite_rule( '^atshift-feed/([^/]+)/(rss|json)/?$', 'index.php?atfb_feed=$matches[1]&atfb_format=$matches[2]', 'top' );
+		add_rewrite_rule( '^feeds/([^/]+)/(rss|json)/?$', 'index.php?atfb_feed=$matches[1]&atfb_format=$matches[2]', 'top' );
+		add_rewrite_rule( '^atshift-feed/([^/]+)/(rss|json)/?$', 'index.php?atfb_feed=$matches[1]&atfb_format=$matches[2]&atfb_legacy=1', 'top' );
 	}
 
 	public function add_query_vars( $vars ) {
 		$vars[] = 'atfb_feed';
 		$vars[] = 'atfb_format';
+		$vars[] = 'atfb_legacy';
 		return $vars;
+	}
+
+	public function maybe_flush_rewrite_rules() {
+		if ( self::REWRITE_VERSION === (string) get_option( 'atshift_feed_builder_rewrite_version', '' ) ) {
+			return;
+		}
+
+		flush_rewrite_rules( false );
+		update_option( 'atshift_feed_builder_rewrite_version', self::REWRITE_VERSION, false );
 	}
 
 	public function serve_feed() {
 		$slug = sanitize_title( (string) get_query_var( 'atfb_feed' ) );
 
 		if ( '' !== $slug ) {
-			$this->serve_custom_feed( $slug );
+			$this->serve_custom_feed( $slug, (bool) get_query_var( 'atfb_legacy' ) );
 		}
 
 		if ( ! is_feed() || is_comment_feed() ) {
@@ -258,7 +271,7 @@ class Atshift_Feed_Builder_Plugin {
 		$this->serve_configured_feed( $feed, 'rss', $context );
 	}
 
-	private function serve_custom_feed( $slug ) {
+	private function serve_custom_feed( $slug, $legacy = false ) {
 		$format = sanitize_key( (string) get_query_var( 'atfb_format' ) );
 		if ( ! in_array( $format, array( 'rss', 'json' ), true ) ) {
 			$this->send_not_found();
@@ -274,6 +287,10 @@ class Atshift_Feed_Builder_Plugin {
 		}
 		if ( 'custom' !== self::get_publication_mode( $feed->ID ) ) {
 			$this->send_not_found();
+		}
+		if ( $legacy ) {
+			wp_safe_redirect( self::get_feed_url( $feed, $format ), 301, 'atshift Feed Builder' );
+			exit;
 		}
 
 		$this->serve_configured_feed( $feed, $format );
@@ -617,7 +634,7 @@ class Atshift_Feed_Builder_Plugin {
 			);
 		}
 
-		return home_url( user_trailingslashit( 'atshift-feed/' . $feed->post_name . '/' . $format ) );
+		return home_url( user_trailingslashit( 'feeds/' . $feed->post_name . '/' . $format ) );
 	}
 
 	public static function activate() {
@@ -632,6 +649,7 @@ class Atshift_Feed_Builder_Plugin {
 
 		add_option( 'atshift_feed_builder_cache_version', 1, '', false );
 		add_option( 'atshift_feed_builder_last_change_gmt', gmdate( 'Y-m-d H:i:s' ), '', false );
+		update_option( 'atshift_feed_builder_rewrite_version', self::REWRITE_VERSION, false );
 		self::instance()->register_post_type();
 		self::instance()->add_rewrite_rules();
 		flush_rewrite_rules();
