@@ -34,6 +34,65 @@ The first release includes:
 
 atshift Fields and atshift User Profile Fields are optional integrations. atshift Feed Builder remains independently usable for standard WordPress post data.
 
+= Developer integration =
+
+Plugins can add selectable mapping sources with the `atshift_feed_builder_source_adapters` filter. Register the filter on `plugins_loaded` before priority 20 and provide an object that implements `Atshift_Feed_Builder_Source_Adapter`.
+
+    add_action(
+        'plugins_loaded',
+        static function () {
+            if ( ! interface_exists( 'Atshift_Feed_Builder_Source_Adapter' ) ) {
+                return;
+            }
+
+            add_filter(
+                'atshift_feed_builder_source_adapters',
+                static function ( $adapters ) {
+                    $adapters['example'] = new class implements Atshift_Feed_Builder_Source_Adapter {
+                        public function get_id() {
+                            return 'example';
+                        }
+
+                        public function get_label() {
+                            return 'Example fields';
+                        }
+
+                        public function is_available() {
+                            return true;
+                        }
+
+                        public function get_fields() {
+                            return array(
+                                'rating' => array(
+                                    'id'        => 'rating',
+                                    'label'     => 'Rating',
+                                    'type'      => 'number',
+                                    'sensitive' => false,
+                                ),
+                            );
+                        }
+
+                        public function get_values( $post, $field_ids ) {
+                            $values = array();
+                            if ( in_array( 'rating', $field_ids, true ) ) {
+                                $values['rating'] = get_post_meta( $post->ID, '_example_rating', true );
+                            }
+                            return $values;
+                        }
+                    };
+                    return $adapters;
+                }
+            );
+        },
+        10
+    );
+
+Field definitions may use `string`, `url`, `image`, `html`, `number`, `boolean`, `datetime`, or `list`. Set `sensitive` to `true` to display a personal-information warning in the editor. For integrations where administrators enter a field key manually, implement `Atshift_Feed_Builder_Manual_Source_Adapter` as well.
+
+Adapters must expose only values intended for public feeds and must validate manually entered keys. Authentication, session, token, capability, password, and other protected values must never be returned.
+
+See the [adapter contract](https://github.com/at-shift/atshift-feed-builder/blob/main/includes/interface-atshift-feed-builder-source-adapter.php) and [bundled adapter examples](https://github.com/at-shift/atshift-feed-builder/tree/main/includes/adapters) for the complete API.
+
 == Links ==
 
 * Official website: [upf.at-shift.net/feed-builder](https://upf.at-shift.net/feed-builder/)
