@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: atshift Feed Builder
- * Plugin URI: https://upf.at-shift.net/feed-builder/
+ * Plugin URI: https://upf.at-shift.net/en/feed-builder/
  * Description: Build safe RSS and JSON feeds from WordPress posts, custom fields, and author profile data.
  * Version: 0.3.3
  * Author: @shift
- * Author URI: https://cfs.at-shift.net/
+ * Author URI: https://cfs.at-shift.net/en/
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: atshift-feed-builder

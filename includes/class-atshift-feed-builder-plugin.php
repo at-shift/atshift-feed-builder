@@ -121,6 +121,9 @@ class Atshift_Feed_Builder_Plugin {
 		$details_url = 0 === strpos( determine_locale(), 'ja' )
 			? 'https://upf.at-shift.net/feed-builder/'
 			: 'https://upf.at-shift.net/en/feed-builder/';
+		$author_url = 0 === strpos( determine_locale(), 'ja' )
+			? 'https://cfs.at-shift.net/'
+			: 'https://cfs.at-shift.net/en/';
 
 		return array(
 			sprintf(
@@ -131,7 +134,7 @@ class Atshift_Feed_Builder_Plugin {
 			sprintf(
 				/* translators: %s: Plugin author. */
 				__( 'By %s', 'atshift-feed-builder' ),
-				'<a href="' . esc_url( 'https://cfs.at-shift.net/' ) . '" target="_blank" rel="noopener noreferrer">@shift</a>'
+				'<a href="' . esc_url( $author_url ) . '" target="_blank" rel="noopener noreferrer">@shift</a>'
 			),
 			sprintf(
 				'<a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a>',

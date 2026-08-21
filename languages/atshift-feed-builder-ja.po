@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atshift Feed Builder 0.3.3\n"
-"Report-Msgid-Bugs-To: https://upf.at-shift.net/feed-builder/\n"
+"Report-Msgid-Bugs-To: https://upf.at-shift.net/en/feed-builder/\n"
 "Last-Translator: @shift\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -1067,8 +1067,8 @@ msgstr "WordPressの投稿、カスタムフィールド、投稿者プロフィ
 
 #. Plugin URI of the plugin
 #: atshift-feed-builder.php
-msgid "https://upf.at-shift.net/feed-builder/"
-msgstr ""
+msgid "https://upf.at-shift.net/en/feed-builder/"
+msgstr "https://upf.at-shift.net/feed-builder/"
 
 #. Author of the plugin
 #: atshift-feed-builder.php
@@ -1077,8 +1077,8 @@ msgstr ""
 
 #. Author URI of the plugin
 #: atshift-feed-builder.php
-msgid "https://cfs.at-shift.net/"
-msgstr ""
+msgid "https://cfs.at-shift.net/en/"
+msgstr "https://cfs.at-shift.net/"
 
 #: includes/class-atshift-feed-builder-plugin.php:95
 msgid "Settings"
