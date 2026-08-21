@@ -4,7 +4,7 @@ Tags: rss, json feed, custom fields, structured data, ai
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.3.1
+Stable tag: 0.3.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,10 @@ The first release includes:
 
 atshift Fields and atshift User Profile Fields are optional integrations. atshift Feed Builder remains independently usable for standard WordPress post data.
 
+== Links ==
+
+* Official website: [upf.at-shift.net/feed-builder](https://upf.at-shift.net/feed-builder/)
+
 == Privacy ==
 
 atshift Feed Builder does not send site data to the plugin author or any external service. It does not include analytics, telemetry, advertising, or remote executable code.
@@ -42,13 +46,27 @@ Feeds created with this plugin are public URLs. Only explicitly mapped values ar
 
 == Installation ==
 
-1. Upload the plugin directory to `/wp-content/plugins/`.
-2. Activate the plugin through the WordPress Plugins screen.
-3. Open atshift Feed Builder and choose RSS 2.0 or JSON Feed 1.1.
-4. Select posts, pages, or public custom post types.
-5. Map each output field to a WordPress, atshift Fields, UPF, post_meta, Pods, or fixed value.
+1. Upload the plugin folder to `/wp-content/plugins/`.
+2. Activate the plugin from the Plugins screen.
+3. Open atshift Feed Builder > Add New Feed in the WordPress administration menu.
+4. Choose whether to replace a WordPress standard RSS feed or add a custom RSS 2.0 or JSON Feed 1.1 feed.
+5. Select the posts, pages, or public custom post types to include.
+6. Map the output fields, then save the feed.
+7. Review the first-item preview and the XML or JSON source before sharing the feed URL.
+
+atshift Fields and atshift User Profile Fields are optional. When they are active, their field definitions and saved values become available as mapping sources.
+
+== Related Projects ==
+
+* [atshift User Profile Fields](https://wordpress.org/plugins/atshift-user-profile-fields/) - create and manage structured custom fields for WordPress users.
+* [at-shift Fields](https://wordpress.org/plugins/atshift-fields-maintenance-for-custom-field-suite/) - arrange custom fields for posts and public custom post types with a field-building interface.
+* [atshift Freeform Login](https://wordpress.org/plugins/atshift-freeform-login/) - add passkey login, customize the WordPress login screen, and place login controls with shortcodes.
 
 == Changelog ==
+
+= 0.3.2 =
+
+* Fixed translation domains for the Plugins screen links.
 
 = 0.3.1 =
 

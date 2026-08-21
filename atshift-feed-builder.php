@@ -3,7 +3,7 @@
  * Plugin Name: atshift Feed Builder
  * Plugin URI: https://upf.at-shift.net/feed-builder/
  * Description: Build safe RSS and JSON feeds from WordPress, atshift Fields, and atshift User Profile Fields data.
- * Version: 0.3.1
+ * Version: 0.3.2
  * Author: @shift
  * Author URI: https://cfs.at-shift.net/
  * License: GPLv2 or later
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ATSHIFT_FEED_BUILDER_VERSION', '0.3.1' );
+define( 'ATSHIFT_FEED_BUILDER_VERSION', '0.3.2' );
 define( 'ATSHIFT_FEED_BUILDER_FILE', __FILE__ );
 define( 'ATSHIFT_FEED_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ATSHIFT_FEED_BUILDER_URL', plugin_dir_url( __FILE__ ) );

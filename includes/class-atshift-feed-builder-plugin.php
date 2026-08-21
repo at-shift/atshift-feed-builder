@@ -92,7 +92,7 @@ class Atshift_Feed_Builder_Plugin {
 			'settings' => sprintf(
 				'<a href="%1$s">%2$s</a>',
 				esc_url( admin_url( 'edit.php?post_type=' . self::POST_TYPE ) ),
-				esc_html__( 'Settings' )
+				esc_html__( 'Settings', 'atshift-feed-builder' )
 			),
 		);
 
@@ -123,18 +123,18 @@ class Atshift_Feed_Builder_Plugin {
 		return array(
 			sprintf(
 				/* translators: %s: Plugin version. */
-				esc_html__( 'Version %s' ),
+				esc_html__( 'Version %s', 'atshift-feed-builder' ),
 				esc_html( isset( $plugin_data['Version'] ) ? $plugin_data['Version'] : ATSHIFT_FEED_BUILDER_VERSION )
 			),
 			sprintf(
 				/* translators: %s: Plugin author. */
-				__( 'By %s' ),
+				__( 'By %s', 'atshift-feed-builder' ),
 				'<a href="' . esc_url( 'https://cfs.at-shift.net/' ) . '" target="_blank" rel="noopener noreferrer">@shift</a>'
 			),
 			sprintf(
 				'<a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a>',
 				esc_url( $details_url ),
-				esc_html__( 'View details' )
+				esc_html__( 'View details', 'atshift-feed-builder' )
 			),
 		);
 	}

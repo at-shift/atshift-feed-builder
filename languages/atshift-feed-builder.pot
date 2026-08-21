@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: atshift Feed Builder 0.3.1\n"
+"Project-Id-Version: atshift Feed Builder 0.3.2\n"
 "Report-Msgid-Bugs-To: https://upf.at-shift.net/feed-builder/\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,27 @@ msgstr ""
 
 #. Author URI of the plugin
 #: atshift-feed-builder.php
-msgid "https://at-shift.net/"
+msgid "https://cfs.at-shift.net/"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-plugin.php:95
+msgid "Settings"
+msgstr ""
+
+#. translators: %s: Plugin version.
+#: includes/class-atshift-feed-builder-plugin.php:126
+#, php-format
+msgid "Version %s"
+msgstr ""
+
+#. translators: %s: Plugin author.
+#: includes/class-atshift-feed-builder-plugin.php:131
+#, php-format
+msgid "By %s"
+msgstr ""
+
+#: includes/class-atshift-feed-builder-plugin.php:137
+msgid "View details"
 msgstr ""
 
 #: includes/adapters/class-atshift-feed-builder-acf-adapter.php:18

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: atshift Feed Builder 0.3.1\n"
+"Project-Id-Version: atshift Feed Builder 0.3.2\n"
 "Report-Msgid-Bugs-To: https://upf.at-shift.net/feed-builder/\n"
 "Last-Translator: @shift\n"
 "Language-Team: Japanese\n"
@@ -1077,5 +1077,25 @@ msgstr ""
 
 #. Author URI of the plugin
 #: atshift-feed-builder.php
-msgid "https://at-shift.net/"
+msgid "https://cfs.at-shift.net/"
 msgstr ""
+
+#: includes/class-atshift-feed-builder-plugin.php:95
+msgid "Settings"
+msgstr "設定"
+
+#. translators: %s: Plugin version.
+#: includes/class-atshift-feed-builder-plugin.php:126
+#, php-format
+msgid "Version %s"
+msgstr "バージョン %s"
+
+#. translators: %s: Plugin author.
+#: includes/class-atshift-feed-builder-plugin.php:131
+#, php-format
+msgid "By %s"
+msgstr "作成者: %s"
+
+#: includes/class-atshift-feed-builder-plugin.php:137
+msgid "View details"
+msgstr "詳細を表示"
