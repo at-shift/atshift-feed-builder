@@ -117,7 +117,7 @@ Supported field types are `string`, `number`, `boolean`, `url`, `image`, `html`,
 ## Related Projects
 
 - [atshift Fields](https://wordpress.org/plugins/atshift-fields-maintenance-for-custom-field-suite/) structures fields for posts and custom post types.
-- [atshift User Profile Fields](https://github.com/at-shift/atshift-user-profile-fields) creates and organizes WordPress user profile fields.
+- [atshift User Profile Fields](https://wordpress.org/plugins/atshift-user-profile-fields/) creates and organizes WordPress user profile fields.
 - [atshift Freeform Login](https://wordpress.org/plugins/atshift-freeform-login/) designs the WordPress login screen and provides a matching login form shortcode.
 
 ## Reporting Issues
