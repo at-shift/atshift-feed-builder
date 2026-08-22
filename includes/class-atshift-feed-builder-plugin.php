@@ -74,6 +74,7 @@ class Atshift_Feed_Builder_Plugin {
 		add_action( 'added_user_meta', array( $this, 'bump_cache_version' ) );
 		add_action( 'updated_user_meta', array( $this, 'bump_cache_version' ) );
 		add_action( 'deleted_user_meta', array( $this, 'bump_cache_version' ) );
+		add_action( 'atshift_cfs_values_updated', array( $this, 'bump_cache_version' ) );
 		add_action( 'updated_option', array( $this, 'maybe_bump_for_option' ), 10, 1 );
 		add_filter( 'plugin_action_links_' . plugin_basename( ATSHIFT_FEED_BUILDER_FILE ), array( $this, 'filter_plugin_action_links' ) );
 		add_filter( 'plugin_row_meta', array( $this, 'filter_plugin_row_meta' ), 10, 4 );

@@ -71,6 +71,7 @@ class Atshift_Feed_Builder_UPF_Adapter implements Atshift_Feed_Builder_Source_Ad
 				'type'      => $this->map_type( $type ),
 				'raw_type'  => $type,
 				'sensitive' => $this->looks_sensitive( $key, $field['label'] ?? '', $type ),
+				'field'     => $field,
 			);
 		}
 
@@ -99,6 +100,9 @@ class Atshift_Feed_Builder_UPF_Adapter implements Atshift_Feed_Builder_Source_Ad
 			}
 
 			$definition = $definitions[ $field_id ];
+			if ( ! apply_filters( 'atshift_upf_can_publish_field', true, $definition['field'], $user->ID, 'feed' ) ) {
+				continue;
+			}
 			$value      = $this->get_user_value( $user, $field_id, $definition['raw_type'] );
 			$value      = Atshift_Feed_Builder_Normalizer::normalize( $value, $definition['type'] );
 

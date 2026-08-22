@@ -4,7 +4,7 @@ Tags: rss, json feed, custom fields, structured data, ai
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.3.3
+Stable tag: 0.3.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -129,6 +129,13 @@ atshift Fields and atshift User Profile Fields are optional. When they are activ
 * [atshift Freeform Login](https://wordpress.org/plugins/atshift-freeform-login/) - add passkey login, customize the WordPress login screen, and place login controls with shortcodes.
 
 == Changelog ==
+
+= 0.3.4 =
+
+* Honor UPF field-level publication checks when resolving post-author profile values.
+* Refresh feed caches after atshift Fields reports updated values.
+* Reviewed standalone operation and integrations between atshift projects with Codex Security Check, fixing potential defects and security issues and applying additional hardening.
+* Made other minor fixes.
 
 = 0.3.3 =
 

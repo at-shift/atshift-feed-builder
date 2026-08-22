@@ -11,7 +11,7 @@
 
 atshift Feed Builder turns WordPress posts, custom fields, and author profile data into purpose-specific RSS 2.0 and JSON Feed 1.1 feeds. It works as a standalone plugin and can discover field definitions from supported custom field plugins when they are active.
 
-The current stable release is version 0.3.3. Review every mapping on a staging site before publishing a new feed in production.
+The current stable release is version 0.3.4. Review every mapping on a staging site before publishing a new feed in production.
 
 ## Features
 
