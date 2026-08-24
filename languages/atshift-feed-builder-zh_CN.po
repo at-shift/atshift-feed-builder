@@ -4,1099 +4,1158 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atshift Feed Builder 1.0\n"
 "Report-Msgid-Bugs-To: https://upf.at-shift.net/en/feed-builder/\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-08-18T01:35:55+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-08-18T01:35:55+00:00\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: atshift-feed-builder\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Plugin Name of the plugin
-#: atshift-feed-builder.php
-#: includes/class-atshift-feed-builder-plugin.php:126
+#: atshift-feed-builder.php includes/class-atshift-feed-builder-plugin.php:126
 msgid "atshift Feed Builder"
-msgstr ""
+msgstr "atshift Feed Builder"
 
 #. Plugin URI of the plugin
 #: atshift-feed-builder.php
 msgid "https://upf.at-shift.net/en/feed-builder/"
-msgstr ""
+msgstr "https://upf.at-shift.net/en/feed-builder/"
 
 #. Description of the plugin
 #: atshift-feed-builder.php
-msgid "Build safe RSS and JSON feeds from WordPress posts, custom fields, and author profile data."
-msgstr ""
+msgid ""
+"Build safe RSS and JSON feeds from WordPress posts, custom fields, and "
+"author profile data."
+msgstr "使用 WordPress 文章、自定义字段和作者个人资料数据构建安全的 RSS 和 JSON 订阅源。"
 
 #. Author of the plugin
 #: atshift-feed-builder.php
 msgid "@shift"
-msgstr ""
+msgstr "@shift"
 
 #. Author URI of the plugin
 #: atshift-feed-builder.php
 msgid "https://cfs.at-shift.net/en/"
-msgstr ""
+msgstr "https://cfs.at-shift.net/en/"
 
 #: includes/class-atshift-feed-builder-plugin.php:95
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #. translators: %s: Plugin version.
 #: includes/class-atshift-feed-builder-plugin.php:126
 #, php-format
 msgid "Version %s"
-msgstr ""
+msgstr "版本 %s"
 
 #. translators: %s: Plugin author.
 #: includes/class-atshift-feed-builder-plugin.php:131
 #, php-format
 msgid "By %s"
-msgstr ""
+msgstr "开发者：%s"
 
 #: includes/class-atshift-feed-builder-plugin.php:137
 msgid "View details"
-msgstr ""
+msgstr "查看详情"
 
 #: includes/adapters/class-atshift-feed-builder-acf-adapter.php:18
 msgid "ACF / Secure Custom Fields field"
-msgstr ""
+msgstr "ACF / Secure Custom Fields 字段"
 
 #: includes/adapters/class-atshift-feed-builder-acf-adapter.php:30
 msgid "ACF / SCF field name"
-msgstr ""
+msgstr "ACF / SCF 字段名称"
 
 #: includes/adapters/class-atshift-feed-builder-acf-adapter.php:34
 msgid "Enter the ACF or Secure Custom Fields field name or field key."
-msgstr ""
+msgstr "输入 ACF 或 Secure Custom Fields 的字段名称或字段键。"
 
 #: includes/adapters/class-atshift-feed-builder-carbon-fields-adapter.php:18
 msgid "Carbon Fields field"
-msgstr ""
+msgstr "Carbon Fields 字段"
 
 #: includes/adapters/class-atshift-feed-builder-carbon-fields-adapter.php:30
 msgid "Carbon Fields field name"
-msgstr ""
+msgstr "Carbon Fields 字段名称"
 
 #: includes/adapters/class-atshift-feed-builder-carbon-fields-adapter.php:34
 msgid "Enter the Carbon Fields post meta field name."
-msgstr ""
+msgstr "输入 Carbon Fields 的文章元数据字段名称。"
 
 #: includes/adapters/class-atshift-feed-builder-fields-adapter.php:24
 msgid "atshift Fields"
-msgstr ""
+msgstr "atshift Fields"
 
 #: includes/adapters/class-atshift-feed-builder-meta-box-adapter.php:18
 msgid "Meta Box field"
-msgstr ""
+msgstr "Meta Box 字段"
 
 #: includes/adapters/class-atshift-feed-builder-meta-box-adapter.php:30
 msgid "Meta Box field ID"
-msgstr ""
+msgstr "Meta Box 字段 ID"
 
 #: includes/adapters/class-atshift-feed-builder-meta-box-adapter.php:34
 msgid "Enter the Meta Box field ID. Standard post storage is supported."
-msgstr ""
+msgstr "输入 Meta Box 字段 ID。支持标准文章存储方式。"
 
 #: includes/adapters/class-atshift-feed-builder-pods-adapter.php:18
 msgid "Pods field"
-msgstr ""
+msgstr "Pods 字段"
 
 #: includes/adapters/class-atshift-feed-builder-pods-adapter.php:35
 msgid "Pods field name"
-msgstr ""
+msgstr "Pods 字段名称"
 
 #: includes/adapters/class-atshift-feed-builder-pods-adapter.php:39
-msgid "Enter the Pods field name. The current post type and post ID are detected automatically."
-msgstr ""
+msgid ""
+"Enter the Pods field name. The current post type and post ID are detected "
+"automatically."
+msgstr "输入 Pods 字段名称。系统会自动检测当前文章类型和文章 ID。"
 
 #: includes/adapters/class-atshift-feed-builder-post-meta-adapter.php:18
 msgid "WordPress custom field (post_meta)"
-msgstr ""
+msgstr "WordPress 自定义字段（post_meta）"
 
 #: includes/adapters/class-atshift-feed-builder-post-meta-adapter.php:35
 #: includes/class-atshift-feed-builder-admin.php:405
 #: includes/class-atshift-feed-builder-admin.php:425
 msgid "Custom field key"
-msgstr ""
+msgstr "自定义字段键"
 
 #: includes/adapters/class-atshift-feed-builder-post-meta-adapter.php:39
-msgid "Enter a public post_meta key. This covers Custom Field Template and other plugins that use standard post meta."
-msgstr ""
+msgid ""
+"Enter a public post_meta key. This covers Custom Field Template and other "
+"plugins that use standard post meta."
+msgstr "输入公开的 post_meta 键。这适用于 Custom Field Template 以及其他使用标准文章元数据的插件。"
 
 #: includes/adapters/class-atshift-feed-builder-upf-adapter.php:21
 msgid "atshift User Profile Fields (post author)"
-msgstr ""
+msgstr "atshift User Profile Fields（文章作者）"
 
 #: includes/class-atshift-feed-builder-admin.php:38
 #: includes/class-atshift-feed-builder-admin.php:39
 #: includes/class-atshift-feed-builder-plugin.php:128
 msgid "Add New Feed"
-msgstr ""
+msgstr "添加新订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:69
 msgid "Choose how to publish the feed"
-msgstr ""
+msgstr "选择订阅源的发布方式"
 
 #: includes/class-atshift-feed-builder-admin.php:70
-msgid "Keep an existing WordPress feed URL and replace its output, or add a separate feed for a new purpose."
-msgstr ""
+msgid ""
+"Keep an existing WordPress feed URL and replace its output, or add a "
+"separate feed for a new purpose."
+msgstr "保留现有 WordPress 订阅源 URL 并替换其输出，或针对新用途添加独立订阅源。"
 
 #: includes/class-atshift-feed-builder-admin.php:72
 msgid "Replace a WordPress standard feed"
-msgstr ""
+msgstr "替换 WordPress 标准订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:73
-msgid "The existing RSS URL stays the same. WordPress continues to advertise that URL in the page head, while atshift Feed Builder controls its content."
-msgstr ""
+msgid ""
+"The existing RSS URL stays the same. WordPress continues to advertise that "
+"URL in the page head, while atshift Feed Builder controls its content."
+msgstr "现有 RSS URL 保持不变。WordPress 会继续在页面头部声明该 URL，而其内容由 atshift Feed Builder 控制。"
 
 #: includes/class-atshift-feed-builder-admin.php:79
 msgid "Standard feed to replace"
-msgstr ""
+msgstr "要替换的标准订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:85
 msgid "Create standard RSS feed"
-msgstr ""
+msgstr "创建标准 RSS 订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:90
 msgid "Add a custom feed"
-msgstr ""
+msgstr "添加自定义订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:91
-msgid "Create a separate URL with its own slug for a specific service, audience, or use case."
-msgstr ""
+msgid ""
+"Create a separate URL with its own slug for a specific service, audience, or "
+"use case."
+msgstr "使用独立别名创建单独的 URL，供特定服务、受众或使用场景使用。"
 
 #. translators: %s: Feed format name.
 #: includes/class-atshift-feed-builder-admin.php:106
 #, php-format
 msgid "Create %s feed"
-msgstr ""
+msgstr "创建 %s 订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:121
 msgid "You are not allowed to create feeds."
-msgstr ""
+msgstr "您无权创建订阅源。"
 
 #: includes/class-atshift-feed-builder-admin.php:132
 msgid "Invalid feed format."
-msgstr ""
+msgstr "订阅源格式无效。"
 
 #: includes/class-atshift-feed-builder-admin.php:135
 msgid "Invalid standard feed destination."
-msgstr ""
+msgstr "标准订阅源目标无效。"
 
 #. translators: %s: Feed format name.
 #: includes/class-atshift-feed-builder-admin.php:142
 #, php-format
 msgid "New %s feed"
-msgstr ""
+msgstr "新建 %s 订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:155
 msgid "The feed could not be created."
-msgstr ""
+msgstr "无法创建订阅源。"
 
 #: includes/class-atshift-feed-builder-admin.php:178
 msgid "Feed source"
-msgstr ""
+msgstr "订阅源来源"
 
 #. translators: %s: Feed format name.
 #: includes/class-atshift-feed-builder-admin.php:183
 #, php-format
 msgid "%s output mapping"
-msgstr ""
+msgstr "%s 输出映射"
 
 #: includes/class-atshift-feed-builder-admin.php:191
 #: includes/class-atshift-feed-builder-admin.php:1108
 msgid "Feed URL"
-msgstr ""
+msgstr "订阅源 URL"
 
 #: includes/class-atshift-feed-builder-admin.php:192
 msgid "Preview"
-msgstr ""
+msgstr "预览"
 
 #: includes/class-atshift-feed-builder-admin.php:203
 msgid "Help"
-msgstr ""
+msgstr "帮助"
 
 #: includes/class-atshift-feed-builder-admin.php:211
-msgid "The most recent update time in the feed, calculated automatically. Services use it to detect changes."
-msgstr ""
+msgid ""
+"The most recent update time in the feed, calculated automatically. Services "
+"use it to detect changes."
+msgstr "订阅源中的最近更新时间，由系统自动计算。服务会使用此时间检测更改。"
 
 #: includes/class-atshift-feed-builder-admin.php:212
 #: includes/class-atshift-feed-builder-admin.php:213
-msgid "The permanent public URL of this feed. It is generated automatically and tells services which URL is authoritative."
-msgstr ""
+msgid ""
+"The permanent public URL of this feed. It is generated automatically and "
+"tells services which URL is authoritative."
+msgstr "此订阅源的永久公开 URL。该 URL 会自动生成，用于告知服务哪个 URL 是规范地址。"
 
 #: includes/class-atshift-feed-builder-admin.php:214
 #: includes/class-atshift-feed-builder-admin.php:215
-msgid "The person or organization responsible for operating and publishing the feed, not necessarily the article author."
-msgstr ""
+msgid ""
+"The person or organization responsible for operating and publishing the "
+"feed, not necessarily the article author."
+msgstr "负责运营和发布订阅源的个人或组织，不一定是文章作者。"
 
 #: includes/class-atshift-feed-builder-admin.php:216
-msgid "A feed item is one published post included in the feed. This container is created automatically."
-msgstr ""
+msgid ""
+"A feed item is one published post included in the feed. This container is "
+"created automatically."
+msgstr "一个订阅源条目就是订阅源中包含的一篇已发布文章。此容器会自动创建。"
 
 #: includes/class-atshift-feed-builder-admin.php:217
 #: includes/class-atshift-feed-builder-admin.php:218
-msgid "Feed readers use this value to recognize the same post after an update and avoid duplicates. It should not change after publication."
-msgstr ""
+msgid ""
+"Feed readers use this value to recognize the same post after an update and "
+"avoid duplicates. It should not change after publication."
+msgstr "订阅阅读器使用此值在更新后识别同一篇文章并避免重复。发布后不应更改此值。"
 
 #: includes/class-atshift-feed-builder-admin.php:219
 #: includes/class-atshift-feed-builder-admin.php:220
-msgid "The public page readers open for this post. Custom post types also use their normal permalink."
-msgstr ""
+msgid ""
+"The public page readers open for this post. Custom post types also use their "
+"normal permalink."
+msgstr "读者打开此文章时访问的公开页面。自定义文章类型也使用其常规固定链接。"
 
 #: includes/class-atshift-feed-builder-admin.php:221
 #: includes/class-atshift-feed-builder-admin.php:222
 msgid "The person credited with writing or creating the post."
-msgstr ""
+msgstr "署名撰写或创建此文章的人员。"
 
 #: includes/class-atshift-feed-builder-admin.php:223
 #: includes/class-atshift-feed-builder-admin.php:224
-msgid "An optional person who checked or supervised the content. Leave it out when there is no reviewer."
-msgstr ""
+msgid ""
+"An optional person who checked or supervised the content. Leave it out when "
+"there is no reviewer."
+msgstr "检查或监督内容的可选人员。如果没有审核人，请勿输出此项。"
 
 #: includes/class-atshift-feed-builder-admin.php:225
 #: includes/class-atshift-feed-builder-admin.php:226
-msgid "The original or related source behind the post. Use this when the WordPress post summarizes information published elsewhere."
-msgstr ""
+msgid ""
+"The original or related source behind the post. Use this when the WordPress "
+"post summarizes information published elsewhere."
+msgstr "文章所依据的原始或相关来源。当 WordPress 文章总结其他位置发布的信息时使用此项。"
 
 #: includes/class-atshift-feed-builder-admin.php:227
 #: includes/class-atshift-feed-builder-admin.php:228
-msgid "Classification labels attached to the post. They help readers and services group or filter items."
-msgstr ""
+msgid ""
+"Classification labels attached to the post. They help readers and services "
+"group or filter items."
+msgstr "附加到文章的分类标签。它们可帮助读者和服务对条目进行分组或筛选。"
 
 #: includes/class-atshift-feed-builder-admin.php:229
-msgid "The representative image for the item. A fallback can be used when the post has no featured image."
-msgstr ""
+msgid ""
+"The representative image for the item. A fallback can be used when the post "
+"has no featured image."
+msgstr "条目的代表图片。文章没有特色图片时可以使用备用图片。"
 
 #: includes/class-atshift-feed-builder-admin.php:269
 msgid "Equals"
-msgstr ""
+msgstr "等于"
 
 #: includes/class-atshift-feed-builder-admin.php:270
 msgid "Does not equal"
-msgstr ""
+msgstr "不等于"
 
 #: includes/class-atshift-feed-builder-admin.php:271
 msgid "Contains"
-msgstr ""
+msgstr "包含"
 
 #: includes/class-atshift-feed-builder-admin.php:272
 msgid "Exists"
-msgstr ""
+msgstr "存在"
 
 #: includes/class-atshift-feed-builder-admin.php:273
 msgid "Does not exist"
-msgstr ""
+msgstr "不存在"
 
 #: includes/class-atshift-feed-builder-admin.php:279
 msgid "Output format"
-msgstr ""
+msgstr "输出格式"
 
 #: includes/class-atshift-feed-builder-admin.php:281
 msgid "The format is fixed for this feed."
-msgstr ""
+msgstr "此订阅源的格式固定不变。"
 
 #: includes/class-atshift-feed-builder-admin.php:286
 msgid "Publication method"
-msgstr ""
+msgstr "发布方式"
 
 #: includes/class-atshift-feed-builder-admin.php:289
 msgid "Customize a standard feed"
-msgstr ""
+msgstr "自定义标准订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:289
 msgid "Keep the WordPress URL and replace its RSS output."
-msgstr ""
+msgstr "保留 WordPress URL 并替换其 RSS 输出。"
 
 #: includes/class-atshift-feed-builder-admin.php:290
 msgid "Create a custom feed"
-msgstr ""
+msgstr "创建自定义订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:290
 msgid "Publish at a separate URL with a custom slug."
-msgstr ""
+msgstr "使用自定义别名发布到独立 URL。"
 
 #: includes/class-atshift-feed-builder-admin.php:291
 msgid "Disable a standard feed"
-msgstr ""
+msgstr "禁用标准订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:291
 msgid "Remove its discovery link and return not found at that RSS URL."
-msgstr ""
+msgstr "移除其发现链接，并让该 RSS URL 返回“未找到”。"
 
 #: includes/class-atshift-feed-builder-admin.php:295
-msgid "JSON Feed uses a custom URL because WordPress does not provide a standard JSON Feed endpoint."
-msgstr ""
+msgid ""
+"JSON Feed uses a custom URL because WordPress does not provide a standard "
+"JSON Feed endpoint."
+msgstr "JSON Feed 使用自定义 URL，因为 WordPress 不提供标准 JSON Feed 端点。"
 
 #: includes/class-atshift-feed-builder-admin.php:301
 msgid "Target WordPress standard feed"
-msgstr ""
+msgstr "目标 WordPress 标准订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:307
-msgid "Choose the standard WordPress feed affected by this setting. Category, tag, and taxonomy targets use each term's existing feed URL."
-msgstr ""
+msgid ""
+"Choose the standard WordPress feed affected by this setting. Category, tag, "
+"and taxonomy targets use each term's existing feed URL."
+msgstr "选择受此设置影响的 WordPress 标准订阅源。分类目录、标签和分类法目标使用各分类项现有的订阅源 URL。"
 
 #: includes/class-atshift-feed-builder-admin.php:313
 msgid "Feed slug"
-msgstr ""
+msgstr "订阅源别名"
 
 #: includes/class-atshift-feed-builder-admin.php:313
-msgid "A short identifier used in the public feed URL. Use lowercase letters, numbers, and hyphens."
-msgstr ""
+msgid ""
+"A short identifier used in the public feed URL. Use lowercase letters, "
+"numbers, and hyphens."
+msgstr "公开订阅源 URL 中使用的简短标识符。请使用小写字母、数字和连字符。"
 
 #: includes/class-atshift-feed-builder-admin.php:315
 msgid "Changing this value changes the public feed URL."
-msgstr ""
+msgstr "更改此值会同时更改公开订阅源 URL。"
 
 #: includes/class-atshift-feed-builder-admin.php:317
 msgid "Publish this feed"
-msgstr ""
+msgstr "发布此订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:317
-msgid "Adds an alternate feed link to the page <head> so browsers and external services can discover this custom feed."
-msgstr ""
+msgid ""
+"Adds an alternate feed link to the page <head> so browsers and external "
+"services can discover this custom feed."
+msgstr "向页面 <head> 添加备用订阅源链接，以便浏览器和外部服务发现此自定义订阅源。"
 
 #: includes/class-atshift-feed-builder-admin.php:322
 msgid "Content types"
-msgstr ""
+msgstr "内容类型"
 
 #: includes/class-atshift-feed-builder-admin.php:322
-msgid "Choose which kinds of WordPress content become feed items. Selecting a custom post type includes its published entries."
-msgstr ""
+msgid ""
+"Choose which kinds of WordPress content become feed items. Selecting a "
+"custom post type includes its published entries."
+msgstr "选择哪些 WordPress 内容类型将成为订阅源条目。选择自定义文章类型会包含其中已发布的内容。"
 
 #: includes/class-atshift-feed-builder-admin.php:326
 msgid "WordPress content"
-msgstr ""
+msgstr "WordPress 内容"
 
 #: includes/class-atshift-feed-builder-admin.php:327
 msgid "Custom post types"
-msgstr ""
+msgstr "自定义文章类型"
 
 #: includes/class-atshift-feed-builder-admin.php:327
 msgid "No public custom post types are currently registered."
-msgstr ""
+msgstr "当前未注册公开的自定义文章类型。"
 
 #: includes/class-atshift-feed-builder-admin.php:354
 msgid "Feed content filters"
-msgstr ""
+msgstr "订阅源内容筛选条件"
 
 #: includes/class-atshift-feed-builder-admin.php:354
-msgid "These settings limit which published posts are included in the feed. They do not change the values output for each item."
-msgstr ""
+msgid ""
+"These settings limit which published posts are included in the feed. They do "
+"not change the values output for each item."
+msgstr "这些设置用于限制订阅源中包含哪些已发布文章，不会更改各条目输出的值。"
 
 #: includes/class-atshift-feed-builder-admin.php:357
 msgid "Active"
-msgstr ""
+msgstr "已启用"
 
 #: includes/class-atshift-feed-builder-admin.php:363
-msgid "Choose which posts are included by author, taxonomy term, or custom field value. Different filter groups must all match; within each taxonomy, any selected term can match."
-msgstr ""
+msgid ""
+"Choose which posts are included by author, taxonomy term, or custom field "
+"value. Different filter groups must all match; within each taxonomy, any "
+"selected term can match."
+msgstr "按作者、分类法项目或自定义字段值选择要包含的文章。不同筛选组必须全部匹配；在每个分类法中，任意一个所选分类项匹配即可。"
 
 #: includes/class-atshift-feed-builder-admin.php:366
 msgid "Authors"
-msgstr ""
+msgstr "作者"
 
 #: includes/class-atshift-feed-builder-admin.php:366
 msgid "Include posts written by the selected authors."
-msgstr ""
+msgstr "包含所选作者撰写的文章。"
 
 #: includes/class-atshift-feed-builder-admin.php:378
 msgid "Taxonomy terms"
-msgstr ""
+msgstr "分类法项目"
 
 #: includes/class-atshift-feed-builder-admin.php:378
-msgid "Include posts assigned to the selected categories, tags, or custom taxonomy terms."
-msgstr ""
+msgid ""
+"Include posts assigned to the selected categories, tags, or custom taxonomy "
+"terms."
+msgstr "包含分配给所选分类目录、标签或自定义分类法项目的文章。"
 
 #: includes/class-atshift-feed-builder-admin.php:380
 msgid "No public taxonomy terms are currently registered."
-msgstr ""
+msgstr "当前未注册公开的分类法项目。"
 
 #: includes/class-atshift-feed-builder-admin.php:401
 msgid "Custom field conditions"
-msgstr ""
+msgstr "自定义字段条件"
 
 #: includes/class-atshift-feed-builder-admin.php:401
 msgid "Include posts by matching a public custom field key and value."
-msgstr ""
+msgstr "通过匹配公开的自定义字段键和值来包含文章。"
 
 #: includes/class-atshift-feed-builder-admin.php:406
 #: includes/class-atshift-feed-builder-admin.php:426
 msgid "Comparison"
-msgstr ""
+msgstr "比较方式"
 
 #: includes/class-atshift-feed-builder-admin.php:411
 #: includes/class-atshift-feed-builder-admin.php:431
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 #: includes/class-atshift-feed-builder-admin.php:412
 #: includes/class-atshift-feed-builder-admin.php:414
 #: includes/class-atshift-feed-builder-admin.php:432
 #: includes/class-atshift-feed-builder-admin.php:434
 msgid "Remove condition"
-msgstr ""
+msgstr "移除条件"
 
 #: includes/class-atshift-feed-builder-admin.php:421
 msgid "Add condition"
-msgstr ""
+msgstr "添加条件"
 
 #: includes/class-atshift-feed-builder-admin.php:445
 msgid "Number of items"
-msgstr ""
+msgstr "条目数量"
 
 #: includes/class-atshift-feed-builder-admin.php:445
 msgid "The maximum number of posts included each time the feed is generated."
-msgstr ""
+msgstr "每次生成订阅源时最多包含的文章数量。"
 
 #: includes/class-atshift-feed-builder-admin.php:450
 msgid "Order items by"
-msgstr ""
+msgstr "条目排序依据"
 
 #: includes/class-atshift-feed-builder-admin.php:450
-msgid "Choose whether newly published posts or recently updated posts appear first."
-msgstr ""
+msgid ""
+"Choose whether newly published posts or recently updated posts appear first."
+msgstr "选择优先显示新发布的文章还是最近更新的文章。"
 
 #: includes/class-atshift-feed-builder-admin.php:452
 #: includes/class-atshift-feed-builder-admin.php:612
 #: includes/class-atshift-feed-builder-schema.php:114
 #: includes/class-atshift-feed-builder-schema.php:139
 msgid "Published date"
-msgstr ""
+msgstr "发布日期"
 
 #: includes/class-atshift-feed-builder-admin.php:453
 #: includes/class-atshift-feed-builder-admin.php:613
 #: includes/class-atshift-feed-builder-schema.php:140
 msgid "Modified date"
-msgstr ""
+msgstr "修改日期"
 
 #: includes/class-atshift-feed-builder-admin.php:458
 msgid "Cache lifetime (seconds)"
-msgstr ""
+msgstr "缓存有效期（秒）"
 
 #: includes/class-atshift-feed-builder-admin.php:458
-msgid "How long generated output is reused before checking WordPress for changes. For example, 900 seconds is 15 minutes."
-msgstr ""
+msgid ""
+"How long generated output is reused before checking WordPress for changes. "
+"For example, 900 seconds is 15 minutes."
+msgstr "在检查 WordPress 是否有更改之前，生成的输出可重复使用多长时间。例如，900 秒为 15 分钟。"
 
 #: includes/class-atshift-feed-builder-admin.php:471
-msgid "Choose a value source for each output field. Field-specific choices appear only when they are needed."
-msgstr ""
+msgid ""
+"Choose a value source for each output field. Field-specific choices appear "
+"only when they are needed."
+msgstr "为每个输出字段选择值来源。仅在需要时显示字段专用选项。"
 
 #: includes/class-atshift-feed-builder-admin.php:472
 msgid "Feed information"
-msgstr ""
+msgstr "订阅源信息"
 
 #: includes/class-atshift-feed-builder-admin.php:472
 msgid "Each item"
-msgstr ""
+msgstr "每个条目"
 
 #: includes/class-atshift-feed-builder-admin.php:483
 msgid "Required"
-msgstr ""
+msgstr "必填"
 
 #: includes/class-atshift-feed-builder-admin.php:490
 msgid "Generated automatically"
-msgstr ""
+msgstr "自动生成"
 
 #: includes/class-atshift-feed-builder-admin.php:494
 #: includes/class-atshift-feed-builder-admin.php:561
 msgid "Fixed value"
-msgstr ""
+msgstr "固定值"
 
 #: includes/class-atshift-feed-builder-admin.php:498
 msgid "If the primary value is empty"
-msgstr ""
+msgstr "如果主要值为空"
 
 #: includes/class-atshift-feed-builder-admin.php:501
 msgid "Fallback URL"
-msgstr ""
+msgstr "备用 URL"
 
 #: includes/class-atshift-feed-builder-admin.php:544
 msgid "Value source"
-msgstr ""
+msgstr "值来源"
 
 #: includes/class-atshift-feed-builder-admin.php:545
 msgid "WordPress values"
-msgstr ""
+msgstr "WordPress 值"
 
 #: includes/class-atshift-feed-builder-admin.php:551
 msgid "Custom values"
-msgstr ""
+msgstr "自定义值"
 
 #: includes/class-atshift-feed-builder-admin.php:560
 msgid "Other"
-msgstr ""
+msgstr "其他"
 
 #: includes/class-atshift-feed-builder-admin.php:563
 msgid "Do not output"
-msgstr ""
+msgstr "不输出"
 
 #: includes/class-atshift-feed-builder-admin.php:566
 msgid "Unavailable source (selection preserved)"
-msgstr ""
+msgstr "来源不可用（已保留选择）"
 
 #: includes/class-atshift-feed-builder-admin.php:579
 msgid "Unavailable field (selection preserved)"
-msgstr ""
+msgstr "字段不可用（已保留选择）"
 
 #: includes/class-atshift-feed-builder-admin.php:602
 msgid "Site name"
-msgstr ""
+msgstr "站点名称"
 
 #: includes/class-atshift-feed-builder-admin.php:603
 msgid "Site tagline"
-msgstr ""
+msgstr "站点副标题"
 
 #: includes/class-atshift-feed-builder-admin.php:604
 msgid "Site URL"
-msgstr ""
+msgstr "站点 URL"
 
 #: includes/class-atshift-feed-builder-admin.php:605
 msgid "Site language"
-msgstr ""
+msgstr "站点语言"
 
 #: includes/class-atshift-feed-builder-admin.php:606
 msgid "Site icon URL"
-msgstr ""
+msgstr "站点图标 URL"
 
 #: includes/class-atshift-feed-builder-admin.php:607
 #: includes/class-atshift-feed-builder-schema.php:105
 #: includes/class-atshift-feed-builder-schema.php:135
 msgid "Post title"
-msgstr ""
+msgstr "文章标题"
 
 #: includes/class-atshift-feed-builder-admin.php:608
 msgid "Post permalink"
-msgstr ""
+msgstr "文章固定链接"
 
 #: includes/class-atshift-feed-builder-admin.php:609
 msgid "Stable post ID"
-msgstr ""
+msgstr "稳定的文章 ID"
 
 #: includes/class-atshift-feed-builder-admin.php:610
 msgid "Post excerpt (generated from content if empty)"
-msgstr ""
+msgstr "文章摘要（为空时根据内容生成）"
 
 #: includes/class-atshift-feed-builder-admin.php:611
 msgid "Post content (HTML)"
-msgstr ""
+msgstr "文章内容（HTML）"
 
 #: includes/class-atshift-feed-builder-admin.php:614
 msgid "Featured image URL"
-msgstr ""
+msgstr "特色图片 URL"
 
 #: includes/class-atshift-feed-builder-admin.php:615
 msgid "All public taxonomy terms"
-msgstr ""
+msgstr "所有公开分类法项目"
 
 #: includes/class-atshift-feed-builder-admin.php:616
 msgid "Categories only"
-msgstr ""
+msgstr "仅分类目录"
 
 #: includes/class-atshift-feed-builder-admin.php:617
 msgid "Tags only"
-msgstr ""
+msgstr "仅标签"
 
 #: includes/class-atshift-feed-builder-admin.php:618
 msgid "Public custom taxonomy terms only"
-msgstr ""
+msgstr "仅公开的自定义分类法项目"
 
 #: includes/class-atshift-feed-builder-admin.php:619
 msgid "Display name"
-msgstr ""
+msgstr "显示名称"
 
 #: includes/class-atshift-feed-builder-admin.php:620
 msgid "Author archive URL"
-msgstr ""
+msgstr "作者归档 URL"
 
 #: includes/class-atshift-feed-builder-admin.php:621
 msgid "Avatar URL"
-msgstr ""
+msgstr "头像 URL"
 
 #: includes/class-atshift-feed-builder-admin.php:658
 msgid "may contain personal information"
-msgstr ""
+msgstr "可能包含个人信息"
 
 #: includes/class-atshift-feed-builder-admin.php:683
 #: includes/class-atshift-feed-builder-admin.php:685
 #: includes/class-atshift-feed-builder-admin.php:689
 msgid "Field name"
-msgstr ""
+msgstr "字段名称"
 
 #: includes/class-atshift-feed-builder-admin.php:696
 #: includes/class-atshift-feed-builder-admin.php:698
 #: includes/class-atshift-feed-builder-admin.php:702
 msgid "Enter the field name used by the plugin."
-msgstr ""
+msgstr "输入插件使用的字段名称。"
 
 #: includes/class-atshift-feed-builder-admin.php:736
 msgid "Publish this feed to create its public URL."
-msgstr ""
+msgstr "发布此订阅源以创建其公开 URL。"
 
 #: includes/class-atshift-feed-builder-admin.php:743
 #: includes/class-atshift-feed-builder-admin.php:1125
 msgid "Standard feed disabled"
-msgstr ""
+msgstr "标准订阅源已禁用"
 
 #: includes/class-atshift-feed-builder-admin.php:743
-msgid "The selected WordPress feed URL returns not found and is not advertised in the page head."
-msgstr ""
+msgid ""
+"The selected WordPress feed URL returns not found and is not advertised in "
+"the page head."
+msgstr "所选 WordPress 订阅源 URL 返回“未找到”，且不会在页面头部声明。"
 
 #: includes/class-atshift-feed-builder-admin.php:747
 msgid "Existing term feed URLs"
-msgstr ""
+msgstr "现有分类项订阅源 URL"
 
 #: includes/class-atshift-feed-builder-admin.php:747
 msgid "Each category, tag, or taxonomy term keeps its own WordPress feed URL."
-msgstr ""
+msgstr "每个分类目录、标签或分类法项目都会保留自己的 WordPress 订阅源 URL。"
 
 #: includes/class-atshift-feed-builder-admin.php:760
 msgid "Check the current settings without saving them."
-msgstr ""
+msgstr "在不保存的情况下检查当前设置。"
 
 #: includes/class-atshift-feed-builder-admin.php:763
 msgid "Preview feed"
-msgstr ""
+msgstr "预览订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:765
 msgid "The preview uses the first item in the current feed order."
-msgstr ""
+msgstr "预览使用当前订阅源排序中的第一个条目。"
 
 #: includes/class-atshift-feed-builder-admin.php:770
 msgid "Feed preview"
-msgstr ""
+msgstr "订阅源预览"
 
 #: includes/class-atshift-feed-builder-admin.php:773
 #: includes/class-atshift-feed-builder-admin.php:775
 msgid "Close preview"
-msgstr ""
+msgstr "关闭预览"
 
 #: includes/class-atshift-feed-builder-admin.php:779
 msgid "Preview view"
-msgstr ""
+msgstr "预览视图"
 
 #: includes/class-atshift-feed-builder-admin.php:781
 msgid "Reader preview"
-msgstr ""
+msgstr "阅读器预览"
 
 #: includes/class-atshift-feed-builder-admin.php:784
 msgid "Source code"
-msgstr ""
+msgstr "源代码"
 
 #: includes/class-atshift-feed-builder-admin.php:796
 msgid "Copy output"
-msgstr ""
+msgstr "复制输出"
 
 #: includes/class-atshift-feed-builder-admin.php:807
 msgid "You are not allowed to preview feeds."
-msgstr ""
+msgstr "您无权预览订阅源。"
 
 #: includes/class-atshift-feed-builder-admin.php:813
 msgid "The feed configuration could not be found."
-msgstr ""
+msgstr "找不到订阅源配置。"
 
 #: includes/class-atshift-feed-builder-admin.php:1089
 msgid "Generating preview..."
-msgstr ""
+msgstr "正在生成预览…"
 
 #: includes/class-atshift-feed-builder-admin.php:1090
 msgid "The preview could not be generated."
-msgstr ""
+msgstr "无法生成预览。"
 
 #. translators: %s: Feed format.
 #: includes/class-atshift-feed-builder-admin.php:1092
 #, php-format
 msgid "%s preview, first item"
-msgstr ""
+msgstr "%s 预览，第一个条目"
 
 #: includes/class-atshift-feed-builder-admin.php:1093
 msgid "Output copied."
-msgstr ""
+msgstr "已复制输出。"
 
 #: includes/class-atshift-feed-builder-admin.php:1094
 msgid "The output could not be copied."
-msgstr ""
+msgstr "无法复制输出。"
 
 #. translators: %s: Publisher name.
 #: includes/class-atshift-feed-builder-admin.php:1096
 #, php-format
 msgid "Published by %s"
-msgstr ""
+msgstr "发布者：%s"
 
 #. translators: %s: Reviewer name.
 #: includes/class-atshift-feed-builder-admin.php:1098
 #, php-format
 msgid "Reviewed by %s"
-msgstr ""
+msgstr "审核人：%s"
 
 #. translators: %s: Source name.
 #: includes/class-atshift-feed-builder-admin.php:1100
 #, php-format
 msgid "Source: %s"
-msgstr ""
+msgstr "来源：%s"
 
 #: includes/class-atshift-feed-builder-admin.php:1106
 msgid "Format"
-msgstr ""
+msgstr "格式"
 
 #: includes/class-atshift-feed-builder-admin.php:1107
 msgid "Publication"
-msgstr ""
+msgstr "发布方式"
 
 #: includes/class-atshift-feed-builder-admin.php:1123
 msgid "Custom feed"
-msgstr ""
+msgstr "自定义订阅源"
 
 #: includes/class-atshift-feed-builder-admin.php:1124
 msgid "Standard feed replacement"
-msgstr ""
+msgstr "标准订阅源替换"
 
 #: includes/class-atshift-feed-builder-admin.php:1132
 msgid "Disabled"
-msgstr ""
+msgstr "已禁用"
 
 #: includes/class-atshift-feed-builder-admin.php:1134
 msgid "Dynamic term URLs"
-msgstr ""
+msgstr "动态分类项 URL"
 
 #: includes/class-atshift-feed-builder-admin.php:1144
 msgid "Internal feed name"
-msgstr ""
+msgstr "内部订阅源名称"
 
 #: includes/class-atshift-feed-builder-plugin.php:127
 msgid "Feed"
-msgstr ""
+msgstr "订阅源"
 
 #: includes/class-atshift-feed-builder-plugin.php:129
 msgid "Edit Feed"
-msgstr ""
+msgstr "编辑订阅源"
 
 #: includes/class-atshift-feed-builder-plugin.php:130
 msgid "New Feed"
-msgstr ""
+msgstr "新订阅源"
 
 #: includes/class-atshift-feed-builder-plugin.php:131
 msgid "Feeds"
-msgstr ""
+msgstr "订阅源"
 
 #: includes/class-atshift-feed-builder-plugin.php:394
 msgid "Main posts feed"
-msgstr ""
+msgstr "主要文章订阅源"
 
 #. translators: %s: Post type label.
 #: includes/class-atshift-feed-builder-plugin.php:408
 #, php-format
 msgid "%s archive feed"
-msgstr ""
+msgstr "%s 归档订阅源"
 
 #. translators: %s: Taxonomy label.
 #: includes/class-atshift-feed-builder-plugin.php:426
 #, php-format
 msgid "%s feeds"
-msgstr ""
+msgstr "%s 订阅源"
 
 #: includes/class-atshift-feed-builder-renderer.php:116
 msgid "The feed could not be encoded."
-msgstr ""
+msgstr "无法对订阅源进行编码。"
 
 #: includes/class-atshift-feed-builder-schema.php:28
 msgid "RSS 2.0"
-msgstr ""
+msgstr "RSS 2.0"
 
 #: includes/class-atshift-feed-builder-schema.php:29
 msgid "For feed readers and broadly compatible content syndication."
-msgstr ""
+msgstr "适用于订阅阅读器和广泛兼容的内容联合发布。"
 
 #: includes/class-atshift-feed-builder-schema.php:32
 msgid "JSON Feed 1.1"
-msgstr ""
+msgstr "JSON Feed 1.1"
 
 #: includes/class-atshift-feed-builder-schema.php:33
 msgid "For applications, external services, and structured data consumers."
-msgstr ""
+msgstr "适用于应用程序、外部服务和结构化数据使用方。"
 
 #: includes/class-atshift-feed-builder-schema.php:96
 msgid "RSS version"
-msgstr ""
+msgstr "RSS 版本"
 
 #: includes/class-atshift-feed-builder-schema.php:96
 msgid "Always output as RSS 2.0."
-msgstr ""
+msgstr "始终输出为 RSS 2.0。"
 
 #: includes/class-atshift-feed-builder-schema.php:97
 #: includes/class-atshift-feed-builder-schema.php:123
 msgid "Feed title"
-msgstr ""
+msgstr "订阅源标题"
 
 #: includes/class-atshift-feed-builder-schema.php:97
 #: includes/class-atshift-feed-builder-schema.php:123
 msgid "Name of this feed."
-msgstr ""
+msgstr "此订阅源的名称。"
 
 #: includes/class-atshift-feed-builder-schema.php:98
 #: includes/class-atshift-feed-builder-schema.php:124
 msgid "Publisher website"
-msgstr ""
+msgstr "发布者网站"
 
 #: includes/class-atshift-feed-builder-schema.php:98
 #: includes/class-atshift-feed-builder-schema.php:124
 msgid "Website represented by the feed."
-msgstr ""
+msgstr "此订阅源所代表的网站。"
 
 #: includes/class-atshift-feed-builder-schema.php:99
 #: includes/class-atshift-feed-builder-schema.php:128
 msgid "Publisher / site operator"
-msgstr ""
+msgstr "发布者/站点运营方"
 
 #: includes/class-atshift-feed-builder-schema.php:99
 #: includes/class-atshift-feed-builder-schema.php:128
 msgid "Person or organization responsible for publishing the feed."
-msgstr ""
+msgstr "负责发布订阅源的个人或组织。"
 
 #: includes/class-atshift-feed-builder-schema.php:100
 #: includes/class-atshift-feed-builder-schema.php:126
 msgid "Feed description"
-msgstr ""
+msgstr "订阅源描述"
 
 #: includes/class-atshift-feed-builder-schema.php:100
 #: includes/class-atshift-feed-builder-schema.php:126
 msgid "Short description of the feed."
-msgstr ""
+msgstr "订阅源的简短描述。"
 
 #: includes/class-atshift-feed-builder-schema.php:101
 #: includes/class-atshift-feed-builder-schema.php:127
 msgid "Language"
-msgstr ""
+msgstr "语言"
 
 #: includes/class-atshift-feed-builder-schema.php:101
 #: includes/class-atshift-feed-builder-schema.php:127
 msgid "Primary language of the feed."
-msgstr ""
+msgstr "订阅源的主要语言。"
 
 #: includes/class-atshift-feed-builder-schema.php:102
 msgid "Copyright"
-msgstr ""
+msgstr "版权"
 
 #: includes/class-atshift-feed-builder-schema.php:102
 msgid "Optional rights statement."
-msgstr ""
+msgstr "可选的权利声明。"
 
 #: includes/class-atshift-feed-builder-schema.php:103
 msgid "Last updated"
-msgstr ""
+msgstr "最近更新"
 
 #: includes/class-atshift-feed-builder-schema.php:103
 msgid "Calculated from feed and source updates."
-msgstr ""
+msgstr "根据订阅源和来源的更新时间计算。"
 
 #: includes/class-atshift-feed-builder-schema.php:104
 #: includes/class-atshift-feed-builder-schema.php:125
 msgid "Canonical feed URL"
-msgstr ""
+msgstr "规范订阅源 URL"
 
 #: includes/class-atshift-feed-builder-schema.php:104
 #: includes/class-atshift-feed-builder-schema.php:125
 msgid "Generated from the public feed URL."
-msgstr ""
+msgstr "根据公开订阅源 URL 生成。"
 
 #: includes/class-atshift-feed-builder-schema.php:105
 msgid "Title for each feed item."
-msgstr ""
+msgstr "每个订阅源条目的标题。"
 
 #: includes/class-atshift-feed-builder-schema.php:106
 #: includes/class-atshift-feed-builder-schema.php:134
 msgid "Post URL"
-msgstr ""
+msgstr "文章 URL"
 
 #: includes/class-atshift-feed-builder-schema.php:106
 msgid "Public URL for each item."
-msgstr ""
+msgstr "每个条目的公开 URL。"
 
 #: includes/class-atshift-feed-builder-schema.php:107
 #: includes/class-atshift-feed-builder-schema.php:133
 msgid "Unique ID"
-msgstr ""
+msgstr "唯一 ID"
 
 #: includes/class-atshift-feed-builder-schema.php:107
 msgid "Stable identifier used by feed readers."
-msgstr ""
+msgstr "订阅阅读器使用的稳定标识符。"
 
 #: includes/class-atshift-feed-builder-schema.php:108
 #: includes/class-atshift-feed-builder-schema.php:136
 msgid "Summary"
-msgstr ""
+msgstr "摘要"
 
 #: includes/class-atshift-feed-builder-schema.php:108
 msgid "Short text shown in item lists."
-msgstr ""
+msgstr "条目列表中显示的简短文本。"
 
 #: includes/class-atshift-feed-builder-schema.php:109
 msgid "Full content"
-msgstr ""
+msgstr "完整内容"
 
 #: includes/class-atshift-feed-builder-schema.php:109
 msgid "HTML body of the item."
-msgstr ""
+msgstr "条目的 HTML 正文。"
 
 #: includes/class-atshift-feed-builder-schema.php:110
 #: includes/class-atshift-feed-builder-schema.php:141
 msgid "Article author"
-msgstr ""
+msgstr "文章作者"
 
 #: includes/class-atshift-feed-builder-schema.php:110
 #: includes/class-atshift-feed-builder-schema.php:141
 msgid "Person credited with creating the item."
-msgstr ""
+msgstr "署名创建此条目的人员。"
 
 #: includes/class-atshift-feed-builder-schema.php:111
 #: includes/class-atshift-feed-builder-schema.php:146
 msgid "Reviewer / supervisor"
-msgstr ""
+msgstr "审核人/监督人"
 
 #: includes/class-atshift-feed-builder-schema.php:111
 #: includes/class-atshift-feed-builder-schema.php:146
 msgid "Person who reviewed or supervised the item."
-msgstr ""
+msgstr "审核或监督此条目的人员。"
 
 #: includes/class-atshift-feed-builder-schema.php:112
 #: includes/class-atshift-feed-builder-schema.php:145
 msgid "Primary source name"
-msgstr ""
+msgstr "主要来源名称"
 
 #: includes/class-atshift-feed-builder-schema.php:112
 #: includes/class-atshift-feed-builder-schema.php:145
 msgid "Name of the original or related source."
-msgstr ""
+msgstr "原始或相关来源的名称。"
 
 #: includes/class-atshift-feed-builder-schema.php:113
 #: includes/class-atshift-feed-builder-schema.php:144
 msgid "Primary source URL"
-msgstr ""
+msgstr "主要来源 URL"
 
 #: includes/class-atshift-feed-builder-schema.php:113
 #: includes/class-atshift-feed-builder-schema.php:144
 msgid "Public URL of the original or related source."
-msgstr ""
+msgstr "原始或相关来源的公开 URL。"
 
 #: includes/class-atshift-feed-builder-schema.php:114
 #: includes/class-atshift-feed-builder-schema.php:139
 msgid "Publication date for the item."
-msgstr ""
+msgstr "条目的发布日期。"
 
 #: includes/class-atshift-feed-builder-schema.php:115
 #: includes/class-atshift-feed-builder-schema.php:148
 msgid "Categories, tags, and terms"
-msgstr ""
+msgstr "分类目录、标签和分类项"
 
 #: includes/class-atshift-feed-builder-schema.php:115
 #: includes/class-atshift-feed-builder-schema.php:148
-msgid "Names of public categories, tags, or custom taxonomy terms assigned to the item. Feed readers may use them for grouping or filtering."
-msgstr ""
+msgid ""
+"Names of public categories, tags, or custom taxonomy terms assigned to the "
+"item. Feed readers may use them for grouping or filtering."
+msgstr "分配给条目的公开分类目录、标签或自定义分类法项目的名称。订阅阅读器可使用它们进行分组或筛选。"
 
 #: includes/class-atshift-feed-builder-schema.php:116
 #: includes/class-atshift-feed-builder-schema.php:138
 msgid "Main image"
-msgstr ""
+msgstr "主图片"
 
 #: includes/class-atshift-feed-builder-schema.php:116
 msgid "Main item image published through Media RSS."
-msgstr ""
+msgstr "通过 Media RSS 发布的条目主图片。"
 
 #: includes/class-atshift-feed-builder-schema.php:122
 msgid "JSON Feed version"
-msgstr ""
+msgstr "JSON Feed 版本"
 
 #: includes/class-atshift-feed-builder-schema.php:122
 msgid "Always output as JSON Feed 1.1."
-msgstr ""
+msgstr "始终输出为 JSON Feed 1.1。"
 
 #: includes/class-atshift-feed-builder-schema.php:129
 msgid "Publisher URL"
-msgstr ""
+msgstr "发布者 URL"
 
 #: includes/class-atshift-feed-builder-schema.php:129
 msgid "Public website or profile for the publisher."
-msgstr ""
+msgstr "发布者的公开网站或个人资料。"
 
 #: includes/class-atshift-feed-builder-schema.php:130
 msgid "Publisher avatar"
-msgstr ""
+msgstr "发布者头像"
 
 #: includes/class-atshift-feed-builder-schema.php:130
 msgid "Square image representing the publisher."
-msgstr ""
+msgstr "代表发布者的方形图片。"
 
 #: includes/class-atshift-feed-builder-schema.php:131
 msgid "Feed icon"
-msgstr ""
+msgstr "订阅源图标"
 
 #: includes/class-atshift-feed-builder-schema.php:131
 msgid "Square image representing the feed."
-msgstr ""
+msgstr "代表订阅源的方形图片。"
 
 #: includes/class-atshift-feed-builder-schema.php:132
 msgid "Items"
-msgstr ""
+msgstr "条目"
 
 #: includes/class-atshift-feed-builder-schema.php:132
 msgid "One item is generated for each matching post."
-msgstr ""
+msgstr "每篇匹配的文章都会生成一个条目。"
 
 #: includes/class-atshift-feed-builder-schema.php:133
 msgid "Stable identifier for the item."
-msgstr ""
+msgstr "条目的稳定标识符。"
 
 #: includes/class-atshift-feed-builder-schema.php:134
 msgid "Public URL for the item."
-msgstr ""
+msgstr "条目的公开 URL。"
 
 #: includes/class-atshift-feed-builder-schema.php:135
 msgid "Title for the item."
-msgstr ""
+msgstr "条目的标题。"
 
 #: includes/class-atshift-feed-builder-schema.php:136
 msgid "Short plain-text summary."
-msgstr ""
+msgstr "简短的纯文本摘要。"
 
 #: includes/class-atshift-feed-builder-schema.php:137
 msgid "Content"
-msgstr ""
+msgstr "内容"
 
 #: includes/class-atshift-feed-builder-schema.php:137
 msgid "HTML content for the item."
-msgstr ""
+msgstr "条目的 HTML 内容。"
 
 #: includes/class-atshift-feed-builder-schema.php:138
 msgid "Featured or mapped image URL."
-msgstr ""
+msgstr "特色图片或映射图片的 URL。"
 
 #: includes/class-atshift-feed-builder-schema.php:140
 msgid "Most recent modification date."
-msgstr ""
+msgstr "最近修改日期。"
 
 #: includes/class-atshift-feed-builder-schema.php:142
 msgid "Article author URL"
-msgstr ""
+msgstr "文章作者 URL"
 
 #: includes/class-atshift-feed-builder-schema.php:142
 msgid "Public profile or website for the article author."
-msgstr ""
+msgstr "文章作者的公开个人资料或网站。"
 
 #: includes/class-atshift-feed-builder-schema.php:143
 msgid "Article author avatar"
-msgstr ""
+msgstr "文章作者头像"
 
 #: includes/class-atshift-feed-builder-schema.php:143
 msgid "Image representing the article author."
-msgstr ""
+msgstr "代表文章作者的图片。"
 
 #: includes/class-atshift-feed-builder-schema.php:147
 msgid "Reviewer / supervisor URL"
-msgstr ""
+msgstr "审核人/监督人 URL"
 
 #: includes/class-atshift-feed-builder-schema.php:147
 msgid "Public profile or website for the reviewer."
-msgstr ""
+msgstr "审核人的公开个人资料或网站。"

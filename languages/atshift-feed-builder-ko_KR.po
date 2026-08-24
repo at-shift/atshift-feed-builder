@@ -1,0 +1,776 @@
+# Copyright (C) 2026 @shift
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: atshift Feed Builder 1.0\n"
+"Report-Msgid-Bugs-To: https://upf.at-shift.net/en/feed-builder/\n"
+"PO-Revision-Date: 2026-08-24 14:44+0900\n"
+"Last-Translator: @shift\n"
+"Language-Team: Korean\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: atshift-feed-builder\n"
+
+msgid "atshift Feed Builder"
+msgstr "atshift Feed Builder"
+
+msgid "https://upf.at-shift.net/en/feed-builder/"
+msgstr "https://upf.at-shift.net/en/feed-builder/"
+
+msgid "Build safe RSS and JSON feeds from WordPress posts, custom fields, and author profile data."
+msgstr "WordPress 글, 사용자 정의 필드, 작성자 프로필 데이터로 안전한 RSS 및 JSON 피드를 생성합니다."
+
+msgid "@shift"
+msgstr "@shift"
+
+msgid "https://cfs.at-shift.net/en/"
+msgstr "https://cfs.at-shift.net/en/"
+
+msgid "Settings"
+msgstr "설정"
+
+#, php-format
+msgid "Version %s"
+msgstr "버전 %s"
+
+#, php-format
+msgid "By %s"
+msgstr "제작자: %s"
+
+msgid "View details"
+msgstr "세부 정보 보기"
+
+msgid "ACF / Secure Custom Fields field"
+msgstr "ACF / Secure Custom Fields 필드"
+
+msgid "ACF / SCF field name"
+msgstr "ACF / SCF 필드 이름"
+
+msgid "Enter the ACF or Secure Custom Fields field name or field key."
+msgstr "ACF 또는 Secure Custom Fields의 필드 이름이나 필드 키를 입력하세요."
+
+msgid "Carbon Fields field"
+msgstr "Carbon Fields 필드"
+
+msgid "Carbon Fields field name"
+msgstr "Carbon Fields 필드 이름"
+
+msgid "Enter the Carbon Fields post meta field name."
+msgstr "Carbon Fields 글 메타 필드 이름을 입력하세요."
+
+msgid "atshift Fields"
+msgstr "atshift Fields"
+
+msgid "Meta Box field"
+msgstr "Meta Box 필드"
+
+msgid "Meta Box field ID"
+msgstr "Meta Box 필드 ID"
+
+msgid "Enter the Meta Box field ID. Standard post storage is supported."
+msgstr "Meta Box 필드 ID를 입력하세요. 표준 글 메타 저장 방식을 지원합니다."
+
+msgid "Pods field"
+msgstr "Pods 필드"
+
+msgid "Pods field name"
+msgstr "Pods 필드 이름"
+
+msgid "Enter the Pods field name. The current post type and post ID are detected automatically."
+msgstr "Pods 필드 이름을 입력하세요. 현재 글 유형과 글 ID는 자동으로 감지됩니다."
+
+msgid "WordPress custom field (post_meta)"
+msgstr "WordPress 사용자 정의 필드(post_meta)"
+
+msgid "Custom field key"
+msgstr "사용자 정의 필드 키"
+
+msgid "Enter a public post_meta key. This covers Custom Field Template and other plugins that use standard post meta."
+msgstr "공개 post_meta 키를 입력하세요. 표준 글 메타를 사용하는 Custom Field Template 및 기타 플러그인에 적용됩니다."
+
+msgid "atshift User Profile Fields (post author)"
+msgstr "atshift User Profile Fields(글 작성자)"
+
+msgid "Add New Feed"
+msgstr "새 피드 추가"
+
+msgid "Choose how to publish the feed"
+msgstr "피드 공개 방식 선택"
+
+msgid "Keep an existing WordPress feed URL and replace its output, or add a separate feed for a new purpose."
+msgstr "기존 WordPress 피드 URL을 유지하면서 출력을 교체하거나, 새로운 용도를 위한 별도 피드를 추가하세요."
+
+msgid "Replace a WordPress standard feed"
+msgstr "WordPress 표준 피드 교체"
+
+msgid "The existing RSS URL stays the same. WordPress continues to advertise that URL in the page head, while atshift Feed Builder controls its content."
+msgstr "기존 RSS URL은 그대로 유지됩니다. WordPress는 페이지 헤드에 해당 URL을 계속 알리고, atshift Feed Builder가 그 내용을 제어합니다."
+
+msgid "Standard feed to replace"
+msgstr "교체할 표준 피드"
+
+msgid "Create standard RSS feed"
+msgstr "표준 RSS 피드 만들기"
+
+msgid "Add a custom feed"
+msgstr "사용자 정의 피드 추가"
+
+msgid "Create a separate URL with its own slug for a specific service, audience, or use case."
+msgstr "특정 서비스, 대상 또는 사용 사례에 맞게 고유한 슬러그를 사용하는 별도 URL을 만드세요."
+
+#, php-format
+msgid "Create %s feed"
+msgstr "%s 피드 만들기"
+
+msgid "You are not allowed to create feeds."
+msgstr "피드를 만들 권한이 없습니다."
+
+msgid "Invalid feed format."
+msgstr "잘못된 피드 형식입니다."
+
+msgid "Invalid standard feed destination."
+msgstr "잘못된 표준 피드 대상입니다."
+
+#, php-format
+msgid "New %s feed"
+msgstr "새 %s 피드"
+
+msgid "The feed could not be created."
+msgstr "피드를 만들 수 없습니다."
+
+msgid "Feed source"
+msgstr "피드 소스"
+
+#, php-format
+msgid "%s output mapping"
+msgstr "%s 출력 매핑"
+
+msgid "Feed URL"
+msgstr "피드 URL"
+
+msgid "Preview"
+msgstr "미리보기"
+
+msgid "Help"
+msgstr "도움말"
+
+msgid "The most recent update time in the feed, calculated automatically. Services use it to detect changes."
+msgstr "피드의 가장 최근 업데이트 시각이며 자동으로 계산됩니다. 서비스는 이 값을 사용해 변경 사항을 감지합니다."
+
+msgid "The permanent public URL of this feed. It is generated automatically and tells services which URL is authoritative."
+msgstr "이 피드의 영구 공개 URL입니다. 자동으로 생성되며 서비스에 어떤 URL을 기준으로 삼아야 하는지 알려 줍니다."
+
+msgid "The person or organization responsible for operating and publishing the feed, not necessarily the article author."
+msgstr "피드를 운영하고 발행할 책임이 있는 사람 또는 조직이며, 글 작성자와는 다를 수 있습니다."
+
+msgid "A feed item is one published post included in the feed. This container is created automatically."
+msgstr "피드 항목은 피드에 포함되는 공개 글 하나를 뜻합니다. 이 컨테이너는 자동으로 생성됩니다."
+
+msgid "Feed readers use this value to recognize the same post after an update and avoid duplicates. It should not change after publication."
+msgstr "피드 리더는 이 값을 사용하여 업데이트 후에도 같은 글임을 식별하고 중복을 방지합니다. 공개한 뒤에는 변경하지 않아야 합니다."
+
+msgid "The public page readers open for this post. Custom post types also use their normal permalink."
+msgstr "독자가 이 글을 볼 때 여는 공개 페이지입니다. 사용자 정의 글 유형에도 일반 고유주소가 사용됩니다."
+
+msgid "The person credited with writing or creating the post."
+msgstr "글을 쓰거나 만든 작성자로 표시되는 사람입니다."
+
+msgid "An optional person who checked or supervised the content. Leave it out when there is no reviewer."
+msgstr "콘텐츠를 검토하거나 감수한 사람을 선택적으로 지정합니다. 검토자나 감수자가 없으면 출력하지 마세요."
+
+msgid "The original or related source behind the post. Use this when the WordPress post summarizes information published elsewhere."
+msgstr "글의 바탕이 된 원 출처 또는 관련 출처입니다. WordPress 글이 다른 곳에 공개된 정보를 요약할 때 사용하세요."
+
+msgid "Classification labels attached to the post. They help readers and services group or filter items."
+msgstr "글에 지정된 분류 레이블입니다. 독자와 서비스가 항목을 그룹화하거나 필터링하는 데 도움이 됩니다."
+
+msgid "The representative image for the item. A fallback can be used when the post has no featured image."
+msgstr "피드 항목을 대표하는 이미지입니다. 글에 대표 이미지가 없으면 대체 이미지를 사용할 수 있습니다."
+
+msgid "Equals"
+msgstr "같음"
+
+msgid "Does not equal"
+msgstr "같지 않음"
+
+msgid "Contains"
+msgstr "포함"
+
+msgid "Exists"
+msgstr "존재함"
+
+msgid "Does not exist"
+msgstr "존재하지 않음"
+
+msgid "Output format"
+msgstr "출력 형식"
+
+msgid "The format is fixed for this feed."
+msgstr "이 피드의 형식은 고정되어 있습니다."
+
+msgid "Publication method"
+msgstr "공개 방식"
+
+msgid "Customize a standard feed"
+msgstr "표준 피드 사용자 정의"
+
+msgid "Keep the WordPress URL and replace its RSS output."
+msgstr "WordPress URL을 유지하고 RSS 출력을 교체합니다."
+
+msgid "Create a custom feed"
+msgstr "사용자 정의 피드 만들기"
+
+msgid "Publish at a separate URL with a custom slug."
+msgstr "사용자 정의 슬러그를 사용해 별도 URL로 공개합니다."
+
+msgid "Disable a standard feed"
+msgstr "표준 피드 비활성화"
+
+msgid "Remove its discovery link and return not found at that RSS URL."
+msgstr "검색 링크를 제거하고 해당 RSS URL에 찾을 수 없음 응답을 반환합니다."
+
+msgid "JSON Feed uses a custom URL because WordPress does not provide a standard JSON Feed endpoint."
+msgstr "WordPress는 표준 JSON Feed 엔드포인트를 제공하지 않으므로 JSON Feed는 사용자 정의 URL을 사용합니다."
+
+msgid "Target WordPress standard feed"
+msgstr "대상 WordPress 표준 피드"
+
+msgid "Choose the standard WordPress feed affected by this setting. Category, tag, and taxonomy targets use each term's existing feed URL."
+msgstr "이 설정을 적용할 WordPress 표준 피드를 선택하세요. 카테고리, 태그, 택소노미 대상에는 각 항목의 기존 피드 URL이 사용됩니다."
+
+msgid "Feed slug"
+msgstr "피드 슬러그"
+
+msgid "A short identifier used in the public feed URL. Use lowercase letters, numbers, and hyphens."
+msgstr "공개 피드 URL에 사용되는 짧은 식별자입니다. 소문자, 숫자 및 하이픈을 사용하세요."
+
+msgid "Changing this value changes the public feed URL."
+msgstr "이 값을 변경하면 공개 피드 URL도 변경됩니다."
+
+msgid "Publish this feed"
+msgstr "이 피드 공개"
+
+msgid "Adds an alternate feed link to the page <head> so browsers and external services can discover this custom feed."
+msgstr "브라우저와 외부 서비스가 이 사용자 정의 피드를 찾을 수 있도록 페이지 <head>에 대체 피드 링크를 추가합니다."
+
+msgid "Content types"
+msgstr "콘텐츠 유형"
+
+msgid "Choose which kinds of WordPress content become feed items. Selecting a custom post type includes its published entries."
+msgstr "피드 항목으로 사용할 WordPress 콘텐츠 유형을 선택하세요. 사용자 정의 글 유형을 선택하면 해당 유형의 공개 글이 포함됩니다."
+
+msgid "WordPress content"
+msgstr "WordPress 콘텐츠"
+
+msgid "Custom post types"
+msgstr "사용자 정의 글 유형"
+
+msgid "No public custom post types are currently registered."
+msgstr "현재 등록된 공개 사용자 정의 글 유형이 없습니다."
+
+msgid "Feed content filters"
+msgstr "피드 콘텐츠 필터"
+
+msgid "These settings limit which published posts are included in the feed. They do not change the values output for each item."
+msgstr "이 설정은 피드에 포함되는 공개 글을 제한합니다. 각 피드 항목에 출력되는 값은 변경하지 않습니다."
+
+msgid "Active"
+msgstr "활성"
+
+msgid "Choose which posts are included by author, taxonomy term, or custom field value. Different filter groups must all match; within each taxonomy, any selected term can match."
+msgstr "작성자, 택소노미 항목 또는 사용자 정의 필드 값을 기준으로 포함할 글을 선택하세요. 서로 다른 필터 그룹은 모두 일치해야 하며, 각 택소노미에서는 선택한 항목 중 하나만 일치해도 됩니다."
+
+msgid "Authors"
+msgstr "작성자"
+
+msgid "Include posts written by the selected authors."
+msgstr "선택한 작성자가 쓴 글을 포함합니다."
+
+msgid "Taxonomy terms"
+msgstr "택소노미 항목"
+
+msgid "Include posts assigned to the selected categories, tags, or custom taxonomy terms."
+msgstr "선택한 카테고리, 태그 또는 사용자 정의 택소노미 항목이 지정된 글을 포함합니다."
+
+msgid "No public taxonomy terms are currently registered."
+msgstr "현재 등록된 공개 택소노미 항목이 없습니다."
+
+msgid "Custom field conditions"
+msgstr "사용자 정의 필드 조건"
+
+msgid "Include posts by matching a public custom field key and value."
+msgstr "공개 사용자 정의 필드 키와 값이 일치하는 글을 포함합니다."
+
+msgid "Comparison"
+msgstr "비교"
+
+msgid "Value"
+msgstr "값"
+
+msgid "Remove condition"
+msgstr "조건 제거"
+
+msgid "Add condition"
+msgstr "조건 추가"
+
+msgid "Number of items"
+msgstr "피드 항목 수"
+
+msgid "The maximum number of posts included each time the feed is generated."
+msgstr "피드가 생성될 때마다 포함되는 최대 글 수입니다."
+
+msgid "Order items by"
+msgstr "항목 정렬 기준"
+
+msgid "Choose whether newly published posts or recently updated posts appear first."
+msgstr "새로 공개된 글과 최근 수정된 글 중 어느 쪽을 먼저 표시할지 선택하세요."
+
+msgid "Published date"
+msgstr "공개일"
+
+msgid "Modified date"
+msgstr "수정일"
+
+msgid "Cache lifetime (seconds)"
+msgstr "캐시 유효 시간(초)"
+
+msgid "How long generated output is reused before checking WordPress for changes. For example, 900 seconds is 15 minutes."
+msgstr "WordPress의 변경 사항을 확인하기 전까지 생성된 출력을 재사용할 시간입니다. 예를 들어 900초는 15분입니다."
+
+msgid "Choose a value source for each output field. Field-specific choices appear only when they are needed."
+msgstr "각 출력 필드의 값 소스를 선택하세요. 필드별 선택 항목은 필요한 경우에만 표시됩니다."
+
+msgid "Feed information"
+msgstr "피드 정보"
+
+msgid "Each item"
+msgstr "각 피드 항목"
+
+msgid "Required"
+msgstr "필수"
+
+msgid "Generated automatically"
+msgstr "자동 생성"
+
+msgid "Fixed value"
+msgstr "고정값"
+
+msgid "If the primary value is empty"
+msgstr "주 값이 비어 있는 경우"
+
+msgid "Fallback URL"
+msgstr "대체 URL"
+
+msgid "Value source"
+msgstr "값 소스"
+
+msgid "WordPress values"
+msgstr "WordPress 값"
+
+msgid "Custom values"
+msgstr "사용자 정의 값"
+
+msgid "Other"
+msgstr "기타"
+
+msgid "Do not output"
+msgstr "출력하지 않음"
+
+msgid "Unavailable source (selection preserved)"
+msgstr "사용할 수 없는 소스(선택 내용 유지됨)"
+
+msgid "Unavailable field (selection preserved)"
+msgstr "사용할 수 없는 필드(선택 내용 유지됨)"
+
+msgid "Site name"
+msgstr "사이트 이름"
+
+msgid "Site tagline"
+msgstr "사이트 태그라인"
+
+msgid "Site URL"
+msgstr "사이트 URL"
+
+msgid "Site language"
+msgstr "사이트 언어"
+
+msgid "Site icon URL"
+msgstr "사이트 아이콘 URL"
+
+msgid "Post title"
+msgstr "글 제목"
+
+msgid "Post permalink"
+msgstr "글 고유주소"
+
+msgid "Stable post ID"
+msgstr "변경되지 않는 글 ID"
+
+msgid "Post excerpt (generated from content if empty)"
+msgstr "글 요약(비어 있으면 콘텐츠에서 생성)"
+
+msgid "Post content (HTML)"
+msgstr "글 콘텐츠(HTML)"
+
+msgid "Featured image URL"
+msgstr "대표 이미지 URL"
+
+msgid "All public taxonomy terms"
+msgstr "모든 공개 택소노미 항목"
+
+msgid "Categories only"
+msgstr "카테고리만"
+
+msgid "Tags only"
+msgstr "태그만"
+
+msgid "Public custom taxonomy terms only"
+msgstr "공개 사용자 정의 택소노미 항목만"
+
+msgid "Display name"
+msgstr "표시 이름"
+
+msgid "Author archive URL"
+msgstr "작성자 아카이브 URL"
+
+msgid "Avatar URL"
+msgstr "아바타 URL"
+
+msgid "may contain personal information"
+msgstr "개인정보가 포함될 수 있음"
+
+msgid "Field name"
+msgstr "필드 이름"
+
+msgid "Enter the field name used by the plugin."
+msgstr "플러그인에서 사용하는 필드 이름을 입력하세요."
+
+msgid "Publish this feed to create its public URL."
+msgstr "공개 URL을 만들려면 이 피드를 공개하세요."
+
+msgid "Standard feed disabled"
+msgstr "표준 피드 비활성화됨"
+
+msgid "The selected WordPress feed URL returns not found and is not advertised in the page head."
+msgstr "선택한 WordPress 피드 URL은 찾을 수 없음 응답을 반환하며 페이지 헤드에 표시되지 않습니다."
+
+msgid "Existing term feed URLs"
+msgstr "기존 항목 피드 URL"
+
+msgid "Each category, tag, or taxonomy term keeps its own WordPress feed URL."
+msgstr "각 카테고리, 태그 또는 택소노미 항목은 자체 WordPress 피드 URL을 유지합니다."
+
+msgid "Check the current settings without saving them."
+msgstr "저장하지 않고 현재 설정을 확인합니다."
+
+msgid "Preview feed"
+msgstr "피드 미리보기"
+
+msgid "The preview uses the first item in the current feed order."
+msgstr "미리보기에는 현재 피드 순서의 첫 번째 항목이 사용됩니다."
+
+msgid "Feed preview"
+msgstr "피드 미리보기"
+
+msgid "Close preview"
+msgstr "미리보기 닫기"
+
+msgid "Preview view"
+msgstr "미리보기 표시 방식"
+
+msgid "Reader preview"
+msgstr "피드 리더 미리보기"
+
+msgid "Source code"
+msgstr "소스 코드"
+
+msgid "Copy output"
+msgstr "출력 복사"
+
+msgid "You are not allowed to preview feeds."
+msgstr "피드를 미리 볼 권한이 없습니다."
+
+msgid "The feed configuration could not be found."
+msgstr "피드 구성을 찾을 수 없습니다."
+
+msgid "Generating preview..."
+msgstr "미리보기를 생성하는 중..."
+
+msgid "The preview could not be generated."
+msgstr "미리보기를 생성할 수 없습니다."
+
+#, php-format
+msgid "%s preview, first item"
+msgstr "%s 미리보기: 첫 번째 항목"
+
+msgid "Output copied."
+msgstr "출력이 복사되었습니다."
+
+msgid "The output could not be copied."
+msgstr "출력을 복사할 수 없습니다."
+
+#, php-format
+msgid "Published by %s"
+msgstr "발행자: %s"
+
+#, php-format
+msgid "Reviewed by %s"
+msgstr "검토자/감수자: %s"
+
+#, php-format
+msgid "Source: %s"
+msgstr "출처: %s"
+
+msgid "Format"
+msgstr "형식"
+
+msgid "Publication"
+msgstr "공개 방식"
+
+msgid "Custom feed"
+msgstr "사용자 정의 피드"
+
+msgid "Standard feed replacement"
+msgstr "표준 피드 교체"
+
+msgid "Disabled"
+msgstr "비활성화됨"
+
+msgid "Dynamic term URLs"
+msgstr "동적 항목 URL"
+
+msgid "Internal feed name"
+msgstr "내부용 피드 이름"
+
+msgid "Feed"
+msgstr "피드"
+
+msgid "Edit Feed"
+msgstr "피드 편집"
+
+msgid "New Feed"
+msgstr "새 피드"
+
+msgid "Feeds"
+msgstr "피드"
+
+msgid "Main posts feed"
+msgstr "기본 글 피드"
+
+#, php-format
+msgid "%s archive feed"
+msgstr "%s 아카이브 피드"
+
+#, php-format
+msgid "%s feeds"
+msgstr "%s 피드"
+
+msgid "The feed could not be encoded."
+msgstr "피드를 인코딩할 수 없습니다."
+
+msgid "RSS 2.0"
+msgstr "RSS 2.0"
+
+msgid "For feed readers and broadly compatible content syndication."
+msgstr "피드 리더와 폭넓은 호환성이 필요한 콘텐츠 배포용입니다."
+
+msgid "JSON Feed 1.1"
+msgstr "JSON Feed 1.1"
+
+msgid "For applications, external services, and structured data consumers."
+msgstr "애플리케이션, 외부 서비스, 구조화된 데이터를 사용하는 시스템용입니다."
+
+msgid "RSS version"
+msgstr "RSS 버전"
+
+msgid "Always output as RSS 2.0."
+msgstr "항상 RSS 2.0으로 출력합니다."
+
+msgid "Feed title"
+msgstr "피드 제목"
+
+msgid "Name of this feed."
+msgstr "이 피드의 이름입니다."
+
+msgid "Publisher website"
+msgstr "피드 발행자 웹사이트"
+
+msgid "Website represented by the feed."
+msgstr "이 피드가 대표하는 웹사이트입니다."
+
+msgid "Publisher / site operator"
+msgstr "피드 발행자/사이트 운영자"
+
+msgid "Person or organization responsible for publishing the feed."
+msgstr "피드 발행을 담당하는 사람 또는 조직입니다."
+
+msgid "Feed description"
+msgstr "피드 설명"
+
+msgid "Short description of the feed."
+msgstr "피드에 대한 짧은 설명입니다."
+
+msgid "Language"
+msgstr "언어"
+
+msgid "Primary language of the feed."
+msgstr "피드의 기본 언어입니다."
+
+msgid "Copyright"
+msgstr "저작권"
+
+msgid "Optional rights statement."
+msgstr "선택 사항인 권리 고지입니다."
+
+msgid "Last updated"
+msgstr "최근 업데이트"
+
+msgid "Calculated from feed and source updates."
+msgstr "피드 설정과 포함된 글의 업데이트를 기준으로 계산됩니다."
+
+msgid "Canonical feed URL"
+msgstr "대표 피드 URL"
+
+msgid "Generated from the public feed URL."
+msgstr "공개 피드 URL에서 생성됩니다."
+
+msgid "Title for each feed item."
+msgstr "각 피드 항목의 제목입니다."
+
+msgid "Post URL"
+msgstr "글 URL"
+
+msgid "Public URL for each item."
+msgstr "각 피드 항목의 공개 URL입니다."
+
+msgid "Unique ID"
+msgstr "고유 ID"
+
+msgid "Stable identifier used by feed readers."
+msgstr "피드 리더가 사용하는 변경되지 않는 식별자입니다."
+
+msgid "Summary"
+msgstr "요약"
+
+msgid "Short text shown in item lists."
+msgstr "항목 목록에 표시되는 짧은 텍스트입니다."
+
+msgid "Full content"
+msgstr "전체 콘텐츠"
+
+msgid "HTML body of the item."
+msgstr "피드 항목의 HTML 본문입니다."
+
+msgid "Article author"
+msgstr "글 작성자"
+
+msgid "Person credited with creating the item."
+msgstr "피드 항목의 작성자로 표시되는 사람입니다."
+
+msgid "Reviewer / supervisor"
+msgstr "검토자/감수자"
+
+msgid "Person who reviewed or supervised the item."
+msgstr "피드 항목을 검토하거나 감수한 사람입니다."
+
+msgid "Primary source name"
+msgstr "주요 출처 이름"
+
+msgid "Name of the original or related source."
+msgstr "원본 또는 관련 출처의 이름입니다."
+
+msgid "Primary source URL"
+msgstr "주요 출처 URL"
+
+msgid "Public URL of the original or related source."
+msgstr "원본 또는 관련 출처의 공개 URL입니다."
+
+msgid "Publication date for the item."
+msgstr "피드 항목의 공개일입니다."
+
+msgid "Categories, tags, and terms"
+msgstr "카테고리, 태그 및 항목"
+
+msgid "Names of public categories, tags, or custom taxonomy terms assigned to the item. Feed readers may use them for grouping or filtering."
+msgstr "피드 항목에 지정된 공개 카테고리, 태그 또는 사용자 정의 택소노미 항목의 이름입니다. 피드 리더가 그룹화하거나 필터링하는 데 사용할 수 있습니다."
+
+msgid "Main image"
+msgstr "대표 이미지"
+
+msgid "Main item image published through Media RSS."
+msgstr "Media RSS를 통해 게시되는 피드 항목의 대표 이미지입니다."
+
+msgid "JSON Feed version"
+msgstr "JSON Feed 버전"
+
+msgid "Always output as JSON Feed 1.1."
+msgstr "항상 JSON Feed 1.1로 출력합니다."
+
+msgid "Publisher URL"
+msgstr "피드 발행자 URL"
+
+msgid "Public website or profile for the publisher."
+msgstr "피드 발행자의 공개 웹사이트 또는 프로필입니다."
+
+msgid "Publisher avatar"
+msgstr "피드 발행자 아바타"
+
+msgid "Square image representing the publisher."
+msgstr "피드 발행자를 나타내는 정사각형 이미지입니다."
+
+msgid "Feed icon"
+msgstr "피드 아이콘"
+
+msgid "Square image representing the feed."
+msgstr "피드를 나타내는 정사각형 이미지입니다."
+
+msgid "Items"
+msgstr "피드 항목"
+
+msgid "One item is generated for each matching post."
+msgstr "일치하는 각 글마다 하나의 피드 항목이 생성됩니다."
+
+msgid "Stable identifier for the item."
+msgstr "피드 항목의 변경되지 않는 식별자입니다."
+
+msgid "Public URL for the item."
+msgstr "피드 항목의 공개 URL입니다."
+
+msgid "Title for the item."
+msgstr "피드 항목의 제목입니다."
+
+msgid "Short plain-text summary."
+msgstr "일반 텍스트 형식의 짧은 요약입니다."
+
+msgid "Content"
+msgstr "콘텐츠"
+
+msgid "HTML content for the item."
+msgstr "피드 항목의 HTML 콘텐츠입니다."
+
+msgid "Featured or mapped image URL."
+msgstr "대표 이미지 또는 매핑된 이미지의 URL입니다."
+
+msgid "Most recent modification date."
+msgstr "가장 최근 수정일입니다."
+
+msgid "Article author URL"
+msgstr "글 작성자 URL"
+
+msgid "Public profile or website for the article author."
+msgstr "글 작성자의 공개 프로필 또는 웹사이트입니다."
+
+msgid "Article author avatar"
+msgstr "글 작성자 아바타"
+
+msgid "Image representing the article author."
+msgstr "글 작성자를 나타내는 이미지입니다."
+
+msgid "Reviewer / supervisor URL"
+msgstr "검토자/감수자 URL"
+
+msgid "Public profile or website for the reviewer."
+msgstr "검토자 또는 감수자의 공개 프로필이나 웹사이트입니다."

@@ -4,1099 +4,1100 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atshift Feed Builder 1.0\n"
 "Report-Msgid-Bugs-To: https://upf.at-shift.net/en/feed-builder/\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-08-18T01:35:55+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-08-18T01:35:55+00:00\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: atshift-feed-builder\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Plugin Name of the plugin
-#: atshift-feed-builder.php
-#: includes/class-atshift-feed-builder-plugin.php:126
+#: atshift-feed-builder.php includes/class-atshift-feed-builder-plugin.php:126
 msgid "atshift Feed Builder"
-msgstr ""
+msgstr "atshift Feed Builder"
 
 #. Plugin URI of the plugin
 #: atshift-feed-builder.php
 msgid "https://upf.at-shift.net/en/feed-builder/"
-msgstr ""
+msgstr "https://upf.at-shift.net/en/feed-builder/"
 
 #. Description of the plugin
 #: atshift-feed-builder.php
 msgid "Build safe RSS and JSON feeds from WordPress posts, custom fields, and author profile data."
-msgstr ""
+msgstr "WordPress yazılarından, özel alanlardan ve yazar profili verilerinden güvenli RSS ve JSON akışları oluşturun."
 
 #. Author of the plugin
 #: atshift-feed-builder.php
 msgid "@shift"
-msgstr ""
+msgstr "@shift"
 
 #. Author URI of the plugin
 #: atshift-feed-builder.php
 msgid "https://cfs.at-shift.net/en/"
-msgstr ""
+msgstr "https://cfs.at-shift.net/en/"
 
 #: includes/class-atshift-feed-builder-plugin.php:95
 msgid "Settings"
-msgstr ""
+msgstr "Ayarlar"
 
 #. translators: %s: Plugin version.
 #: includes/class-atshift-feed-builder-plugin.php:126
 #, php-format
 msgid "Version %s"
-msgstr ""
+msgstr "Sürüm %s"
 
 #. translators: %s: Plugin author.
 #: includes/class-atshift-feed-builder-plugin.php:131
 #, php-format
 msgid "By %s"
-msgstr ""
+msgstr "%s tarafından"
 
 #: includes/class-atshift-feed-builder-plugin.php:137
 msgid "View details"
-msgstr ""
+msgstr "Ayrıntıları görüntüle"
 
 #: includes/adapters/class-atshift-feed-builder-acf-adapter.php:18
 msgid "ACF / Secure Custom Fields field"
-msgstr ""
+msgstr "ACF / Secure Custom Fields alanı"
 
 #: includes/adapters/class-atshift-feed-builder-acf-adapter.php:30
 msgid "ACF / SCF field name"
-msgstr ""
+msgstr "ACF / SCF alan adı"
 
 #: includes/adapters/class-atshift-feed-builder-acf-adapter.php:34
 msgid "Enter the ACF or Secure Custom Fields field name or field key."
-msgstr ""
+msgstr "ACF veya Secure Custom Fields alan adını ya da alan anahtarını girin."
 
 #: includes/adapters/class-atshift-feed-builder-carbon-fields-adapter.php:18
 msgid "Carbon Fields field"
-msgstr ""
+msgstr "Carbon Fields alanı"
 
 #: includes/adapters/class-atshift-feed-builder-carbon-fields-adapter.php:30
 msgid "Carbon Fields field name"
-msgstr ""
+msgstr "Carbon Fields alan adı"
 
 #: includes/adapters/class-atshift-feed-builder-carbon-fields-adapter.php:34
 msgid "Enter the Carbon Fields post meta field name."
-msgstr ""
+msgstr "Carbon Fields yazı üst verisi alanının adını girin."
 
 #: includes/adapters/class-atshift-feed-builder-fields-adapter.php:24
 msgid "atshift Fields"
-msgstr ""
+msgstr "atshift Fields"
 
 #: includes/adapters/class-atshift-feed-builder-meta-box-adapter.php:18
 msgid "Meta Box field"
-msgstr ""
+msgstr "Meta Box alanı"
 
 #: includes/adapters/class-atshift-feed-builder-meta-box-adapter.php:30
 msgid "Meta Box field ID"
-msgstr ""
+msgstr "Meta Box alan kimliği"
 
 #: includes/adapters/class-atshift-feed-builder-meta-box-adapter.php:34
 msgid "Enter the Meta Box field ID. Standard post storage is supported."
-msgstr ""
+msgstr "Meta Box alan kimliğini girin. Standart yazı depolama yöntemi desteklenir."
 
 #: includes/adapters/class-atshift-feed-builder-pods-adapter.php:18
 msgid "Pods field"
-msgstr ""
+msgstr "Pods alanı"
 
 #: includes/adapters/class-atshift-feed-builder-pods-adapter.php:35
 msgid "Pods field name"
-msgstr ""
+msgstr "Pods alan adı"
 
 #: includes/adapters/class-atshift-feed-builder-pods-adapter.php:39
 msgid "Enter the Pods field name. The current post type and post ID are detected automatically."
-msgstr ""
+msgstr "Pods alan adını girin. Geçerli yazı türü ve yazı kimliği otomatik olarak algılanır."
 
 #: includes/adapters/class-atshift-feed-builder-post-meta-adapter.php:18
 msgid "WordPress custom field (post_meta)"
-msgstr ""
+msgstr "WordPress özel alanı (post_meta)"
 
 #: includes/adapters/class-atshift-feed-builder-post-meta-adapter.php:35
 #: includes/class-atshift-feed-builder-admin.php:405
 #: includes/class-atshift-feed-builder-admin.php:425
 msgid "Custom field key"
-msgstr ""
+msgstr "Özel alan anahtarı"
 
 #: includes/adapters/class-atshift-feed-builder-post-meta-adapter.php:39
 msgid "Enter a public post_meta key. This covers Custom Field Template and other plugins that use standard post meta."
-msgstr ""
+msgstr "Herkese açık bir post_meta anahtarı girin. Bu, Custom Field Template ve standart yazı üst verilerini kullanan diğer eklentileri kapsar."
 
 #: includes/adapters/class-atshift-feed-builder-upf-adapter.php:21
 msgid "atshift User Profile Fields (post author)"
-msgstr ""
+msgstr "atshift User Profile Fields (yazı yazarı)"
 
 #: includes/class-atshift-feed-builder-admin.php:38
 #: includes/class-atshift-feed-builder-admin.php:39
 #: includes/class-atshift-feed-builder-plugin.php:128
 msgid "Add New Feed"
-msgstr ""
+msgstr "Yeni akış ekle"
 
 #: includes/class-atshift-feed-builder-admin.php:69
 msgid "Choose how to publish the feed"
-msgstr ""
+msgstr "Akışın nasıl yayımlanacağını seçin"
 
 #: includes/class-atshift-feed-builder-admin.php:70
 msgid "Keep an existing WordPress feed URL and replace its output, or add a separate feed for a new purpose."
-msgstr ""
+msgstr "Mevcut bir WordPress akış URL'sini koruyup çıktısını değiştirin veya yeni bir amaç için ayrı bir akış ekleyin."
 
 #: includes/class-atshift-feed-builder-admin.php:72
 msgid "Replace a WordPress standard feed"
-msgstr ""
+msgstr "Standart bir WordPress akışını değiştir"
 
 #: includes/class-atshift-feed-builder-admin.php:73
 msgid "The existing RSS URL stays the same. WordPress continues to advertise that URL in the page head, while atshift Feed Builder controls its content."
-msgstr ""
+msgstr "Mevcut RSS URL'si aynı kalır. WordPress bu URL'nin bağlantısını sayfanın <head> bölümünde sunmayı sürdürürken içeriği atshift Feed Builder tarafından denetlenir."
 
 #: includes/class-atshift-feed-builder-admin.php:79
 msgid "Standard feed to replace"
-msgstr ""
+msgstr "Değiştirilecek standart akış"
 
 #: includes/class-atshift-feed-builder-admin.php:85
 msgid "Create standard RSS feed"
-msgstr ""
+msgstr "Standart RSS akışı oluştur"
 
 #: includes/class-atshift-feed-builder-admin.php:90
 msgid "Add a custom feed"
-msgstr ""
+msgstr "Özel akış ekle"
 
 #: includes/class-atshift-feed-builder-admin.php:91
 msgid "Create a separate URL with its own slug for a specific service, audience, or use case."
-msgstr ""
+msgstr "Belirli bir hizmet, hedef kitle veya kullanım amacı için kendi adres son ekine sahip ayrı bir URL oluşturun."
 
 #. translators: %s: Feed format name.
 #: includes/class-atshift-feed-builder-admin.php:106
 #, php-format
 msgid "Create %s feed"
-msgstr ""
+msgstr "%s akışı oluştur"
 
 #: includes/class-atshift-feed-builder-admin.php:121
 msgid "You are not allowed to create feeds."
-msgstr ""
+msgstr "Akış oluşturma izniniz yok."
 
 #: includes/class-atshift-feed-builder-admin.php:132
 msgid "Invalid feed format."
-msgstr ""
+msgstr "Geçersiz akış biçimi."
 
 #: includes/class-atshift-feed-builder-admin.php:135
 msgid "Invalid standard feed destination."
-msgstr ""
+msgstr "Geçersiz standart akış hedefi."
 
 #. translators: %s: Feed format name.
 #: includes/class-atshift-feed-builder-admin.php:142
 #, php-format
 msgid "New %s feed"
-msgstr ""
+msgstr "Yeni %s akışı"
 
 #: includes/class-atshift-feed-builder-admin.php:155
 msgid "The feed could not be created."
-msgstr ""
+msgstr "Akış oluşturulamadı."
 
 #: includes/class-atshift-feed-builder-admin.php:178
 msgid "Feed source"
-msgstr ""
+msgstr "Akış kaynağı"
 
 #. translators: %s: Feed format name.
 #: includes/class-atshift-feed-builder-admin.php:183
 #, php-format
 msgid "%s output mapping"
-msgstr ""
+msgstr "%s çıktı eşlemesi"
 
 #: includes/class-atshift-feed-builder-admin.php:191
 #: includes/class-atshift-feed-builder-admin.php:1108
 msgid "Feed URL"
-msgstr ""
+msgstr "Akış URL'si"
 
 #: includes/class-atshift-feed-builder-admin.php:192
 msgid "Preview"
-msgstr ""
+msgstr "Ön izleme"
 
 #: includes/class-atshift-feed-builder-admin.php:203
 msgid "Help"
-msgstr ""
+msgstr "Yardım"
 
 #: includes/class-atshift-feed-builder-admin.php:211
 msgid "The most recent update time in the feed, calculated automatically. Services use it to detect changes."
-msgstr ""
+msgstr "Akıştaki en son güncelleme zamanı otomatik olarak hesaplanır. Hizmetler değişiklikleri algılamak için bunu kullanır."
 
 #: includes/class-atshift-feed-builder-admin.php:212
 #: includes/class-atshift-feed-builder-admin.php:213
 msgid "The permanent public URL of this feed. It is generated automatically and tells services which URL is authoritative."
-msgstr ""
+msgstr "Bu akışın kalıcı ve herkese açık URL'sidir. Otomatik olarak oluşturulur ve hizmetlere hangi URL'nin asıl olduğunu bildirir."
 
 #: includes/class-atshift-feed-builder-admin.php:214
 #: includes/class-atshift-feed-builder-admin.php:215
 msgid "The person or organization responsible for operating and publishing the feed, not necessarily the article author."
-msgstr ""
+msgstr "Akışı işletmekten ve yayımlamaktan sorumlu kişi veya kuruluş; bu kişi makale yazarı olmak zorunda değildir."
 
 #: includes/class-atshift-feed-builder-admin.php:216
 msgid "A feed item is one published post included in the feed. This container is created automatically."
-msgstr ""
+msgstr "Akış ögesi, akışa eklenen yayımlanmış bir yazıdır. Bu kapsayıcı otomatik olarak oluşturulur."
 
 #: includes/class-atshift-feed-builder-admin.php:217
 #: includes/class-atshift-feed-builder-admin.php:218
 msgid "Feed readers use this value to recognize the same post after an update and avoid duplicates. It should not change after publication."
-msgstr ""
+msgstr "Akış okuyucuları bir güncellemeden sonra aynı yazıyı tanımak ve yinelenen ögeleri önlemek için bu değeri kullanır. Yayımdan sonra değişmemelidir."
 
 #: includes/class-atshift-feed-builder-admin.php:219
 #: includes/class-atshift-feed-builder-admin.php:220
 msgid "The public page readers open for this post. Custom post types also use their normal permalink."
-msgstr ""
+msgstr "Okuyucuların bu yazı için açtığı herkese açık sayfadır. Özel yazı türleri de normal kalıcı bağlantılarını kullanır."
 
 #: includes/class-atshift-feed-builder-admin.php:221
 #: includes/class-atshift-feed-builder-admin.php:222
 msgid "The person credited with writing or creating the post."
-msgstr ""
+msgstr "Yazıyı yazdığı veya oluşturduğu belirtilen kişi."
 
 #: includes/class-atshift-feed-builder-admin.php:223
 #: includes/class-atshift-feed-builder-admin.php:224
 msgid "An optional person who checked or supervised the content. Leave it out when there is no reviewer."
-msgstr ""
+msgstr "İçeriği kontrol eden veya denetleyen isteğe bağlı kişi. İnceleyen biri yoksa bu alanı boş bırakın."
 
 #: includes/class-atshift-feed-builder-admin.php:225
 #: includes/class-atshift-feed-builder-admin.php:226
 msgid "The original or related source behind the post. Use this when the WordPress post summarizes information published elsewhere."
-msgstr ""
+msgstr "Yazının dayandığı asıl veya ilişkili kaynak. WordPress yazısı başka bir yerde yayımlanan bilgileri özetlediğinde bunu kullanın."
 
 #: includes/class-atshift-feed-builder-admin.php:227
 #: includes/class-atshift-feed-builder-admin.php:228
 msgid "Classification labels attached to the post. They help readers and services group or filter items."
-msgstr ""
+msgstr "Yazıya eklenen sınıflandırma etiketleri. Okuyucuların ve hizmetlerin ögeleri gruplamasına veya süzmesine yardımcı olur."
 
 #: includes/class-atshift-feed-builder-admin.php:229
 msgid "The representative image for the item. A fallback can be used when the post has no featured image."
-msgstr ""
+msgstr "Ögeyi temsil eden görsel. Yazının öne çıkarılmış görseli yoksa yedek bir değer kullanılabilir."
 
 #: includes/class-atshift-feed-builder-admin.php:269
 msgid "Equals"
-msgstr ""
+msgstr "Eşittir"
 
 #: includes/class-atshift-feed-builder-admin.php:270
 msgid "Does not equal"
-msgstr ""
+msgstr "Eşit değildir"
 
 #: includes/class-atshift-feed-builder-admin.php:271
 msgid "Contains"
-msgstr ""
+msgstr "İçerir"
 
 #: includes/class-atshift-feed-builder-admin.php:272
 msgid "Exists"
-msgstr ""
+msgstr "Mevcut"
 
 #: includes/class-atshift-feed-builder-admin.php:273
 msgid "Does not exist"
-msgstr ""
+msgstr "Mevcut değil"
 
 #: includes/class-atshift-feed-builder-admin.php:279
 msgid "Output format"
-msgstr ""
+msgstr "Çıktı biçimi"
 
 #: includes/class-atshift-feed-builder-admin.php:281
 msgid "The format is fixed for this feed."
-msgstr ""
+msgstr "Bu akışın biçimi sabittir."
 
 #: includes/class-atshift-feed-builder-admin.php:286
 msgid "Publication method"
-msgstr ""
+msgstr "Yayımlama yöntemi"
 
 #: includes/class-atshift-feed-builder-admin.php:289
 msgid "Customize a standard feed"
-msgstr ""
+msgstr "Standart bir akışı özelleştir"
 
 #: includes/class-atshift-feed-builder-admin.php:289
 msgid "Keep the WordPress URL and replace its RSS output."
-msgstr ""
+msgstr "WordPress URL'sini koruyun ve RSS çıktısını değiştirin."
 
 #: includes/class-atshift-feed-builder-admin.php:290
 msgid "Create a custom feed"
-msgstr ""
+msgstr "Özel akış oluştur"
 
 #: includes/class-atshift-feed-builder-admin.php:290
 msgid "Publish at a separate URL with a custom slug."
-msgstr ""
+msgstr "Özel bir adres son ekiyle ayrı bir URL'de yayımlayın."
 
 #: includes/class-atshift-feed-builder-admin.php:291
 msgid "Disable a standard feed"
-msgstr ""
+msgstr "Standart bir akışı devre dışı bırak"
 
 #: includes/class-atshift-feed-builder-admin.php:291
 msgid "Remove its discovery link and return not found at that RSS URL."
-msgstr ""
+msgstr "Keşif bağlantısını kaldırın ve bu RSS URL'sinde bulunamadı yanıtı döndürün."
 
 #: includes/class-atshift-feed-builder-admin.php:295
 msgid "JSON Feed uses a custom URL because WordPress does not provide a standard JSON Feed endpoint."
-msgstr ""
+msgstr "WordPress standart bir JSON Feed uç noktası sunmadığından JSON Feed özel bir URL kullanır."
 
 #: includes/class-atshift-feed-builder-admin.php:301
 msgid "Target WordPress standard feed"
-msgstr ""
+msgstr "Hedef standart WordPress akışı"
 
 #: includes/class-atshift-feed-builder-admin.php:307
 msgid "Choose the standard WordPress feed affected by this setting. Category, tag, and taxonomy targets use each term's existing feed URL."
-msgstr ""
+msgstr "Bu ayardan etkilenecek standart WordPress akışını seçin. Kategori, etiket ve taksonomi hedefleri her terimin mevcut akış URL'sini kullanır."
 
 #: includes/class-atshift-feed-builder-admin.php:313
 msgid "Feed slug"
-msgstr ""
+msgstr "Akış adres son eki"
 
 #: includes/class-atshift-feed-builder-admin.php:313
 msgid "A short identifier used in the public feed URL. Use lowercase letters, numbers, and hyphens."
-msgstr ""
+msgstr "Herkese açık akış URL'sinde kullanılan kısa bir tanımlayıcıdır. Küçük harfler, rakamlar ve kısa çizgiler kullanın."
 
 #: includes/class-atshift-feed-builder-admin.php:315
 msgid "Changing this value changes the public feed URL."
-msgstr ""
+msgstr "Bu değerin değiştirilmesi herkese açık akış URL'sini değiştirir."
 
 #: includes/class-atshift-feed-builder-admin.php:317
 msgid "Publish this feed"
-msgstr ""
+msgstr "Bu akışı yayımla"
 
 #: includes/class-atshift-feed-builder-admin.php:317
 msgid "Adds an alternate feed link to the page <head> so browsers and external services can discover this custom feed."
-msgstr ""
+msgstr "Tarayıcıların ve harici hizmetlerin bu özel akışı keşfedebilmesi için sayfanın <head> bölümüne alternatif bir akış bağlantısı ekler."
 
 #: includes/class-atshift-feed-builder-admin.php:322
 msgid "Content types"
-msgstr ""
+msgstr "İçerik türleri"
 
 #: includes/class-atshift-feed-builder-admin.php:322
 msgid "Choose which kinds of WordPress content become feed items. Selecting a custom post type includes its published entries."
-msgstr ""
+msgstr "Hangi WordPress içerik türlerinin akış ögesi olacağını seçin. Özel bir yazı türü seçildiğinde bu türdeki yayımlanmış kayıtlar akışa eklenir."
 
 #: includes/class-atshift-feed-builder-admin.php:326
 msgid "WordPress content"
-msgstr ""
+msgstr "WordPress içeriği"
 
 #: includes/class-atshift-feed-builder-admin.php:327
 msgid "Custom post types"
-msgstr ""
+msgstr "Özel yazı türleri"
 
 #: includes/class-atshift-feed-builder-admin.php:327
 msgid "No public custom post types are currently registered."
-msgstr ""
+msgstr "Şu anda herkese açık özel bir yazı türü kayıtlı değil."
 
 #: includes/class-atshift-feed-builder-admin.php:354
 msgid "Feed content filters"
-msgstr ""
+msgstr "Akış içeriği süzgeçleri"
 
 #: includes/class-atshift-feed-builder-admin.php:354
 msgid "These settings limit which published posts are included in the feed. They do not change the values output for each item."
-msgstr ""
+msgstr "Bu ayarlar, akışa hangi yayımlanmış yazıların ekleneceğini sınırlar. Her ögenin çıktısındaki değerleri değiştirmez."
 
 #: includes/class-atshift-feed-builder-admin.php:357
 msgid "Active"
-msgstr ""
+msgstr "Etkin"
 
 #: includes/class-atshift-feed-builder-admin.php:363
 msgid "Choose which posts are included by author, taxonomy term, or custom field value. Different filter groups must all match; within each taxonomy, any selected term can match."
-msgstr ""
+msgstr "Yazara, taksonomi terimine veya özel alan değerine göre eklenecek yazıları seçin. Farklı süzgeç gruplarının tümü eşleşmelidir; her taksonomide seçili terimlerden herhangi biri eşleşebilir."
 
 #: includes/class-atshift-feed-builder-admin.php:366
 msgid "Authors"
-msgstr ""
+msgstr "Yazarlar"
 
 #: includes/class-atshift-feed-builder-admin.php:366
 msgid "Include posts written by the selected authors."
-msgstr ""
+msgstr "Seçili yazarlar tarafından yazılan yazıları ekleyin."
 
 #: includes/class-atshift-feed-builder-admin.php:378
 msgid "Taxonomy terms"
-msgstr ""
+msgstr "Taksonomi terimleri"
 
 #: includes/class-atshift-feed-builder-admin.php:378
 msgid "Include posts assigned to the selected categories, tags, or custom taxonomy terms."
-msgstr ""
+msgstr "Seçili kategorilere, etiketlere veya özel taksonomi terimlerine atanmış yazıları ekleyin."
 
 #: includes/class-atshift-feed-builder-admin.php:380
 msgid "No public taxonomy terms are currently registered."
-msgstr ""
+msgstr "Şu anda herkese açık bir taksonomi terimi kayıtlı değil."
 
 #: includes/class-atshift-feed-builder-admin.php:401
 msgid "Custom field conditions"
-msgstr ""
+msgstr "Özel alan koşulları"
 
 #: includes/class-atshift-feed-builder-admin.php:401
 msgid "Include posts by matching a public custom field key and value."
-msgstr ""
+msgstr "Herkese açık bir özel alan anahtarı ve değeriyle eşleşen yazıları ekleyin."
 
 #: includes/class-atshift-feed-builder-admin.php:406
 #: includes/class-atshift-feed-builder-admin.php:426
 msgid "Comparison"
-msgstr ""
+msgstr "Karşılaştırma"
 
 #: includes/class-atshift-feed-builder-admin.php:411
 #: includes/class-atshift-feed-builder-admin.php:431
 msgid "Value"
-msgstr ""
+msgstr "Değer"
 
 #: includes/class-atshift-feed-builder-admin.php:412
 #: includes/class-atshift-feed-builder-admin.php:414
 #: includes/class-atshift-feed-builder-admin.php:432
 #: includes/class-atshift-feed-builder-admin.php:434
 msgid "Remove condition"
-msgstr ""
+msgstr "Koşulu kaldır"
 
 #: includes/class-atshift-feed-builder-admin.php:421
 msgid "Add condition"
-msgstr ""
+msgstr "Koşul ekle"
 
 #: includes/class-atshift-feed-builder-admin.php:445
 msgid "Number of items"
-msgstr ""
+msgstr "Öge sayısı"
 
 #: includes/class-atshift-feed-builder-admin.php:445
 msgid "The maximum number of posts included each time the feed is generated."
-msgstr ""
+msgstr "Akış her oluşturulduğunda eklenecek en fazla yazı sayısı."
 
 #: includes/class-atshift-feed-builder-admin.php:450
 msgid "Order items by"
-msgstr ""
+msgstr "Ögeleri şuna göre sırala"
 
 #: includes/class-atshift-feed-builder-admin.php:450
 msgid "Choose whether newly published posts or recently updated posts appear first."
-msgstr ""
+msgstr "Yeni yayımlanan yazıların mı yoksa yakın zamanda güncellenen yazıların mı önce görüneceğini seçin."
 
 #: includes/class-atshift-feed-builder-admin.php:452
 #: includes/class-atshift-feed-builder-admin.php:612
 #: includes/class-atshift-feed-builder-schema.php:114
 #: includes/class-atshift-feed-builder-schema.php:139
 msgid "Published date"
-msgstr ""
+msgstr "Yayımlanma tarihi"
 
 #: includes/class-atshift-feed-builder-admin.php:453
 #: includes/class-atshift-feed-builder-admin.php:613
 #: includes/class-atshift-feed-builder-schema.php:140
 msgid "Modified date"
-msgstr ""
+msgstr "Değiştirilme tarihi"
 
 #: includes/class-atshift-feed-builder-admin.php:458
 msgid "Cache lifetime (seconds)"
-msgstr ""
+msgstr "Önbellek ömrü (saniye)"
 
 #: includes/class-atshift-feed-builder-admin.php:458
 msgid "How long generated output is reused before checking WordPress for changes. For example, 900 seconds is 15 minutes."
-msgstr ""
+msgstr "WordPress'te değişiklik denetlenmeden önce oluşturulan çıktının ne kadar süre yeniden kullanılacağı. Örneğin 900 saniye 15 dakikadır."
 
 #: includes/class-atshift-feed-builder-admin.php:471
 msgid "Choose a value source for each output field. Field-specific choices appear only when they are needed."
-msgstr ""
+msgstr "Her çıktı alanı için bir değer kaynağı seçin. Alana özgü seçenekler yalnızca gerektiğinde görünür."
 
 #: includes/class-atshift-feed-builder-admin.php:472
 msgid "Feed information"
-msgstr ""
+msgstr "Akış bilgileri"
 
 #: includes/class-atshift-feed-builder-admin.php:472
 msgid "Each item"
-msgstr ""
+msgstr "Her öge"
 
 #: includes/class-atshift-feed-builder-admin.php:483
 msgid "Required"
-msgstr ""
+msgstr "Gerekli"
 
 #: includes/class-atshift-feed-builder-admin.php:490
 msgid "Generated automatically"
-msgstr ""
+msgstr "Otomatik oluşturulur"
 
 #: includes/class-atshift-feed-builder-admin.php:494
 #: includes/class-atshift-feed-builder-admin.php:561
 msgid "Fixed value"
-msgstr ""
+msgstr "Sabit değer"
 
 #: includes/class-atshift-feed-builder-admin.php:498
 msgid "If the primary value is empty"
-msgstr ""
+msgstr "Birincil değer boşsa"
 
 #: includes/class-atshift-feed-builder-admin.php:501
 msgid "Fallback URL"
-msgstr ""
+msgstr "Yedek URL"
 
 #: includes/class-atshift-feed-builder-admin.php:544
 msgid "Value source"
-msgstr ""
+msgstr "Değer kaynağı"
 
 #: includes/class-atshift-feed-builder-admin.php:545
 msgid "WordPress values"
-msgstr ""
+msgstr "WordPress değerleri"
 
 #: includes/class-atshift-feed-builder-admin.php:551
 msgid "Custom values"
-msgstr ""
+msgstr "Özel değerler"
 
 #: includes/class-atshift-feed-builder-admin.php:560
 msgid "Other"
-msgstr ""
+msgstr "Diğer"
 
 #: includes/class-atshift-feed-builder-admin.php:563
 msgid "Do not output"
-msgstr ""
+msgstr "Çıktıya ekleme"
 
 #: includes/class-atshift-feed-builder-admin.php:566
 msgid "Unavailable source (selection preserved)"
-msgstr ""
+msgstr "Kullanılamayan kaynak (seçim korundu)"
 
 #: includes/class-atshift-feed-builder-admin.php:579
 msgid "Unavailable field (selection preserved)"
-msgstr ""
+msgstr "Kullanılamayan alan (seçim korundu)"
 
 #: includes/class-atshift-feed-builder-admin.php:602
 msgid "Site name"
-msgstr ""
+msgstr "Site adı"
 
 #: includes/class-atshift-feed-builder-admin.php:603
 msgid "Site tagline"
-msgstr ""
+msgstr "Site sloganı"
 
 #: includes/class-atshift-feed-builder-admin.php:604
 msgid "Site URL"
-msgstr ""
+msgstr "Site URL'si"
 
 #: includes/class-atshift-feed-builder-admin.php:605
 msgid "Site language"
-msgstr ""
+msgstr "Site dili"
 
 #: includes/class-atshift-feed-builder-admin.php:606
 msgid "Site icon URL"
-msgstr ""
+msgstr "Site simgesi URL'si"
 
 #: includes/class-atshift-feed-builder-admin.php:607
 #: includes/class-atshift-feed-builder-schema.php:105
 #: includes/class-atshift-feed-builder-schema.php:135
 msgid "Post title"
-msgstr ""
+msgstr "Yazı başlığı"
 
 #: includes/class-atshift-feed-builder-admin.php:608
 msgid "Post permalink"
-msgstr ""
+msgstr "Yazı kalıcı bağlantısı"
 
 #: includes/class-atshift-feed-builder-admin.php:609
 msgid "Stable post ID"
-msgstr ""
+msgstr "Kalıcı yazı kimliği"
 
 #: includes/class-atshift-feed-builder-admin.php:610
 msgid "Post excerpt (generated from content if empty)"
-msgstr ""
+msgstr "Yazı özeti (boşsa içerikten oluşturulur)"
 
 #: includes/class-atshift-feed-builder-admin.php:611
 msgid "Post content (HTML)"
-msgstr ""
+msgstr "Yazı içeriği (HTML)"
 
 #: includes/class-atshift-feed-builder-admin.php:614
 msgid "Featured image URL"
-msgstr ""
+msgstr "Öne çıkarılmış görsel URL'si"
 
 #: includes/class-atshift-feed-builder-admin.php:615
 msgid "All public taxonomy terms"
-msgstr ""
+msgstr "Herkese açık tüm taksonomi terimleri"
 
 #: includes/class-atshift-feed-builder-admin.php:616
 msgid "Categories only"
-msgstr ""
+msgstr "Yalnızca kategoriler"
 
 #: includes/class-atshift-feed-builder-admin.php:617
 msgid "Tags only"
-msgstr ""
+msgstr "Yalnızca etiketler"
 
 #: includes/class-atshift-feed-builder-admin.php:618
 msgid "Public custom taxonomy terms only"
-msgstr ""
+msgstr "Yalnızca herkese açık özel taksonomi terimleri"
 
 #: includes/class-atshift-feed-builder-admin.php:619
 msgid "Display name"
-msgstr ""
+msgstr "Görünen ad"
 
 #: includes/class-atshift-feed-builder-admin.php:620
 msgid "Author archive URL"
-msgstr ""
+msgstr "Yazar arşivi URL'si"
 
 #: includes/class-atshift-feed-builder-admin.php:621
 msgid "Avatar URL"
-msgstr ""
+msgstr "Avatar URL'si"
 
 #: includes/class-atshift-feed-builder-admin.php:658
 msgid "may contain personal information"
-msgstr ""
+msgstr "kişisel bilgi içerebilir"
 
 #: includes/class-atshift-feed-builder-admin.php:683
 #: includes/class-atshift-feed-builder-admin.php:685
 #: includes/class-atshift-feed-builder-admin.php:689
 msgid "Field name"
-msgstr ""
+msgstr "Alan adı"
 
 #: includes/class-atshift-feed-builder-admin.php:696
 #: includes/class-atshift-feed-builder-admin.php:698
 #: includes/class-atshift-feed-builder-admin.php:702
 msgid "Enter the field name used by the plugin."
-msgstr ""
+msgstr "Eklentinin kullandığı alan adını girin."
 
 #: includes/class-atshift-feed-builder-admin.php:736
 msgid "Publish this feed to create its public URL."
-msgstr ""
+msgstr "Herkese açık URL'sini oluşturmak için bu akışı yayımlayın."
 
 #: includes/class-atshift-feed-builder-admin.php:743
 #: includes/class-atshift-feed-builder-admin.php:1125
 msgid "Standard feed disabled"
-msgstr ""
+msgstr "Standart akış devre dışı"
 
 #: includes/class-atshift-feed-builder-admin.php:743
 msgid "The selected WordPress feed URL returns not found and is not advertised in the page head."
-msgstr ""
+msgstr "Seçilen WordPress akış URL'si bulunamadı yanıtı döndürür ve bağlantısı sayfanın <head> bölümünde sunulmaz."
 
 #: includes/class-atshift-feed-builder-admin.php:747
 msgid "Existing term feed URLs"
-msgstr ""
+msgstr "Mevcut terim akışı URL'leri"
 
 #: includes/class-atshift-feed-builder-admin.php:747
 msgid "Each category, tag, or taxonomy term keeps its own WordPress feed URL."
-msgstr ""
+msgstr "Her kategori, etiket veya taksonomi terimi kendi WordPress akış URL'sini korur."
 
 #: includes/class-atshift-feed-builder-admin.php:760
 msgid "Check the current settings without saving them."
-msgstr ""
+msgstr "Geçerli ayarları kaydetmeden kontrol edin."
 
 #: includes/class-atshift-feed-builder-admin.php:763
 msgid "Preview feed"
-msgstr ""
+msgstr "Akışı ön izle"
 
 #: includes/class-atshift-feed-builder-admin.php:765
 msgid "The preview uses the first item in the current feed order."
-msgstr ""
+msgstr "Ön izleme, geçerli akış sırasındaki ilk ögeyi kullanır."
 
 #: includes/class-atshift-feed-builder-admin.php:770
 msgid "Feed preview"
-msgstr ""
+msgstr "Akış ön izlemesi"
 
 #: includes/class-atshift-feed-builder-admin.php:773
 #: includes/class-atshift-feed-builder-admin.php:775
 msgid "Close preview"
-msgstr ""
+msgstr "Ön izlemeyi kapat"
 
 #: includes/class-atshift-feed-builder-admin.php:779
 msgid "Preview view"
-msgstr ""
+msgstr "Ön izleme görünümü"
 
 #: includes/class-atshift-feed-builder-admin.php:781
 msgid "Reader preview"
-msgstr ""
+msgstr "Okuyucu ön izlemesi"
 
 #: includes/class-atshift-feed-builder-admin.php:784
 msgid "Source code"
-msgstr ""
+msgstr "Kaynak kodu"
 
 #: includes/class-atshift-feed-builder-admin.php:796
 msgid "Copy output"
-msgstr ""
+msgstr "Çıktıyı kopyala"
 
 #: includes/class-atshift-feed-builder-admin.php:807
 msgid "You are not allowed to preview feeds."
-msgstr ""
+msgstr "Akışları ön izleme izniniz yok."
 
 #: includes/class-atshift-feed-builder-admin.php:813
 msgid "The feed configuration could not be found."
-msgstr ""
+msgstr "Akış yapılandırması bulunamadı."
 
 #: includes/class-atshift-feed-builder-admin.php:1089
 msgid "Generating preview..."
-msgstr ""
+msgstr "Ön izleme oluşturuluyor..."
 
 #: includes/class-atshift-feed-builder-admin.php:1090
 msgid "The preview could not be generated."
-msgstr ""
+msgstr "Ön izleme oluşturulamadı."
 
 #. translators: %s: Feed format.
 #: includes/class-atshift-feed-builder-admin.php:1092
 #, php-format
 msgid "%s preview, first item"
-msgstr ""
+msgstr "%s ön izlemesi, ilk öge"
 
 #: includes/class-atshift-feed-builder-admin.php:1093
 msgid "Output copied."
-msgstr ""
+msgstr "Çıktı kopyalandı."
 
 #: includes/class-atshift-feed-builder-admin.php:1094
 msgid "The output could not be copied."
-msgstr ""
+msgstr "Çıktı kopyalanamadı."
 
 #. translators: %s: Publisher name.
 #: includes/class-atshift-feed-builder-admin.php:1096
 #, php-format
 msgid "Published by %s"
-msgstr ""
+msgstr "Yayıncı: %s"
 
 #. translators: %s: Reviewer name.
 #: includes/class-atshift-feed-builder-admin.php:1098
 #, php-format
 msgid "Reviewed by %s"
-msgstr ""
+msgstr "İnceleyen: %s"
 
 #. translators: %s: Source name.
 #: includes/class-atshift-feed-builder-admin.php:1100
 #, php-format
 msgid "Source: %s"
-msgstr ""
+msgstr "Kaynak: %s"
 
 #: includes/class-atshift-feed-builder-admin.php:1106
 msgid "Format"
-msgstr ""
+msgstr "Biçim"
 
 #: includes/class-atshift-feed-builder-admin.php:1107
 msgid "Publication"
-msgstr ""
+msgstr "Yayımlama"
 
 #: includes/class-atshift-feed-builder-admin.php:1123
 msgid "Custom feed"
-msgstr ""
+msgstr "Özel akış"
 
 #: includes/class-atshift-feed-builder-admin.php:1124
 msgid "Standard feed replacement"
-msgstr ""
+msgstr "Standart akışın değiştirilmesi"
 
 #: includes/class-atshift-feed-builder-admin.php:1132
 msgid "Disabled"
-msgstr ""
+msgstr "Devre dışı"
 
 #: includes/class-atshift-feed-builder-admin.php:1134
 msgid "Dynamic term URLs"
-msgstr ""
+msgstr "Dinamik terim URL'leri"
 
 #: includes/class-atshift-feed-builder-admin.php:1144
 msgid "Internal feed name"
-msgstr ""
+msgstr "Dahili akış adı"
 
 #: includes/class-atshift-feed-builder-plugin.php:127
 msgid "Feed"
-msgstr ""
+msgstr "Akış"
 
 #: includes/class-atshift-feed-builder-plugin.php:129
 msgid "Edit Feed"
-msgstr ""
+msgstr "Akışı düzenle"
 
 #: includes/class-atshift-feed-builder-plugin.php:130
 msgid "New Feed"
-msgstr ""
+msgstr "Yeni akış"
 
 #: includes/class-atshift-feed-builder-plugin.php:131
 msgid "Feeds"
-msgstr ""
+msgstr "Akışlar"
 
 #: includes/class-atshift-feed-builder-plugin.php:394
 msgid "Main posts feed"
-msgstr ""
+msgstr "Ana yazı akışı"
 
 #. translators: %s: Post type label.
 #: includes/class-atshift-feed-builder-plugin.php:408
 #, php-format
 msgid "%s archive feed"
-msgstr ""
+msgstr "%s arşiv akışı"
 
 #. translators: %s: Taxonomy label.
 #: includes/class-atshift-feed-builder-plugin.php:426
 #, php-format
 msgid "%s feeds"
-msgstr ""
+msgstr "%s akışları"
 
 #: includes/class-atshift-feed-builder-renderer.php:116
 msgid "The feed could not be encoded."
-msgstr ""
+msgstr "Akış kodlanamadı."
 
 #: includes/class-atshift-feed-builder-schema.php:28
 msgid "RSS 2.0"
-msgstr ""
+msgstr "RSS 2.0"
 
 #: includes/class-atshift-feed-builder-schema.php:29
 msgid "For feed readers and broadly compatible content syndication."
-msgstr ""
+msgstr "Akış okuyucuları ve geniş ölçüde uyumlu içerik dağıtımı için."
 
 #: includes/class-atshift-feed-builder-schema.php:32
 msgid "JSON Feed 1.1"
-msgstr ""
+msgstr "JSON Feed 1.1"
 
 #: includes/class-atshift-feed-builder-schema.php:33
 msgid "For applications, external services, and structured data consumers."
-msgstr ""
+msgstr "Uygulamalar, harici hizmetler ve yapılandırılmış veri tüketicileri için."
 
 #: includes/class-atshift-feed-builder-schema.php:96
 msgid "RSS version"
-msgstr ""
+msgstr "RSS sürümü"
 
 #: includes/class-atshift-feed-builder-schema.php:96
 msgid "Always output as RSS 2.0."
-msgstr ""
+msgstr "Çıktı her zaman RSS 2.0 biçimindedir."
 
 #: includes/class-atshift-feed-builder-schema.php:97
 #: includes/class-atshift-feed-builder-schema.php:123
 msgid "Feed title"
-msgstr ""
+msgstr "Akış başlığı"
 
 #: includes/class-atshift-feed-builder-schema.php:97
 #: includes/class-atshift-feed-builder-schema.php:123
 msgid "Name of this feed."
-msgstr ""
+msgstr "Bu akışın adı."
 
 #: includes/class-atshift-feed-builder-schema.php:98
 #: includes/class-atshift-feed-builder-schema.php:124
 msgid "Publisher website"
-msgstr ""
+msgstr "Yayıncının web sitesi"
 
 #: includes/class-atshift-feed-builder-schema.php:98
 #: includes/class-atshift-feed-builder-schema.php:124
 msgid "Website represented by the feed."
-msgstr ""
+msgstr "Akışın temsil ettiği site."
 
 #: includes/class-atshift-feed-builder-schema.php:99
 #: includes/class-atshift-feed-builder-schema.php:128
 msgid "Publisher / site operator"
-msgstr ""
+msgstr "Yayıncı / site işletmecisi"
 
 #: includes/class-atshift-feed-builder-schema.php:99
 #: includes/class-atshift-feed-builder-schema.php:128
 msgid "Person or organization responsible for publishing the feed."
-msgstr ""
+msgstr "Akışı yayımlamaktan sorumlu kişi veya kuruluş."
 
 #: includes/class-atshift-feed-builder-schema.php:100
 #: includes/class-atshift-feed-builder-schema.php:126
 msgid "Feed description"
-msgstr ""
+msgstr "Akış açıklaması"
 
 #: includes/class-atshift-feed-builder-schema.php:100
 #: includes/class-atshift-feed-builder-schema.php:126
 msgid "Short description of the feed."
-msgstr ""
+msgstr "Akışın kısa açıklaması."
 
 #: includes/class-atshift-feed-builder-schema.php:101
 #: includes/class-atshift-feed-builder-schema.php:127
 msgid "Language"
-msgstr ""
+msgstr "Dil"
 
 #: includes/class-atshift-feed-builder-schema.php:101
 #: includes/class-atshift-feed-builder-schema.php:127
 msgid "Primary language of the feed."
-msgstr ""
+msgstr "Akışın birincil dili."
 
 #: includes/class-atshift-feed-builder-schema.php:102
 msgid "Copyright"
-msgstr ""
+msgstr "Telif hakkı"
 
 #: includes/class-atshift-feed-builder-schema.php:102
 msgid "Optional rights statement."
-msgstr ""
+msgstr "İsteğe bağlı hak bildirimi."
 
 #: includes/class-atshift-feed-builder-schema.php:103
 msgid "Last updated"
-msgstr ""
+msgstr "Son güncelleme"
 
 #: includes/class-atshift-feed-builder-schema.php:103
 msgid "Calculated from feed and source updates."
-msgstr ""
+msgstr "Akış ve kaynak güncellemelerinden hesaplanır."
 
 #: includes/class-atshift-feed-builder-schema.php:104
 #: includes/class-atshift-feed-builder-schema.php:125
 msgid "Canonical feed URL"
-msgstr ""
+msgstr "Kanonik akış URL'si"
 
 #: includes/class-atshift-feed-builder-schema.php:104
 #: includes/class-atshift-feed-builder-schema.php:125
 msgid "Generated from the public feed URL."
-msgstr ""
+msgstr "Herkese açık akış URL'sinden oluşturulur."
 
 #: includes/class-atshift-feed-builder-schema.php:105
 msgid "Title for each feed item."
-msgstr ""
+msgstr "Her akış ögesinin başlığı."
 
 #: includes/class-atshift-feed-builder-schema.php:106
 #: includes/class-atshift-feed-builder-schema.php:134
 msgid "Post URL"
-msgstr ""
+msgstr "Yazı URL'si"
 
 #: includes/class-atshift-feed-builder-schema.php:106
 msgid "Public URL for each item."
-msgstr ""
+msgstr "Her ögenin herkese açık URL'si."
 
 #: includes/class-atshift-feed-builder-schema.php:107
 #: includes/class-atshift-feed-builder-schema.php:133
 msgid "Unique ID"
-msgstr ""
+msgstr "Benzersiz kimlik"
 
 #: includes/class-atshift-feed-builder-schema.php:107
 msgid "Stable identifier used by feed readers."
-msgstr ""
+msgstr "Akış okuyucularının kullandığı kalıcı tanımlayıcı."
 
 #: includes/class-atshift-feed-builder-schema.php:108
 #: includes/class-atshift-feed-builder-schema.php:136
 msgid "Summary"
-msgstr ""
+msgstr "Özet"
 
 #: includes/class-atshift-feed-builder-schema.php:108
 msgid "Short text shown in item lists."
-msgstr ""
+msgstr "Öge listelerinde gösterilen kısa metin."
 
 #: includes/class-atshift-feed-builder-schema.php:109
 msgid "Full content"
-msgstr ""
+msgstr "Tam içerik"
 
 #: includes/class-atshift-feed-builder-schema.php:109
 msgid "HTML body of the item."
-msgstr ""
+msgstr "Ögenin HTML gövdesi."
 
 #: includes/class-atshift-feed-builder-schema.php:110
 #: includes/class-atshift-feed-builder-schema.php:141
 msgid "Article author"
-msgstr ""
+msgstr "Makale yazarı"
 
 #: includes/class-atshift-feed-builder-schema.php:110
 #: includes/class-atshift-feed-builder-schema.php:141
 msgid "Person credited with creating the item."
-msgstr ""
+msgstr "Ögeyi oluşturduğu belirtilen kişi."
 
 #: includes/class-atshift-feed-builder-schema.php:111
 #: includes/class-atshift-feed-builder-schema.php:146
 msgid "Reviewer / supervisor"
-msgstr ""
+msgstr "İnceleyen / denetleyen"
 
 #: includes/class-atshift-feed-builder-schema.php:111
 #: includes/class-atshift-feed-builder-schema.php:146
 msgid "Person who reviewed or supervised the item."
-msgstr ""
+msgstr "Ögeyi inceleyen veya denetleyen kişi."
 
 #: includes/class-atshift-feed-builder-schema.php:112
 #: includes/class-atshift-feed-builder-schema.php:145
 msgid "Primary source name"
-msgstr ""
+msgstr "Birincil kaynak adı"
 
 #: includes/class-atshift-feed-builder-schema.php:112
 #: includes/class-atshift-feed-builder-schema.php:145
 msgid "Name of the original or related source."
-msgstr ""
+msgstr "Asıl veya ilişkili kaynağın adı."
 
 #: includes/class-atshift-feed-builder-schema.php:113
 #: includes/class-atshift-feed-builder-schema.php:144
 msgid "Primary source URL"
-msgstr ""
+msgstr "Birincil kaynak URL'si"
 
 #: includes/class-atshift-feed-builder-schema.php:113
 #: includes/class-atshift-feed-builder-schema.php:144
 msgid "Public URL of the original or related source."
-msgstr ""
+msgstr "Asıl veya ilişkili kaynağın herkese açık URL'si."
 
 #: includes/class-atshift-feed-builder-schema.php:114
 #: includes/class-atshift-feed-builder-schema.php:139
 msgid "Publication date for the item."
-msgstr ""
+msgstr "Ögenin yayımlanma tarihi."
 
 #: includes/class-atshift-feed-builder-schema.php:115
 #: includes/class-atshift-feed-builder-schema.php:148
 msgid "Categories, tags, and terms"
-msgstr ""
+msgstr "Kategoriler, etiketler ve terimler"
 
 #: includes/class-atshift-feed-builder-schema.php:115
 #: includes/class-atshift-feed-builder-schema.php:148
 msgid "Names of public categories, tags, or custom taxonomy terms assigned to the item. Feed readers may use them for grouping or filtering."
-msgstr ""
+msgstr "Ögeye atanmış herkese açık kategorilerin, etiketlerin veya özel taksonomi terimlerinin adları. Akış okuyucuları bunları gruplama veya süzme için kullanabilir."
 
 #: includes/class-atshift-feed-builder-schema.php:116
 #: includes/class-atshift-feed-builder-schema.php:138
 msgid "Main image"
-msgstr ""
+msgstr "Ana görsel"
 
 #: includes/class-atshift-feed-builder-schema.php:116
 msgid "Main item image published through Media RSS."
-msgstr ""
+msgstr "Media RSS üzerinden yayımlanan ana öge görseli."
 
 #: includes/class-atshift-feed-builder-schema.php:122
 msgid "JSON Feed version"
-msgstr ""
+msgstr "JSON Feed sürümü"
 
 #: includes/class-atshift-feed-builder-schema.php:122
 msgid "Always output as JSON Feed 1.1."
-msgstr ""
+msgstr "Çıktı her zaman JSON Feed 1.1 biçimindedir."
 
 #: includes/class-atshift-feed-builder-schema.php:129
 msgid "Publisher URL"
-msgstr ""
+msgstr "Yayıncı URL'si"
 
 #: includes/class-atshift-feed-builder-schema.php:129
 msgid "Public website or profile for the publisher."
-msgstr ""
+msgstr "Yayıncının herkese açık sitesi veya profili."
 
 #: includes/class-atshift-feed-builder-schema.php:130
 msgid "Publisher avatar"
-msgstr ""
+msgstr "Yayıncı avatarı"
 
 #: includes/class-atshift-feed-builder-schema.php:130
 msgid "Square image representing the publisher."
-msgstr ""
+msgstr "Yayıncıyı temsil eden kare görsel."
 
 #: includes/class-atshift-feed-builder-schema.php:131
 msgid "Feed icon"
-msgstr ""
+msgstr "Akış simgesi"
 
 #: includes/class-atshift-feed-builder-schema.php:131
 msgid "Square image representing the feed."
-msgstr ""
+msgstr "Akışı temsil eden kare görsel."
 
 #: includes/class-atshift-feed-builder-schema.php:132
 msgid "Items"
-msgstr ""
+msgstr "Ögeler"
 
 #: includes/class-atshift-feed-builder-schema.php:132
 msgid "One item is generated for each matching post."
-msgstr ""
+msgstr "Eşleşen her yazı için bir öge oluşturulur."
 
 #: includes/class-atshift-feed-builder-schema.php:133
 msgid "Stable identifier for the item."
-msgstr ""
+msgstr "Ögenin kalıcı tanımlayıcısı."
 
 #: includes/class-atshift-feed-builder-schema.php:134
 msgid "Public URL for the item."
-msgstr ""
+msgstr "Ögenin herkese açık URL'si."
 
 #: includes/class-atshift-feed-builder-schema.php:135
 msgid "Title for the item."
-msgstr ""
+msgstr "Ögenin başlığı."
 
 #: includes/class-atshift-feed-builder-schema.php:136
 msgid "Short plain-text summary."
-msgstr ""
+msgstr "Kısa düz metin özeti."
 
 #: includes/class-atshift-feed-builder-schema.php:137
 msgid "Content"
-msgstr ""
+msgstr "İçerik"
 
 #: includes/class-atshift-feed-builder-schema.php:137
 msgid "HTML content for the item."
-msgstr ""
+msgstr "Ögenin HTML içeriği."
 
 #: includes/class-atshift-feed-builder-schema.php:138
 msgid "Featured or mapped image URL."
-msgstr ""
+msgstr "Öne çıkarılmış görselin veya eşleme ile belirtilen görselin URL'si."
 
 #: includes/class-atshift-feed-builder-schema.php:140
 msgid "Most recent modification date."
-msgstr ""
+msgstr "En son değiştirilme tarihi."
 
 #: includes/class-atshift-feed-builder-schema.php:142
 msgid "Article author URL"
-msgstr ""
+msgstr "Makale yazarı URL'si"
 
 #: includes/class-atshift-feed-builder-schema.php:142
 msgid "Public profile or website for the article author."
-msgstr ""
+msgstr "Makale yazarının herkese açık profili veya sitesi."
 
 #: includes/class-atshift-feed-builder-schema.php:143
 msgid "Article author avatar"
-msgstr ""
+msgstr "Makale yazarı avatarı"
 
 #: includes/class-atshift-feed-builder-schema.php:143
 msgid "Image representing the article author."
-msgstr ""
+msgstr "Makale yazarını temsil eden görsel."
 
 #: includes/class-atshift-feed-builder-schema.php:147
 msgid "Reviewer / supervisor URL"
-msgstr ""
+msgstr "İnceleyen / denetleyen kişinin URL'si"
 
 #: includes/class-atshift-feed-builder-schema.php:147
 msgid "Public profile or website for the reviewer."
-msgstr ""
+msgstr "İnceleyen kişinin herkese açık profili veya sitesi."

@@ -4,7 +4,7 @@ Tags: rss, json feed, custom fields, structured data, ai
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.3.4
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,8 @@ The first release includes:
 * Per-feed controls for replacing or disabling standard feeds and advertising custom feeds in the document head.
 
 atshift Fields and atshift User Profile Fields are optional integrations. atshift Feed Builder remains independently usable for standard WordPress post data.
+
+GitHub and WordPress.org release packages include the same bundled translations for 15 locales: English (US), Japanese, Spanish (Spain), German, French, Portuguese (Brazil), Italian, Russian, Dutch, Chinese (Simplified), Polish, Turkish, Indonesian, Chinese (Traditional, Taiwan), and Korean.
 
 = Developer integration =
 
@@ -129,6 +131,11 @@ atshift Fields and atshift User Profile Fields are optional. When they are activ
 * [atshift Freeform Login](https://wordpress.org/plugins/atshift-freeform-login/) - add passkey login, customize the WordPress login screen, and place login controls with shortcodes.
 
 == Changelog ==
+
+= 1.0 =
+
+* Added the same bundled translations for 15 locales to GitHub and WordPress.org release packages.
+* Standardized plugin and translation package version metadata at 1.0.
 
 = 0.3.4 =
 
