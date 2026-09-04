@@ -11,7 +11,7 @@
 
 atshift Feed Builder turns WordPress posts, custom fields, and author profile data into purpose-specific RSS 2.0 and JSON Feed 1.1 feeds. It works as a standalone plugin and can discover field definitions from supported custom field plugins when they are active.
 
-The current stable release is version 1.0. Review every mapping on a staging site before publishing a new feed in production.
+The current stable release is version 1.0.1. Review every mapping on a staging site before publishing a new feed in production.
 
 ## Features
 
@@ -27,7 +27,7 @@ The current stable release is version 1.0. Review every mapping on a staging sit
 - Define a fallback source for the main image
 - Preview the first real feed item before saving
 - Inspect and copy the generated XML or JSON
-- Publish ETag and Last-Modified headers with cached feed output
+- Publish ETag and Last-Modified headers with generation-checked anonymous feed caches
 
 ## Requirements
 
@@ -38,7 +38,7 @@ atshift Fields, atshift User Profile Fields, and supported third-party field plu
 
 ## Translations
 
-GitHub and WordPress.org release packages include the same bundled PO and MO catalogs for English (US), Japanese, Spanish (Spain), German, French, Portuguese (Brazil), Italian, Russian, Dutch, Chinese (Simplified), Polish, Turkish, Indonesian, Chinese (Traditional, Taiwan), and Korean.
+GitHub release packages include bundled PO and MO catalogs for English (US), Japanese, Spanish (Spain), German, French, Portuguese (Brazil), Italian, Russian, Dutch, Chinese (Simplified), Polish, Turkish, Indonesian, Chinese (Traditional, Taiwan), and Korean. WordPress.org releases rely on WordPress.org language packs and include only the translation template.
 
 ## Installation
 
@@ -88,6 +88,8 @@ Every output field uses an explicit value source. Available sources depend on th
 Fields and UPF values replace selected output fields. They are never appended to a public feed automatically.
 
 ## Privacy And Safety
+
+Anonymous feed responses use a shared cache. Requests made while logged in bypass that cache and are returned with private, no-store response headers so personalized integration output cannot be reused for another visitor.
 
 - Only explicitly selected fields are published
 - Protected and security-related meta keys are blocked

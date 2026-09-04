@@ -19,6 +19,9 @@ class Atshift_Feed_Builder_Plugin {
 	/** @var array<string,Atshift_Feed_Builder_Source_Adapter> */
 	private $adapters = array();
 
+	/** @var bool */
+	private $cache_bumped_this_request = false;
+
 	public static function instance() {
 		if ( null === self::$instance ) {
 			self::$instance = new self();
@@ -70,10 +73,10 @@ class Atshift_Feed_Builder_Plugin {
 		add_action( 'updated_post_meta', array( $this, 'bump_cache_version' ) );
 		add_action( 'deleted_post_meta', array( $this, 'bump_cache_version' ) );
 		add_action( 'set_object_terms', array( $this, 'bump_cache_version' ) );
-		add_action( 'profile_update', array( $this, 'bump_cache_version' ) );
-		add_action( 'added_user_meta', array( $this, 'bump_cache_version' ) );
-		add_action( 'updated_user_meta', array( $this, 'bump_cache_version' ) );
-		add_action( 'deleted_user_meta', array( $this, 'bump_cache_version' ) );
+		add_action( 'profile_update', array( $this, 'maybe_bump_for_user_profile' ), 10, 1 );
+		add_action( 'added_user_meta', array( $this, 'maybe_bump_for_user_meta' ), 10, 4 );
+		add_action( 'updated_user_meta', array( $this, 'maybe_bump_for_user_meta' ), 10, 4 );
+		add_action( 'deleted_user_meta', array( $this, 'maybe_bump_for_user_meta' ), 10, 4 );
 		add_action( 'atshift_cfs_values_updated', array( $this, 'bump_cache_version' ) );
 		add_action( 'updated_option', array( $this, 'maybe_bump_for_option' ), 10, 1 );
 		add_filter( 'plugin_action_links_' . plugin_basename( ATSHIFT_FEED_BUILDER_FILE ), array( $this, 'filter_plugin_action_links' ) );
@@ -301,12 +304,13 @@ class Atshift_Feed_Builder_Plugin {
 	}
 
 	private function serve_configured_feed( $feed, $format, $context = array() ) {
-		$settings  = self::get_feed_settings( $feed->ID );
-		$version   = (int) get_option( 'atshift_feed_builder_cache_version', 1 );
-		$cache_key = 'atfb_' . md5( $feed->ID . '|' . $format . '|' . wp_json_encode( $context ) . '|' . $version );
-		$response  = get_transient( $cache_key );
+		$settings   = self::get_feed_settings( $feed->ID );
+		$version    = (int) get_option( 'atshift_feed_builder_cache_version', 1 );
+		$cache_key  = 'atfb_' . md5( $feed->ID . '|' . $format . '|' . wp_json_encode( $context ) );
+		$is_private = is_user_logged_in();
+		$response   = $is_private ? false : get_transient( $cache_key );
 
-		if ( ! is_array( $response ) || empty( $response['body'] ) ) {
+		if ( ! is_array( $response ) || empty( $response['body'] ) || $version !== (int) ( $response['cache_version'] ?? 0 ) ) {
 			$renderer = new Atshift_Feed_Builder_Renderer( $this->adapters );
 			$response = $renderer->generate( $feed, $format, null, null, false, $context );
 
@@ -317,11 +321,17 @@ class Atshift_Feed_Builder_Plugin {
 				exit;
 			}
 
-			set_transient( $cache_key, $response, $settings['cache_ttl'] );
+			if ( ! $is_private ) {
+				$response['cache_version'] = $version;
+
+				if ( $version === (int) get_option( 'atshift_feed_builder_cache_version', 1 ) ) {
+					set_transient( $cache_key, $response, $settings['cache_ttl'] );
+				}
+			}
 		}
 
 		$response['cache_ttl'] = $settings['cache_ttl'];
-		$this->send_response( $response, $format );
+		$this->send_response( $response, $format, $is_private );
 	}
 
 	public function print_custom_feed_discovery_links() {
@@ -408,20 +418,25 @@ class Atshift_Feed_Builder_Plugin {
 		return 'posts';
 	}
 
-	private function send_response( $response, $format ) {
+	private function send_response( $response, $format, $is_private = false ) {
 		$etag          = $response['etag'];
 		$last_modified = (int) $response['last_modified'];
 		$if_none_match = isset( $_SERVER['HTTP_IF_NONE_MATCH'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_IF_NONE_MATCH'] ) ) : '';
 		$if_modified   = isset( $_SERVER['HTTP_IF_MODIFIED_SINCE'] ) ? strtotime( sanitize_text_field( wp_unslash( $_SERVER['HTTP_IF_MODIFIED_SINCE'] ) ) ) : false;
 
 		header( 'Content-Type: ' . ( 'json' === $format ? 'application/feed+json' : 'application/rss+xml' ) . '; charset=UTF-8' );
-		header( 'ETag: ' . $etag );
-		header( 'Last-Modified: ' . gmdate( 'D, d M Y H:i:s', $last_modified ) . ' GMT' );
-		header( 'Cache-Control: public, max-age=' . absint( $response['cache_ttl'] ?? 0 ) );
+		if ( $is_private ) {
+			header( 'Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0' );
+			header( 'Pragma: no-cache' );
+		} else {
+			header( 'ETag: ' . $etag );
+			header( 'Last-Modified: ' . gmdate( 'D, d M Y H:i:s', $last_modified ) . ' GMT' );
+			header( 'Cache-Control: public, max-age=' . absint( $response['cache_ttl'] ?? 0 ) );
+		}
 		header( 'X-Robots-Tag: noindex, follow', true );
 		header( 'X-Content-Type-Options: nosniff', true );
 
-		if ( $if_none_match === $etag || ( '' === $if_none_match && false !== $if_modified && $if_modified >= $last_modified ) ) {
+		if ( ! $is_private && ( $if_none_match === $etag || ( '' === $if_none_match && false !== $if_modified && $if_modified >= $last_modified ) ) ) {
 			status_header( 304 );
 			exit;
 		}
@@ -444,8 +459,109 @@ class Atshift_Feed_Builder_Plugin {
 	}
 
 	public function bump_cache_version() {
-		update_option( 'atshift_feed_builder_cache_version', (int) get_option( 'atshift_feed_builder_cache_version', 1 ) + 1, false );
+		if ( $this->cache_bumped_this_request ) {
+			return;
+		}
+
+		$this->cache_bumped_this_request = true;
+		global $wpdb;
+
+		$option_name = 'atshift_feed_builder_cache_version';
+		// A single SQL increment keeps concurrent invalidations from overwriting each other.
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- WordPress has no atomic option-increment API.
+		$updated     = $wpdb->query(
+			$wpdb->prepare(
+				"UPDATE {$wpdb->options} SET option_value = CAST(option_value AS UNSIGNED) + 1 WHERE option_name = %s",
+				$option_name
+			)
+		);
+
+		if ( false === $updated ) {
+			wp_cache_delete( $option_name, 'options' );
+			$current = max( 1, (int) get_option( $option_name, 1 ) );
+			update_option( $option_name, $current + 1, false );
+		} elseif ( 0 === $updated ) {
+			add_option( $option_name, 1, '', false );
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- Complete the same atomic increment after an insert race.
+			$wpdb->query(
+				$wpdb->prepare(
+					"UPDATE {$wpdb->options} SET option_value = CAST(option_value AS UNSIGNED) + 1 WHERE option_name = %s",
+					$option_name
+				)
+			);
+		}
+
+		wp_cache_delete( $option_name, 'options' );
 		update_option( 'atshift_feed_builder_last_change_gmt', gmdate( 'Y-m-d H:i:s' ), false );
+	}
+
+	public function maybe_bump_for_user_profile( $user_id ) {
+		if (
+			$this->user_has_published_content( $user_id )
+			&& ( $this->published_feed_uses_source( 'author:', true ) || $this->published_feed_uses_source( 'upf:', true ) )
+		) {
+			$this->bump_cache_version();
+		}
+	}
+
+	public function maybe_bump_for_user_meta( $meta_id, $user_id, $meta_key, $meta_value ) {
+		unset( $meta_id, $meta_value );
+		$meta_key = (string) $meta_key;
+
+		if ( ! $this->user_has_published_content( $user_id ) ) {
+			return;
+		}
+
+		if ( 0 === strpos( $meta_key, '_atshift_upf_' ) ) {
+			$source = 'upf:' . sanitize_key( substr( $meta_key, strlen( '_atshift_upf_' ) ) );
+			if ( 'upf:' !== $source && $this->published_feed_uses_source( $source ) ) {
+				$this->bump_cache_version();
+			}
+			return;
+		}
+
+		$core_profile_keys = array( 'first_name', 'last_name', 'nickname', 'locale', 'description' );
+		if ( in_array( $meta_key, $core_profile_keys, true ) && $this->published_feed_uses_source( 'upf:', true ) ) {
+			$this->bump_cache_version();
+		}
+	}
+
+	private function user_has_published_content( $user_id ) {
+		global $wpdb;
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching -- This bounded existence check must reflect the current author content state.
+		return (bool) $wpdb->get_var(
+			$wpdb->prepare(
+				"SELECT ID FROM {$wpdb->posts} WHERE post_author = %d AND post_status = 'publish' AND post_type NOT IN ('revision', %s) LIMIT 1",
+				absint( $user_id ),
+				self::POST_TYPE
+			)
+		);
+	}
+
+	private function published_feed_uses_source( $needle, $prefix = false ) {
+		$feed_ids = get_posts(
+			array(
+				'post_type'      => self::POST_TYPE,
+				'post_status'    => 'publish',
+				'posts_per_page' => -1,
+				'fields'         => 'ids',
+				'no_found_rows'  => true,
+			)
+		);
+
+		foreach ( $feed_ids as $feed_id ) {
+			foreach ( self::get_mappings( $feed_id ) as $mapping ) {
+				foreach ( array( 'source', 'fallback_source' ) as $key ) {
+					$source = isset( $mapping[ $key ] ) ? (string) $mapping[ $key ] : '';
+					if ( ( $prefix && 0 === strpos( $source, $needle ) ) || ( ! $prefix && $needle === $source ) ) {
+						return true;
+					}
+				}
+			}
+		}
+
+		return false;
 	}
 
 	public function maybe_bump_for_option( $option ) {

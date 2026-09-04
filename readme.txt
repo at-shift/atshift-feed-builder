@@ -4,7 +4,7 @@ Tags: rss, json feed, custom fields, structured data, ai
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,7 +34,7 @@ The first release includes:
 
 atshift Fields and atshift User Profile Fields are optional integrations. atshift Feed Builder remains independently usable for standard WordPress post data.
 
-GitHub and WordPress.org release packages include the same bundled translations for 15 locales: English (US), Japanese, Spanish (Spain), German, French, Portuguese (Brazil), Italian, Russian, Dutch, Chinese (Simplified), Polish, Turkish, Indonesian, Chinese (Traditional, Taiwan), and Korean.
+GitHub release packages include bundled translations for 15 locales: English (US), Japanese, Spanish (Spain), German, French, Portuguese (Brazil), Italian, Russian, Dutch, Chinese (Simplified), Polish, Turkish, Indonesian, Chinese (Traditional, Taiwan), and Korean. WordPress.org releases rely on WordPress.org language packs and include only the translation template.
 
 = Developer integration =
 
@@ -105,6 +105,8 @@ atshift Feed Builder does not send site data to the plugin author or any externa
 
 Feeds created with this plugin are public URLs. Only explicitly mapped values are output, and protected authentication, session, token, and capability keys are blocked. Site administrators are responsible for reviewing mappings before publication, especially fields that may contain personal information.
 
+Anonymous feed responses use a shared cache. Requests made while logged in bypass that cache and use private, no-store response headers, preventing personalized integration output from being reused for another visitor.
+
 == Installation ==
 
 1. Upload the plugin folder to `/wp-content/plugins/`.
@@ -131,6 +133,12 @@ atshift Fields and atshift User Profile Fields are optional. When they are activ
 * [atshift Freeform Login](https://wordpress.org/plugins/atshift-freeform-login/) - add passkey login, customize the WordPress login screen, and place login controls with shortcodes.
 
 == Changelog ==
+
+= 1.0.1 =
+
+* Prevented logged-in feed responses from using shared cached output and added private no-store cache headers.
+* Added generation-based cache keys and scoped invalidation for safer feed refreshes.
+* Kept bundled translation catalogs in GitHub packages while leaving WordPress.org translations to language packs.
 
 = 1.0 =
 
