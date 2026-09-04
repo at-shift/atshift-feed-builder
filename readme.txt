@@ -34,7 +34,7 @@ The first release includes:
 
 atshift Fields and atshift User Profile Fields are optional integrations. atshift Feed Builder remains independently usable for standard WordPress post data.
 
-GitHub release packages include bundled translations for 15 locales: English (US), Japanese, Spanish (Spain), German, French, Portuguese (Brazil), Italian, Russian, Dutch, Chinese (Simplified), Polish, Turkish, Indonesian, Chinese (Traditional, Taiwan), and Korean. WordPress.org releases rely on WordPress.org language packs and include only the translation template.
+GitHub and WordPress.org release packages include bundled translations for 15 locales: English (US), Japanese, Spanish (Spain), German, French, Portuguese (Brazil), Italian, Russian, Dutch, Chinese (Simplified), Polish, Turkish, Indonesian, Chinese (Traditional, Taiwan), and Korean.
 
 = Developer integration =
 
@@ -138,7 +138,7 @@ atshift Fields and atshift User Profile Fields are optional. When they are activ
 
 * Prevented logged-in feed responses from using shared cached output and added private no-store cache headers.
 * Added generation-based cache keys and scoped invalidation for safer feed refreshes.
-* Kept bundled translation catalogs in GitHub packages while leaving WordPress.org translations to language packs.
+* Included bundled translation catalogs in both GitHub and WordPress.org packages.
 
 = 1.0 =
 

@@ -38,7 +38,7 @@ atshift Fields, atshift User Profile Fields, and supported third-party field plu
 
 ## Translations
 
-GitHub release packages include bundled PO and MO catalogs for English (US), Japanese, Spanish (Spain), German, French, Portuguese (Brazil), Italian, Russian, Dutch, Chinese (Simplified), Polish, Turkish, Indonesian, Chinese (Traditional, Taiwan), and Korean. WordPress.org releases rely on WordPress.org language packs and include only the translation template.
+GitHub and WordPress.org release packages include bundled PO and MO catalogs for English (US), Japanese, Spanish (Spain), German, French, Portuguese (Brazil), Italian, Russian, Dutch, Chinese (Simplified), Polish, Turkish, Indonesian, Chinese (Traditional, Taiwan), and Korean.
 
 ## Installation
 
