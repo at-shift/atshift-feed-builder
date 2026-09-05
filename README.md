@@ -3,6 +3,8 @@
   <h1>atshift Feed Builder</h1>
   <p><strong>Build reliable WordPress feeds for people, services, and AI.</strong></p>
   <p>
+    <a href="https://plugins.at-shift.net/en/feed-builder/">Official Website</a>
+    &middot;
     <a href="https://github.com/at-shift/atshift-feed-builder/releases">Releases</a>
     &middot;
     <a href="https://github.com/at-shift/atshift-feed-builder/issues">Issues</a>

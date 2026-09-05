@@ -97,7 +97,7 @@ See the [adapter contract](https://github.com/at-shift/atshift-feed-builder/blob
 
 == Links ==
 
-* Official website: [upf.at-shift.net/en/feed-builder](https://upf.at-shift.net/en/feed-builder/)
+* Official website: [plugins.at-shift.net/en/feed-builder](https://plugins.at-shift.net/en/feed-builder/)
 
 == Privacy ==
 
