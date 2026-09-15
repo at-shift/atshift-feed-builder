@@ -96,7 +96,7 @@ class Atshift_Feed_Builder_Renderer {
 		$last_modified = strtotime( $feed->post_modified_gmt . ' GMT' );
 
 		foreach ( $query->posts as $post ) {
-			$items[]       = $this->resolve_scope( 'item', $schema, $mappings, $post );
+			$items[]       = $this->resolve_scope( 'item', $schema, $mappings, $post, $settings );
 			$post_modified = strtotime( $post->post_modified_gmt . ' GMT' );
 			$last_modified = max( $last_modified, $post_modified );
 		}
@@ -104,7 +104,7 @@ class Atshift_Feed_Builder_Renderer {
 		$global_change = strtotime( (string) get_option( 'atshift_feed_builder_last_change_gmt', '' ) . ' GMT' );
 		$last_modified = max( $last_modified, $global_change, time() - 1 );
 		$model         = array(
-			'feed'          => $this->resolve_scope( 'feed', $schema, $mappings, null ),
+			'feed'          => $this->resolve_scope( 'feed', $schema, $mappings, null, $settings ),
 			'feed_url'      => ! empty( $context['feed_url'] ) ? esc_url_raw( html_entity_decode( (string) $context['feed_url'], ENT_QUOTES, 'UTF-8' ) ) : Atshift_Feed_Builder_Plugin::get_feed_url( $feed, $format ),
 			'last_modified' => $last_modified,
 			'items'         => $items,
@@ -157,7 +157,7 @@ class Atshift_Feed_Builder_Renderer {
 		return $preview;
 	}
 
-	private function resolve_scope( $scope, $schema, $mappings, $post ) {
+	private function resolve_scope( $scope, $schema, $mappings, $post, $settings = array() ) {
 		$values = array();
 
 		foreach ( $schema as $key => $field ) {
@@ -166,15 +166,15 @@ class Atshift_Feed_Builder_Renderer {
 			}
 
 			$mapping = $mappings[ $key ];
-			$value   = $this->resolve_source( $mapping['source'], $mapping['fixed'], $post );
+			$value   = $this->resolve_source( $mapping['source'], $mapping['fixed'], $post, $settings );
 			$value   = $this->coerce_value( $value, $field['type'] );
 			if ( $this->is_empty( $value ) && ! empty( $field['allow_fallback'] ) && 'none' !== $mapping['fallback_source'] ) {
-				$value = $this->resolve_source( $mapping['fallback_source'], $mapping['fallback_fixed'], $post );
+				$value = $this->resolve_source( $mapping['fallback_source'], $mapping['fallback_fixed'], $post, $settings );
 				$value = $this->coerce_value( $value, $field['type'] );
 			}
 
 			if ( $this->is_empty( $value ) && ! empty( $field['required'] ) ) {
-				$value = $this->coerce_value( $this->resolve_source( $field['default'], '', $post ), $field['type'] );
+				$value = $this->coerce_value( $this->resolve_source( $field['default'], '', $post, $settings ), $field['type'] );
 			}
 
 			$values[ $key ] = $value;
@@ -183,7 +183,7 @@ class Atshift_Feed_Builder_Renderer {
 		return $values;
 	}
 
-	private function resolve_source( $source, $fixed, $post ) {
+	private function resolve_source( $source, $fixed, $post, $settings = array() ) {
 		if ( 'none' === $source ) {
 			return null;
 		}
@@ -194,6 +194,8 @@ class Atshift_Feed_Builder_Renderer {
 		switch ( $source ) {
 			case 'site:name':
 				return get_bloginfo( 'name' );
+			case 'site:post_type_and_name':
+				return $this->get_post_type_feed_title( $settings );
 			case 'site:description':
 				return get_bloginfo( 'description' );
 			case 'site:url':
@@ -263,6 +265,30 @@ class Atshift_Feed_Builder_Renderer {
 		return empty( $values ) ? null : reset( $values );
 	}
 
+	/**
+	 * Build a feed title from selected post type labels and the site name.
+	 *
+	 * @param array $settings Feed settings.
+	 * @return string
+	 */
+	private function get_post_type_feed_title( $settings ) {
+		$labels = array();
+		foreach ( (array) ( $settings['post_types'] ?? array() ) as $post_type ) {
+			$object = get_post_type_object( $post_type );
+			if ( $object && ! empty( $object->labels->name ) ) {
+				$labels[] = $object->labels->name;
+			}
+		}
+
+		$labels    = array_values( array_unique( $labels ) );
+		$site_name = get_bloginfo( 'name' );
+		if ( empty( $labels ) ) {
+			return $site_name;
+		}
+
+		return implode( ' / ', $labels ) . ' | ' . $site_name;
+	}
+
 	private function coerce_value( $value, $type ) {
 		if ( null === $value || '' === $value || array() === $value ) {
 			return null;
@@ -273,7 +299,7 @@ class Atshift_Feed_Builder_Renderer {
 				return $this->extract_url( $value );
 
 			case 'html':
-				return wp_kses_post( $this->stringify( $value ) );
+				return $this->decode_html_numeric_entities( wp_kses_post( $this->stringify( $value ) ) );
 
 			case 'datetime':
 				$timestamp = is_numeric( $value ) ? (int) $value : strtotime( $this->stringify( $value ) );
@@ -284,16 +310,47 @@ class Atshift_Feed_Builder_Renderer {
 				$output = array();
 				array_walk_recursive(
 					$values,
-					static function ( $item ) use ( &$output ) {
+					function ( $item ) use ( &$output ) {
 						if ( is_scalar( $item ) && '' !== trim( (string) $item ) ) {
-							$output[] = sanitize_text_field( (string) $item );
+							$output[] = $this->decode_text_entities( sanitize_text_field( (string) $item ) );
 						}
 					}
 				);
 				return array_values( array_unique( $output ) );
 		}
 
-		return sanitize_textarea_field( $this->stringify( $value ) );
+		return $this->decode_text_entities( sanitize_textarea_field( $this->stringify( $value ) ) );
+	}
+
+	/**
+	 * Decode character references in a sanitized plain-text value.
+	 *
+	 * @param string $value Sanitized text.
+	 * @return string
+	 */
+	private function decode_text_entities( $value ) {
+		return wp_check_invalid_utf8( html_entity_decode( (string) $value, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
+	}
+
+	/**
+	 * Decode non-ASCII numeric references without creating HTML syntax.
+	 *
+	 * @param string $html Sanitized HTML.
+	 * @return string
+	 */
+	private function decode_html_numeric_entities( $html ) {
+		$decoded = preg_replace_callback(
+			'/&#(?:x[0-9a-f]+|[0-9]+);/i',
+			static function ( $matches ) {
+				$character = html_entity_decode( $matches[0], ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+
+				// Decode display characters only. ASCII references remain entities so they cannot become HTML syntax after KSES.
+				return 1 === preg_match( '/^[\x{00A0}-\x{D7FF}\x{E000}-\x{10FFFF}]$/u', $character ) ? $character : $matches[0];
+			},
+			(string) $html
+		);
+
+		return null === $decoded ? (string) $html : $decoded;
 	}
 
 	private function stringify( $value ) {

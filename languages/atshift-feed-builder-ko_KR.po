@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: atshift Feed Builder 1.0\n"
+"Project-Id-Version: atshift Feed Builder 1.0.2\n"
 "Report-Msgid-Bugs-To: https://upf.at-shift.net/en/feed-builder/\n"
 "PO-Revision-Date: 2026-08-24 14:44+0900\n"
 "Last-Translator: @shift\n"
@@ -20,8 +20,8 @@ msgstr "atshift Feed Builder"
 msgid "https://upf.at-shift.net/en/feed-builder/"
 msgstr "https://upf.at-shift.net/en/feed-builder/"
 
-msgid "Build safe RSS and JSON feeds from WordPress posts, custom fields, and author profile data."
-msgstr "WordPress 글, 사용자 정의 필드, 작성자 프로필 데이터로 안전한 RSS 및 JSON 피드를 생성합니다."
+msgid "Build safe, purpose-specific RSS and JSON feeds for WordPress sites that rely on custom fields beyond what standard feeds can provide."
+msgstr "표준 피드만으로 필요한 내용을 제공하기 어려운 사용자 정의 필드 중심의 WordPress 사이트를 위해 안전한 용도별 RSS 및 JSON 피드를 만듭니다."
 
 msgid "@shift"
 msgstr "@shift"
@@ -387,6 +387,9 @@ msgstr "사용할 수 없는 필드(선택 내용 유지됨)"
 
 msgid "Site name"
 msgstr "사이트 이름"
+
+msgid "Post type name + site name"
+msgstr "글 유형 이름 + 사이트 이름"
 
 msgid "Site tagline"
 msgstr "사이트 태그라인"

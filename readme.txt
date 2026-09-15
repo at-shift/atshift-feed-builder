@@ -4,11 +4,11 @@ Tags: rss, json feed, custom fields, structured data, ai
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Build safe RSS 2.0 and JSON Feed 1.1 feeds from WordPress posts, custom fields, and author profile data.
+Build safe, purpose-specific RSS and JSON feeds for WordPress sites that rely on custom fields beyond what standard feeds can provide.
 
 == Description ==
 
@@ -131,8 +131,15 @@ atshift Fields and atshift User Profile Fields are optional. When they are activ
 * [atshift User Profile Fields](https://wordpress.org/plugins/atshift-user-profile-fields/) - create and manage structured custom fields for WordPress users.
 * [at-shift Fields](https://wordpress.org/plugins/atshift-fields-maintenance-for-custom-field-suite/) - arrange custom fields for posts and public custom post types with a field-building interface.
 * [atshift Freeform Login](https://wordpress.org/plugins/atshift-freeform-login/) - add passkey login, customize the WordPress login screen, and place login controls with shortcodes.
+* [KOTOTSUGI](https://wordpress.org/plugins/kototsugi/) - turn Markdown drafts into editable WordPress blocks and provide a focused Quick Post workflow.
 
 == Changelog ==
+
+= 1.0.2 =
+
+* Fixed emoji and other character references appearing as encoded text in feed titles, summaries, content, and previews.
+* Added a feed-title source that combines selected post type names with the site name.
+* Refined the plugin description and added KOTOTSUGI to related projects.
 
 = 1.0.1 =
 

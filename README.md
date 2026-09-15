@@ -11,9 +11,9 @@
   </p>
 </div>
 
-atshift Feed Builder turns WordPress posts, custom fields, and author profile data into purpose-specific RSS 2.0 and JSON Feed 1.1 feeds. It works as a standalone plugin and can discover field definitions from supported custom field plugins when they are active.
+atshift Feed Builder solves a common problem on WordPress sites that rely heavily on custom fields: standard feeds cannot always include the information readers and external services need. It creates safe, purpose-specific RSS 2.0 and JSON Feed 1.1 feeds, works as a standalone plugin, and can discover field definitions from supported custom field plugins when they are active.
 
-The current stable release is version 1.0.1. Review every mapping on a staging site before publishing a new feed in production.
+The current stable release is version 1.0.2. Review every mapping on a staging site before publishing a new feed in production.
 
 ## Features
 
@@ -127,6 +127,7 @@ Supported field types are `string`, `number`, `boolean`, `url`, `image`, `html`,
 - [atshift Fields](https://wordpress.org/plugins/atshift-fields-maintenance-for-custom-field-suite/) structures fields for posts and custom post types.
 - [atshift User Profile Fields](https://wordpress.org/plugins/atshift-user-profile-fields/) creates and organizes WordPress user profile fields.
 - [atshift Freeform Login](https://wordpress.org/plugins/atshift-freeform-login/) designs the WordPress login screen and provides a matching login form shortcode.
+- [KOTOTSUGI](https://wordpress.org/plugins/kototsugi/) turns Markdown drafts from AI and other writing tools into editable WordPress blocks and provides a focused Quick Post workflow.
 
 ## Reporting Issues
 

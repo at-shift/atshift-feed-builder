@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: atshift Feed Builder 1.0\n"
+"Project-Id-Version: atshift Feed Builder 1.0.2\n"
 "Report-Msgid-Bugs-To: https://upf.at-shift.net/en/feed-builder/\n"
 "POT-Creation-Date: 2026-08-18T01:35:55+00:00\n"
 "PO-Revision-Date: 2026-08-24 14:45+0900\n"
@@ -28,8 +28,8 @@ msgstr "https://upf.at-shift.net/en/feed-builder/"
 
 #. Description of the plugin
 #: atshift-feed-builder.php
-msgid "Build safe RSS and JSON feeds from WordPress posts, custom fields, and author profile data."
-msgstr "使用 WordPress 文章、自訂欄位及作者個人資料建立安全的 RSS 及 JSON 資訊提供。"
+msgid "Build safe, purpose-specific RSS and JSON feeds for WordPress sites that rely on custom fields beyond what standard feeds can provide."
+msgstr "為大量使用自訂欄位、標準資訊提供無法完整呈現所需內容的 WordPress 網站建立安全且用途明確的 RSS 與 JSON 資訊提供。"
 
 #. Author of the plugin
 #: atshift-feed-builder.php
@@ -546,6 +546,10 @@ msgstr "無法使用的欄位 (已保留選項)"
 #: includes/class-atshift-feed-builder-admin.php:602
 msgid "Site name"
 msgstr "網站名稱"
+
+#: includes/class-atshift-feed-builder-admin.php:603
+msgid "Post type name + site name"
+msgstr "內容類型名稱 + 網站名稱"
 
 #: includes/class-atshift-feed-builder-admin.php:603
 msgid "Site tagline"

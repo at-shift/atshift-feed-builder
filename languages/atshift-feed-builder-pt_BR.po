@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: atshift Feed Builder 1.0\n"
+"Project-Id-Version: atshift Feed Builder 1.0.2\n"
 "Report-Msgid-Bugs-To: https://upf.at-shift.net/en/feed-builder/\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -28,8 +28,8 @@ msgstr "https://upf.at-shift.net/en/feed-builder/"
 
 #. Description of the plugin
 #: atshift-feed-builder.php
-msgid "Build safe RSS and JSON feeds from WordPress posts, custom fields, and author profile data."
-msgstr "Crie feeds RSS e JSON seguros a partir de posts do WordPress, campos personalizados e dados do perfil dos autores."
+msgid "Build safe, purpose-specific RSS and JSON feeds for WordPress sites that rely on custom fields beyond what standard feeds can provide."
+msgstr "Crie feeds RSS e JSON seguros e específicos para sites WordPress que dependem de campos personalizados além do que os feeds padrão oferecem."
 
 #. Author of the plugin
 #: atshift-feed-builder.php
@@ -546,6 +546,10 @@ msgstr "Campo indisponível (seleção preservada)"
 #: includes/class-atshift-feed-builder-admin.php:602
 msgid "Site name"
 msgstr "Nome do site"
+
+#: includes/class-atshift-feed-builder-admin.php:603
+msgid "Post type name + site name"
+msgstr "Nome do tipo de post + nome do site"
 
 #: includes/class-atshift-feed-builder-admin.php:603
 msgid "Site tagline"

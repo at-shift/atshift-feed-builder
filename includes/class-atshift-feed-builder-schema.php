@@ -94,7 +94,7 @@ class Atshift_Feed_Builder_Schema {
 	private static function get_rss_fields() {
 		return array(
 			'rss_version'      => self::automatic( 'feed', 'rss@version', __( 'RSS version', 'atshift-feed-builder' ), __( 'Always output as RSS 2.0.', 'atshift-feed-builder' ) ),
-			'feed_title'       => self::field( 'feed', 'channel/title', __( 'Feed title', 'atshift-feed-builder' ), __( 'Name of this feed.', 'atshift-feed-builder' ), 'string', 'site:name', true, array( 'site:name' ) ),
+			'feed_title'       => self::field( 'feed', 'channel/title', __( 'Feed title', 'atshift-feed-builder' ), __( 'Name of this feed.', 'atshift-feed-builder' ), 'string', 'site:name', true, array( 'site:name', 'site:post_type_and_name' ) ),
 			'feed_link'        => self::field( 'feed', 'channel/link', __( 'Publisher website', 'atshift-feed-builder' ), __( 'Website represented by the feed.', 'atshift-feed-builder' ), 'url', 'site:url', true, array( 'site:url' ) ),
 			'feed_publisher'   => self::field( 'feed', 'channel/dc:publisher', __( 'Publisher / site operator', 'atshift-feed-builder' ), __( 'Person or organization responsible for publishing the feed.', 'atshift-feed-builder' ), 'string', 'site:name', false, array( 'site:name' ) ),
 			'feed_description' => self::field( 'feed', 'channel/description', __( 'Feed description', 'atshift-feed-builder' ), __( 'Short description of the feed.', 'atshift-feed-builder' ), 'string', 'site:description', true, array( 'site:description' ) ),
@@ -120,7 +120,7 @@ class Atshift_Feed_Builder_Schema {
 	private static function get_json_fields() {
 		return array(
 			'json_version'        => self::automatic( 'feed', 'version', __( 'JSON Feed version', 'atshift-feed-builder' ), __( 'Always output as JSON Feed 1.1.', 'atshift-feed-builder' ) ),
-			'feed_title'          => self::field( 'feed', 'title', __( 'Feed title', 'atshift-feed-builder' ), __( 'Name of this feed.', 'atshift-feed-builder' ), 'string', 'site:name', true, array( 'site:name' ) ),
+			'feed_title'          => self::field( 'feed', 'title', __( 'Feed title', 'atshift-feed-builder' ), __( 'Name of this feed.', 'atshift-feed-builder' ), 'string', 'site:name', true, array( 'site:name', 'site:post_type_and_name' ) ),
 			'feed_home_url'       => self::field( 'feed', 'home_page_url', __( 'Publisher website', 'atshift-feed-builder' ), __( 'Website represented by the feed.', 'atshift-feed-builder' ), 'url', 'site:url', false, array( 'site:url' ) ),
 			'feed_url'            => self::automatic( 'feed', 'feed_url', __( 'Canonical feed URL', 'atshift-feed-builder' ), __( 'Generated from the public feed URL.', 'atshift-feed-builder' ) ),
 			'feed_description'    => self::field( 'feed', 'description', __( 'Feed description', 'atshift-feed-builder' ), __( 'Short description of the feed.', 'atshift-feed-builder' ), 'string', 'site:description', false, array( 'site:description' ) ),

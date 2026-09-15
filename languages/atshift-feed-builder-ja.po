@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: atshift Feed Builder 1.0\n"
+"Project-Id-Version: atshift Feed Builder 1.0.2\n"
 "Report-Msgid-Bugs-To: https://upf.at-shift.net/en/feed-builder/\n"
 "POT-Creation-Date: 2026-08-15 21:06+0900\n"
 "PO-Revision-Date: 2026-08-24 21:49+0900\n"
@@ -439,6 +439,10 @@ msgstr "利用できないフィールド (選択は保持されています)"
 #: includes/class-atshift-feed-builder-admin.php:602
 msgid "Site name"
 msgstr "サイト名"
+
+#: includes/class-atshift-feed-builder-admin.php:603
+msgid "Post type name + site name"
+msgstr "投稿タイプ名 + サイト名"
 
 #: includes/class-atshift-feed-builder-admin.php:603
 msgid "Site tagline"
@@ -1062,8 +1066,8 @@ msgstr "atshift User Profile Fields （投稿者）"
 
 #. Description of the plugin
 #: atshift-feed-builder.php
-msgid "Build safe RSS and JSON feeds from WordPress posts, custom fields, and author profile data."
-msgstr "WordPress の投稿、カスタムフィールド、投稿者プロフィールのデータから、安全な RSS フィードと JSON フィードを作成します。"
+msgid "Build safe, purpose-specific RSS and JSON feeds for WordPress sites that rely on custom fields beyond what standard feeds can provide."
+msgstr "カスタムフィールドを多用するWordPressサイトで、標準フィードでは必要な情報を適切に配信できない問題を解決し、安全で用途別のRSS・JSONフィードを作成します。"
 
 #. Plugin URI of the plugin
 #: atshift-feed-builder.php
@@ -1073,7 +1077,7 @@ msgstr "https://upf.at-shift.net/feed-builder/"
 #. Author of the plugin
 #: atshift-feed-builder.php
 msgid "@shift"
-msgstr ""
+msgstr "@shift"
 
 #. Author URI of the plugin
 #: atshift-feed-builder.php
