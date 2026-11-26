@@ -2,9 +2,9 @@
 Contributors: atshift
 Tags: rss, json feed, custom fields, structured data, ai
 Requires at least: 6.4
-Tested up to: 7.1
+Tested up to: 7.2
 Requires PHP: 7.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,6 +134,11 @@ atshift Fields and atshift User Profile Fields are optional. When they are activ
 * [KOTOTSUGI](https://wordpress.org/plugins/kototsugi/) - turn Markdown drafts into editable WordPress blocks and provide a focused Quick Post workflow.
 
 == Changelog ==
+
+= 1.0.3 =
+
+* Confirmed compatibility with WordPress 7.2 and PHP 8.6.
+* Preserve the requested post while rendering feed content so membership and access-control filters evaluate the correct item.
 
 = 1.0.2 =
 

@@ -221,8 +221,7 @@ class Atshift_Feed_Builder_Renderer {
 			case 'post:excerpt':
 				return has_excerpt( $post ) ? get_the_excerpt( $post ) : wp_trim_words( wp_strip_all_tags( strip_shortcodes( $post->post_content ) ), 55 );
 			case 'post:content_html':
-				// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Apply the standard WordPress content rendering pipeline.
-				return apply_filters( 'the_content', $post->post_content );
+				return $this->render_post_content( $post );
 			case 'post:published':
 				return get_post_time( 'c', true, $post );
 			case 'post:modified':
@@ -563,6 +562,23 @@ class Atshift_Feed_Builder_Renderer {
 
 		$output .= "</channel>\n</rss>\n";
 		return $output;
+	}
+
+	private function render_post_content( $post ) {
+		$had_global_post = array_key_exists( 'post', $GLOBALS );
+		$previous_post   = $GLOBALS['post'] ?? null;
+		$GLOBALS['post'] = $post;
+
+		try {
+			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Apply the standard WordPress content rendering pipeline.
+			return apply_filters( 'the_content', $post->post_content );
+		} finally {
+			if ( $had_global_post ) {
+				$GLOBALS['post'] = $previous_post;
+			} else {
+				unset( $GLOBALS['post'] );
+			}
+		}
 	}
 
 	private function xml( $value ) {
